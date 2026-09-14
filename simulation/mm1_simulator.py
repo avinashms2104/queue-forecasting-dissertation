@@ -47,7 +47,7 @@ from pathlib import Path
 # ----------------------------------------------------------------------
 MU = 1.0              # service rate is fixed at 1 (time is measured in units of mean service time)
 RHOS = [0.3, 0.5, 0.7, 0.8, 0.9, 0.95]
-N_RUNS = 10            # independent replications per rho
+N_RUNS = 30            # independent replications per rho (20 train / 5 val / 5 test)
 DT = 1.0               # observation interval (sampling step for the time series)
 ROLLING_WINDOW = 10.0  # trailing window (in time units) used to estimate "recent" arrival/service rates
 
@@ -61,11 +61,17 @@ BASE_WARMUP = 200.0
 BASE_SIM_TIME = 3000.0
 
 
+BASE_WARMUP = 200.0
+POST_WARMUP_LENGTH = 20_000.0   # fixed for every rho, per Azam's instruction
+
+
 def scaled_lengths(rho):
     scale = 1.0 / (1.0 - rho) ** 2
-    base_scale = 1.0 / (1.0 - 0.7) ** 2  # rho=0.7 is our "reference" case, scale=1x there
+    base_scale = 1.0 / (1.0 - 0.7) ** 2
     factor = max(scale / base_scale, 1.0)
-    return BASE_WARMUP * factor, BASE_SIM_TIME * factor
+    warmup = BASE_WARMUP * factor      # still scales with rho -- correct, keep this
+    sim_time = POST_WARMUP_LENGTH       # fixed -- no longer scales with rho
+    return warmup, sim_time
 
 
 OUT_DIR = Path(__file__).resolve().parent.parent / "data"
