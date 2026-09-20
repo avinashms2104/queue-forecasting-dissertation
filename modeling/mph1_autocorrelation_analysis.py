@@ -94,9 +94,9 @@ def compute_all():
     ax.set_xlabel("Lag (time units)")
     ax.set_ylabel("Autocorrelation of queue_length")
     ax.set_title("M/PH/1 (Erlang-2) queue-length persistence vs. traffic intensity")
-    ax.legend(fontsize=8)
+    ax.legend(fontsize=8, loc="center left", bbox_to_anchor=(1.02, 0.5))
     fig.tight_layout()
-    fig.savefig(PLOTS_DIR / "mph1_autocorrelation_by_rho.png", dpi=130)
+    fig.savefig(PLOTS_DIR / "mph1_autocorrelation_by_rho.png", dpi=130, bbox_inches="tight")
     plt.close(fig)
     print("Saved: results/plots/mph1_autocorrelation_by_rho.png")
 

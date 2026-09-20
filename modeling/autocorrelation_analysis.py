@@ -106,9 +106,9 @@ def compute_all():
     ax.set_ylabel("Autocorrelation of queue_length")
     ax.set_title("Queue-length persistence vs. traffic intensity\n"
                  "(slower decay = longer-lasting congestion episodes)")
-    ax.legend()
+    ax.legend(fontsize=8, loc="center left", bbox_to_anchor=(1.02, 0.5))
     fig.tight_layout()
-    fig.savefig(PLOTS_DIR / "autocorrelation_by_rho.png", dpi=130)
+    fig.savefig(PLOTS_DIR / "autocorrelation_by_rho.png", dpi=130, bbox_inches="tight")
     plt.close(fig)
     print("Saved: results/plots/autocorrelation_by_rho.png")
 
