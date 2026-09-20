@@ -1,1 +1,3 @@
 data/mm1_timeseries_all.csv
+data/
+__pycache__/

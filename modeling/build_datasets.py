@@ -41,6 +41,18 @@ dissertation's framing ("use recent behaviour to predict ... whether the
 system is moving towards congestion"), rather than just classifying the
 current state.
 
+Train/validation/test split
+----------------------------
+Per Azam's instruction (2026-09-01), rows are NOT split randomly at the row
+level -- consecutive rows share most of their lookback window, so a random
+row split would leak near-duplicate observations across train/test and
+overstate performance. Instead, each of the 30 independent simulation runs
+per rho is assigned entirely to ONE of train/val/test:
+    run_id 0-19  -> train (20 runs)
+    run_id 20-24 -> val   (5 runs)
+    run_id 25-29 -> test  (5 runs)
+No row ever has its run split across two sets.
+
 Usage
 -----
     python build_datasets.py
@@ -50,6 +62,8 @@ Produces, per rho and combined:
     data/processed/rich_features_rho{rho}.csv
     data/processed/history_only_all.csv
     data/processed/rich_features_all.csv
+
+Each output file now includes a "split" column ("train" / "val" / "test").
 """
 
 import numpy as np
@@ -66,18 +80,17 @@ HORIZONS = {            # forecast horizons, in observation steps (dt=1.0 time u
     "short": 5,
     "medium": 10,
     "long": 20,
+    "extra_long": 15,
 }
+
 CONGESTION_PERCENTILE = 0.80   # "congested" = top 20% of observed queue lengths for that rho
 
-# The raw simulation runs are much longer at high rho (needed for the queue
-# to reach steady state -- see simulation/mm1_simulator.py), which means the
-# raw row count per rho ranges from ~30k (rho=0.3) to >1,000,000 (rho=0.95).
-# For the ML datasets we don't need that many rows, and an unbalanced,
-# huge file is both impractical (300MB+ CSVs) and would silently make the
-# high-rho classes dominate any model trained on the combined data. So we
-# cap rows per rho via random subsampling (fixed seed for reproducibility).
-MAX_ROWS_PER_RHO = 30000
 RANDOM_SEED = 42
+
+# Run-level train/val/test split boundaries (30 runs per rho total).
+N_TRAIN_RUNS = 20
+N_VAL_RUNS = 5
+# remaining runs (25-29) are test
 
 
 def congestion_threshold(queue_length_series, percentile=CONGESTION_PERCENTILE):
@@ -87,6 +100,20 @@ def congestion_threshold(queue_length_series, percentile=CONGESTION_PERCENTILE):
     definition from Azam's list of candidates.
     """
     return queue_length_series.quantile(percentile)
+
+
+def assign_split(run_id):
+    """
+    Deterministic run-level split: run_id 0-19 -> train, 20-24 -> val,
+    25-29 -> test. No randomness needed since run_ids are already
+    arbitrary/interchangeable (independent replications).
+    """
+    if run_id < N_TRAIN_RUNS:
+        return "train"
+    elif run_id < N_TRAIN_RUNS + N_VAL_RUNS:
+        return "val"
+    else:
+        return "test"
 
 
 def build_features_for_run(df_run, threshold):
@@ -163,11 +190,12 @@ def build_all():
         rho_feat = pd.concat(run_feature_dfs, ignore_index=True)
         rho_feat["congestion_threshold"] = threshold
 
-        if len(rho_feat) > MAX_ROWS_PER_RHO:
-            rho_feat = rho_feat.sample(n=MAX_ROWS_PER_RHO, random_state=RANDOM_SEED).sort_values(
-                ["run_id", "t"]).reset_index(drop=True)
+        # Run-level train/val/test split (per Azam's instruction): assign
+        # each run_id to exactly one of train/val/test so that no two rows
+        # from the same run ever end up in different sets.
+        rho_feat["split"] = rho_feat["run_id"].apply(assign_split)
 
-        base_cols = ["rho", "run_id", "t", "congestion_threshold"]
+        base_cols = ["rho", "run_id", "t", "congestion_threshold", "split"]
 
         history_df = rho_feat[base_cols + history_lag_cols + target_cols].copy()
         rich_df = rho_feat[base_cols + history_lag_cols + rich_extra_cols + target_cols].copy()
@@ -176,8 +204,10 @@ def build_all():
         rich_df.to_csv(OUT_DIR / f"rich_features_rho{rho}.csv", index=False)
 
         congestion_rate = rho_feat["target_congested_medium"].mean()
-        print(f"rho={rho}: {len(rho_feat)} usable rows | congestion threshold (queue_length) = "
-              f"{threshold:.2f} | medium-horizon congestion rate = {congestion_rate:.1%}")
+        split_counts = rho_feat["split"].value_counts().to_dict()
+        print(f"rho={rho}: {len(rho_feat)} usable rows | split counts = {split_counts} | "
+              f"congestion threshold (queue_length) = {threshold:.2f} | "
+              f"medium-horizon congestion rate = {congestion_rate:.1%}")
 
         history_dfs.append(history_df)
         rich_dfs.append(rich_df)
