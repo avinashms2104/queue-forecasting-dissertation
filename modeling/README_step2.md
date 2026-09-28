@@ -1,3 +1,5 @@
+> **Superseded.** These notes are from the first round of experiments, before the run-level train/test split, persistence baselines and other corrections. Numbers below are out of date; see the top-level `README.md` and the notebook for current results.
+
 # Step 2: Forecasting Datasets
 
 ## What this is
