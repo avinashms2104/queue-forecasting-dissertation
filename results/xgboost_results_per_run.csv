@@ -1,0 +1,901 @@
+queue,rho,horizon,test_run_id,task,model,MAE,RMSE,precision,recall,F1
+M/M/1,0.3,medium,25,regression,Naive (persistence),0.24297346992382454,0.67415027409862,,,
+M/M/1,0.3,medium,25,regression,XGBoost (L2),0.23933320192051138,0.4887138285535098,,,
+M/M/1,0.3,medium,25,regression,XGBoost (L1),0.13558596509141546,0.5058864722946947,,,
+M/M/1,0.3,medium,25,regression,Constant (train median),0.13380614657210402,0.5064853891626597,,,
+M/M/1,0.3,medium,25,classification,Naive (persistence),,,0.11316397228637413,0.11421911421911422,0.1136890951276102
+M/M/1,0.3,medium,25,classification,XGBoost,,,0.0,0.0,0.0
+M/M/1,0.3,medium,26,regression,Naive (persistence),0.22782745923198316,0.6374677019388945,,,
+M/M/1,0.3,medium,26,regression,XGBoost (L2),0.2293186097316243,0.4579145592516057,,,
+M/M/1,0.3,medium,26,regression,XGBoost (L1),0.12571933656401021,0.473921782512989,,,
+M/M/1,0.3,medium,26,regression,Constant (train median),0.12393477117306681,0.4744941102952619,,,
+M/M/1,0.3,medium,26,classification,Naive (persistence),,,0.1017149615612064,0.10280932456664674,0.10225921521997622
+M/M/1,0.3,medium,26,classification,XGBoost,,,0.0,0.0,0.0
+M/M/1,0.3,medium,27,regression,Naive (persistence),0.23331410894982435,0.6552883493099524,,,
+M/M/1,0.3,medium,27,regression,XGBoost (L2),0.23466455902732294,0.4766438675480104,,,
+M/M/1,0.3,medium,27,regression,XGBoost (L1),0.13089079178216598,0.4927531472753704,,,
+M/M/1,0.3,medium,27,regression,Constant (train median),0.12908299690662192,0.49333629019525266,,,
+M/M/1,0.3,medium,27,classification,Naive (persistence),,,0.11213872832369942,0.11272515979081929,0.11243117936829905
+M/M/1,0.3,medium,27,classification,XGBoost,,,0.0,0.0,0.0
+M/M/1,0.3,medium,28,regression,Naive (persistence),0.21913336492391933,0.6064814284509153,,,
+M/M/1,0.3,medium,28,regression,XGBoost (L2),0.2232407721012826,0.4295363967601178,,,
+M/M/1,0.3,medium,28,regression,XGBoost (L1),0.11874262470740747,0.4436073249947264,,,
+M/M/1,0.3,medium,28,regression,Constant (train median),0.1169378191965461,0.44416574564405364,,,
+M/M/1,0.3,medium,28,classification,Naive (persistence),,,0.06965174129353234,0.06892307692307692,0.06928549334982988
+M/M/1,0.3,medium,28,classification,XGBoost,,,0.0,0.0,0.0
+M/M/1,0.3,medium,29,regression,Naive (persistence),0.23516018003706646,0.6221147328263303,,,
+M/M/1,0.3,medium,29,regression,XGBoost (L2),0.232447167092267,0.4450950030567372,,,
+M/M/1,0.3,medium,29,regression,XGBoost (L1),0.13016377338318602,0.4623212991327381,,,
+M/M/1,0.3,medium,29,regression,Constant (train median),0.12840879004500927,0.46292230574865423,,,
+M/M/1,0.3,medium,29,classification,Naive (persistence),,,0.09545199326221224,0.09545199326221224,0.09545199326221224
+M/M/1,0.3,medium,29,classification,XGBoost,,,0.0,0.0,0.0
+M/M/1,0.5,medium,25,regression,Naive (persistence),0.7402007768753468,1.3766708833565022,,,
+M/M/1,0.5,medium,25,regression,XGBoost (L2),0.7192954000560862,1.0432281752317822,,,
+M/M/1,0.5,medium,25,regression,XGBoost (L1),0.5394947197188109,1.106488222660941,,,
+M/M/1,0.5,medium,25,regression,Constant (train median),0.4858497704686475,1.1585894946491775,,,
+M/M/1,0.5,medium,25,classification,Naive (persistence),,,0.19520130134200894,0.19583843329253367,0.1955193482688391
+M/M/1,0.5,medium,25,classification,XGBoost,,,0.40425531914893614,0.007751937984496124,0.01521216973578863
+M/M/1,0.5,medium,26,regression,Naive (persistence),0.7806991034552231,1.4679683226394196,,,
+M/M/1,0.5,medium,26,regression,XGBoost (L2),0.7565072794731282,1.1523981361091866,,,
+M/M/1,0.5,medium,26,regression,XGBoost (L1),0.5824572276964805,1.2262677229482661,,,
+M/M/1,0.5,medium,26,regression,Constant (train median),0.5348544373929687,1.3035932239942023,,,
+M/M/1,0.5,medium,26,classification,Naive (persistence),,,0.2494390426327599,0.2508461827754795,0.2501406337896119
+M/M/1,0.5,medium,26,classification,XGBoost,,,0.6320754716981132,0.025197442647611885,0.0484629294755877
+M/M/1,0.5,medium,27,regression,Naive (persistence),0.7146608757133478,1.3552956957461106,,,
+M/M/1,0.5,medium,27,regression,XGBoost (L2),0.7134989115035772,1.0359925525395404,,,
+M/M/1,0.5,medium,27,regression,XGBoost (L1),0.5277767111407835,1.0976454621355007,,,
+M/M/1,0.5,medium,27,regression,Constant (train median),0.4718953588202616,1.1495426967696236,,,
+M/M/1,0.5,medium,27,classification,Naive (persistence),,,0.23028258118937156,0.2297979797979798,0.23004002527912365
+M/M/1,0.5,medium,27,classification,XGBoost,,,0.4,0.005892255892255892,0.011613438407299876
+M/M/1,0.5,medium,28,regression,Naive (persistence),0.7069026370191096,1.354108802466947,,,
+M/M/1,0.5,medium,28,regression,XGBoost (L2),0.717543980118451,1.053383624910807,,,
+M/M/1,0.5,medium,28,regression,XGBoost (L1),0.5329652577200975,1.116214387005833,,,
+M/M/1,0.5,medium,28,regression,Constant (train median),0.4786466999445369,1.1768665490188623,,,
+M/M/1,0.5,medium,28,classification,Naive (persistence),,,0.2392384105960265,0.23884297520661157,0.23904052936311002
+M/M/1,0.5,medium,28,classification,XGBoost,,,0.47540983606557374,0.011983471074380166,0.023377670294236194
+M/M/1,0.5,medium,29,regression,Naive (persistence),0.7090945898071764,1.3367051685116222,,,
+M/M/1,0.5,medium,29,regression,XGBoost (L2),0.6998244556256878,1.0102722695771889,,,
+M/M/1,0.5,medium,29,regression,XGBoost (L1),0.5107224202563607,1.0628164289778315,,,
+M/M/1,0.5,medium,29,regression,Constant (train median),0.4530593653524976,1.111615970237341,,,
+M/M/1,0.5,medium,29,classification,Naive (persistence),,,0.18508885999133073,0.18565217391304348,0.1853700889950076
+M/M/1,0.5,medium,29,classification,XGBoost,,,0.5609756097560976,0.01,0.019649722340879965
+M/M/1,0.7,medium,25,regression,Naive (persistence),1.6157704654895666,2.4159631639639745,,,
+M/M/1,0.7,medium,25,regression,XGBoost (L2),1.5582691388680072,2.1240711395863907,,,
+M/M/1,0.7,medium,25,regression,XGBoost (L1),1.4820503413790829,2.180775221930795,,,
+M/M/1,0.7,medium,25,regression,Constant (train median),1.7648475120385232,3.2773573849324746,,,
+M/M/1,0.7,medium,25,classification,Naive (persistence),,,0.5140921409214092,0.5143709327548807,0.5142314990512334
+M/M/1,0.7,medium,25,classification,XGBoost,,,0.7771822358346095,0.2752169197396963,0.40648778534241087
+M/M/1,0.7,medium,26,regression,Naive (persistence),1.5830243511373885,2.410290428536524,,,
+M/M/1,0.7,medium,26,regression,XGBoost (L2),1.5233717216483957,2.072439682491565,,,
+M/M/1,0.7,medium,26,regression,XGBoost (L1),1.4352765277726927,2.116097937224326,,,
+M/M/1,0.7,medium,26,regression,Constant (train median),1.5976049704379196,3.023532316696355,,,
+M/M/1,0.7,medium,26,classification,Naive (persistence),,,0.45501835985312117,0.45613496932515335,0.45557598039215685
+M/M/1,0.7,medium,26,classification,XGBoost,,,0.6772727272727272,0.2285276073619632,0.34174311926605505
+M/M/1,0.7,medium,27,regression,Naive (persistence),1.580422033983259,2.3845084204081024,,,
+M/M/1,0.7,medium,27,regression,XGBoost (L2),1.5157007215722247,2.0639219269886557,,,
+M/M/1,0.7,medium,27,regression,XGBoost (L1),1.4362222131906157,2.115188963691222,,,
+M/M/1,0.7,medium,27,regression,Constant (train median),1.642925166658313,3.0510172615882967,,,
+M/M/1,0.7,medium,27,classification,Naive (persistence),,,0.47124413145539906,0.47124413145539906,0.47124413145539906
+M/M/1,0.7,medium,27,classification,XGBoost,,,0.7359154929577465,0.24530516431924881,0.36795774647887325
+M/M/1,0.7,medium,28,regression,Naive (persistence),1.5776385058912008,2.402785214321485,,,
+M/M/1,0.7,medium,28,regression,XGBoost (L2),1.5054209315289708,2.0678528045352906,,,
+M/M/1,0.7,medium,28,regression,XGBoost (L1),1.4190961985726738,2.110204132784846,,,
+M/M/1,0.7,medium,28,regression,Constant (train median),1.555226873903234,2.9195187740702075,,,
+M/M/1,0.7,medium,28,classification,Naive (persistence),,,0.4520242269684412,0.4520242269684412,0.4520242269684412
+M/M/1,0.7,medium,28,classification,XGBoost,,,0.6584905660377358,0.22250557857825948,0.332618537050274
+M/M/1,0.7,medium,29,regression,Naive (persistence),1.5343764104107116,2.358592956439451,,,
+M/M/1,0.7,medium,29,regression,XGBoost (L2),1.4829051250363119,2.0477607205562305,,,
+M/M/1,0.7,medium,29,regression,XGBoost (L1),1.3884533991169699,2.0790517921988636,,,
+M/M/1,0.7,medium,29,regression,Constant (train median),1.587733814753523,3.128389541331261,,,
+M/M/1,0.7,medium,29,classification,Naive (persistence),,,0.4817351598173516,0.48095083034842073,0.48134267557438487
+M/M/1,0.7,medium,29,classification,XGBoost,,,0.7268128161888702,0.28069032888309997,0.4049800328870096
+M/M/1,0.8,medium,25,regression,Naive (persistence),2.1211681025846523,3.002978885696383,,,
+M/M/1,0.8,medium,25,regression,XGBoost (L2),2.0868764373814743,2.7203665575887612,,,
+M/M/1,0.8,medium,25,regression,XGBoost (L1),2.006312831531687,2.754557666125751,,,
+M/M/1,0.8,medium,25,regression,Constant (train median),2.671658986175115,3.818507010917535,,,
+M/M/1,0.8,medium,25,classification,Naive (persistence),,,0.6026511477529907,0.6034315312398835,0.6030410870268521
+M/M/1,0.8,medium,25,classification,XGBoost,,,0.7119170984455958,0.4448041437358368,0.5475194261805141
+M/M/1,0.8,medium,26,regression,Naive (persistence),2.0509994489254044,2.9399412147141057,,,
+M/M/1,0.8,medium,26,regression,XGBoost (L2),2.0248308855446573,2.6644532910110184,,,
+M/M/1,0.8,medium,26,regression,XGBoost (L1),1.9367418777643455,2.690412741906533,,,
+M/M/1,0.8,medium,26,regression,Constant (train median),2.5790291067581785,3.909181412221955,,,
+M/M/1,0.8,medium,26,classification,Naive (persistence),,,0.5962192816635161,0.5944214097248398,0.5953189882974708
+M/M/1,0.8,medium,26,classification,XGBoost,,,0.7544642857142857,0.44591029023746703,0.560530679933665
+M/M/1,0.8,medium,27,regression,Naive (persistence),2.1834343232009616,3.0826740767015752,,,
+M/M/1,0.8,medium,27,regression,XGBoost (L2),2.141933780009247,2.8053306750473457,,,
+M/M/1,0.8,medium,27,regression,XGBoost (L1),2.0643016182192517,2.8403430205169347,,,
+M/M/1,0.8,medium,27,regression,Constant (train median),2.8342931543893033,4.141132806422255,,,
+M/M/1,0.8,medium,27,classification,Naive (persistence),,,0.6368994989684645,0.6350279165442256,0.6359623307828134
+M/M/1,0.8,medium,27,classification,XGBoost,,,0.7689411764705882,0.4801645606817514,0.5911722141823444
+M/M/1,0.8,medium,28,regression,Naive (persistence),2.242374154770849,3.0999785914935782,,,
+M/M/1,0.8,medium,28,regression,XGBoost (L2),2.1673749684988928,2.841240917254774,,,
+M/M/1,0.8,medium,28,regression,XGBoost (L1),2.1055700488595654,2.8834169620403647,,,
+M/M/1,0.8,medium,28,regression,Constant (train median),3.08580015026296,4.706598146825632,,,
+M/M/1,0.8,medium,28,classification,Naive (persistence),,,0.6594033722438392,0.6594033722438392,0.6594033722438392
+M/M/1,0.8,medium,28,classification,XGBoost,,,0.7952979327117957,0.5089494163424124,0.6206896551724138
+M/M/1,0.8,medium,29,regression,Naive (persistence),2.1115116919533325,2.9733767681944,,,
+M/M/1,0.8,medium,29,regression,XGBoost (L2),2.072676578190514,2.7181338708370686,,,
+M/M/1,0.8,medium,29,regression,XGBoost (L1),1.9941269293293908,2.7495762502352763,,,
+M/M/1,0.8,medium,29,regression,Constant (train median),2.8792749486755795,4.455691542434903,,,
+M/M/1,0.8,medium,29,classification,Naive (persistence),,,0.6521349656613915,0.6521349656613915,0.6521349656613915
+M/M/1,0.8,medium,29,classification,XGBoost,,,0.7857806691449815,0.5049268438339803,0.6147973095800764
+M/M/1,0.9,medium,25,regression,Naive (persistence),2.7414993239521257,3.641552471381241,,,
+M/M/1,0.9,medium,25,regression,XGBoost (L2),2.705012407746526,3.468305376696137,,,
+M/M/1,0.9,medium,25,regression,XGBoost (L1),2.67290905442592,3.476862875953236,,,
+M/M/1,0.9,medium,25,regression,Constant (train median),5.663828934849016,7.821110095942642,,,
+M/M/1,0.9,medium,25,classification,Naive (persistence),,,0.7909987669543773,0.7909987669543773,0.7909987669543773
+M/M/1,0.9,medium,25,classification,XGBoost,,,0.8343728343728344,0.7422934648581998,0.7856443719412725
+M/M/1,0.9,medium,26,regression,Naive (persistence),2.6692873954629674,3.5713890814296585,,,
+M/M/1,0.9,medium,26,regression,XGBoost (L2),2.6577488897834045,3.3930044539123982,,,
+M/M/1,0.9,medium,26,regression,XGBoost (L1),2.6167458709583267,3.3981204944525714,,,
+M/M/1,0.9,medium,26,regression,Constant (train median),5.661425209074065,7.998751091857761,,,
+M/M/1,0.9,medium,26,classification,Naive (persistence),,,0.8232881035026822,0.8232881035026822,0.8232881035026822
+M/M/1,0.9,medium,26,classification,XGBoost,,,0.8731448763250883,0.7797412432944146,0.823803967327888
+M/M/1,0.9,medium,27,regression,Naive (persistence),2.7760753091983377,3.6694924040021384,,,
+M/M/1,0.9,medium,27,regression,XGBoost (L2),2.7556612006258545,3.510490570599524,,,
+M/M/1,0.9,medium,27,regression,XGBoost (L1),2.725031306846171,3.520308047709319,,,
+M/M/1,0.9,medium,27,regression,Constant (train median),6.797055730809674,10.836427956099243,,,
+M/M/1,0.9,medium,27,classification,Naive (persistence),,,0.8258396533044421,0.8258396533044421,0.8258396533044421
+M/M/1,0.9,medium,27,classification,XGBoost,,,0.8684923262112549,0.7816901408450704,0.822808267997149
+M/M/1,0.9,medium,28,regression,Naive (persistence),2.7606529467728205,3.659859577851028,,,
+M/M/1,0.9,medium,28,regression,XGBoost (L2),2.7208694104444913,3.4523810718918333,,,
+M/M/1,0.9,medium,28,regression,XGBoost (L1),2.690183744982805,3.4658536016611556,,,
+M/M/1,0.9,medium,28,regression,Constant (train median),5.247809323519102,7.490056499936416,,,
+M/M/1,0.9,medium,28,classification,Naive (persistence),,,0.7859259259259259,0.7888475836431227,0.7873840445269017
+M/M/1,0.9,medium,28,classification,XGBoost,,,0.8356628547225752,0.7334572490706319,0.7812314393189468
+M/M/1,0.9,medium,29,regression,Naive (persistence),2.8768028846153846,3.772953257337186,,,
+M/M/1,0.9,medium,29,regression,XGBoost (L2),2.8401709696313797,3.6299443385658896,,,
+M/M/1,0.9,medium,29,regression,XGBoost (L1),2.813780025585005,3.639200695233855,,,
+M/M/1,0.9,medium,29,regression,Constant (train median),7.720853365384615,11.531081707826205,,,
+M/M/1,0.9,medium,29,classification,Naive (persistence),,,0.8746355685131195,0.8746355685131195,0.8746355685131195
+M/M/1,0.9,medium,29,classification,XGBoost,,,0.9056643503895557,0.8359572400388727,0.8694158075601375
+M/M/1,0.95,medium,25,regression,Naive (persistence),3.1426067798307544,4.037906859143053,,,
+M/M/1,0.95,medium,25,regression,XGBoost (L2),3.131618427690677,3.9472558202251267,,,
+M/M/1,0.95,medium,25,regression,XGBoost (L1),3.1182004828331533,3.9520639824941015,,,
+M/M/1,0.95,medium,25,regression,Constant (train median),12.028240949376595,15.791554424031041,,,
+M/M/1,0.95,medium,25,classification,Naive (persistence),,,0.8796595245083652,0.8796595245083652,0.8796595245083652
+M/M/1,0.95,medium,25,classification,XGBoost,,,0.9014040561622465,0.8479600821837393,0.8738656987295825
+M/M/1,0.95,medium,26,regression,Naive (persistence),3.1708978018126284,4.098494431138464,,,
+M/M/1,0.95,medium,26,regression,XGBoost (L2),3.1832289016573307,4.047861648240146,,,
+M/M/1,0.95,medium,26,regression,XGBoost (L1),3.1691355597697695,4.051494553237894,,,
+M/M/1,0.95,medium,26,regression,Constant (train median),20.474287717189924,32.586201032364855,,,
+M/M/1,0.95,medium,26,classification,Naive (persistence),,,0.9536760835234251,0.9520056051847959,0.9528401122019635
+M/M/1,0.95,medium,26,classification,XGBoost,,,0.9651643023882205,0.9414958836924154,0.9531831885086008
+M/M/1,0.95,medium,27,regression,Naive (persistence),3.178927337372928,4.1034496906888265,,,
+M/M/1,0.95,medium,27,regression,XGBoost (L2),3.187996511693602,4.021055808760856,,,
+M/M/1,0.95,medium,27,regression,XGBoost (L1),3.1752148966765605,4.028901937272255,,,
+M/M/1,0.95,medium,27,regression,Constant (train median),12.19690520306475,17.879757069236852,,,
+M/M/1,0.95,medium,27,classification,Naive (persistence),,,0.9494630448515476,0.9494630448515476,0.9494630448515476
+M/M/1,0.95,medium,27,classification,XGBoost,,,0.9590718659361908,0.9399873657612129,0.9494337214866805
+M/M/1,0.95,medium,28,regression,Naive (persistence),3.258124280206299,4.181142048029152,,,
+M/M/1,0.95,medium,28,regression,XGBoost (L2),3.277599720978533,4.135866625668248,,,
+M/M/1,0.95,medium,28,regression,XGBoost (L1),3.267709180574664,4.1420434470411704,,,
+M/M/1,0.95,medium,28,regression,Constant (train median),18.752441039507286,29.803562133711367,,,
+M/M/1,0.95,medium,28,classification,Naive (persistence),,,0.926484813310118,0.925053119567317,0.9257684129132032
+M/M/1,0.95,medium,28,classification,XGBoost,,,0.9399279134961954,0.9067027235850879,0.9230164192311474
+M/M/1,0.95,medium,29,regression,Naive (persistence),3.1141769743101806,4.0285487794199115,,,
+M/M/1,0.95,medium,29,regression,XGBoost (L2),3.0909410181350703,3.9220968444507416,,,
+M/M/1,0.95,medium,29,regression,XGBoost (L1),3.0788020375160694,3.927758013930407,,,
+M/M/1,0.95,medium,29,regression,Constant (train median),10.03850969001953,13.168243013678945,,,
+M/M/1,0.95,medium,29,classification,Naive (persistence),,,0.8820351193156236,0.8820351193156236,0.8820351193156236
+M/M/1,0.95,medium,29,classification,XGBoost,,,0.9063097514340345,0.8536695182350292,0.8792024113146302
+M/G/1 Weibull 2.0,0.3,medium,25,regression,Naive (persistence),0.1507345225603358,0.4713736039508088,,,
+M/G/1 Weibull 2.0,0.3,medium,25,regression,XGBoost (L2),0.14985627715986716,0.33628548500671523,,,
+M/G/1 Weibull 2.0,0.3,medium,25,regression,XGBoost (L1),0.07999420004759404,0.3450915763722568,,,
+M/G/1 Weibull 2.0,0.3,medium,25,regression,Constant (train median),0.07943336831059811,0.3452571771347614,,,
+M/G/1 Weibull 2.0,0.3,medium,25,classification,Naive (persistence),,,0.0656,0.06666666666666667,0.06612903225806452
+M/G/1 Weibull 2.0,0.3,medium,25,classification,XGBoost,,,0.0,0.0,0.0
+M/G/1 Weibull 2.0,0.3,medium,26,regression,Naive (persistence),0.1457936003390549,0.4500947605720204,,,
+M/G/1 Weibull 2.0,0.3,medium,26,regression,XGBoost (L2),0.14934870424101987,0.3259620796349163,,,
+M/G/1 Weibull 2.0,0.3,medium,26,regression,XGBoost (L1),0.07955015096650868,0.33551042503064443,,,
+M/G/1 Weibull 2.0,0.3,medium,26,regression,Constant (train median),0.07898919262555626,0.3356825461260696,,,
+M/G/1 Weibull 2.0,0.3,medium,26,classification,Naive (persistence),,,0.08951612903225807,0.09076042518397383,0.09013398294762484
+M/G/1 Weibull 2.0,0.3,medium,26,classification,XGBoost,,,0.25,0.0008176614881439084,0.0016299918500407497
+M/G/1 Weibull 2.0,0.3,medium,27,regression,Naive (persistence),0.16269903830994797,0.48347542765702406,,,
+M/G/1 Weibull 2.0,0.3,medium,27,regression,XGBoost (L2),0.15659983747603182,0.34459373581702185,,,
+M/G/1 Weibull 2.0,0.3,medium,27,regression,XGBoost (L1),0.0879937661105329,0.3551307388980058,,,
+M/G/1 Weibull 2.0,0.3,medium,27,regression,Constant (train median),0.08744547795470071,0.35528634683803134,,,
+M/G/1 Weibull 2.0,0.3,medium,27,classification,Naive (persistence),,,0.08376193975018369,0.08425720620842572,0.08400884303610906
+M/G/1 Weibull 2.0,0.3,medium,27,classification,XGBoost,,,0.0,0.0,0.0
+M/G/1 Weibull 2.0,0.3,medium,28,regression,Naive (persistence),0.15239852398523984,0.46653988287059533,,,
+M/G/1 Weibull 2.0,0.3,medium,28,regression,XGBoost (L2),0.1503476593314371,0.32977901710470636,,,
+M/G/1 Weibull 2.0,0.3,medium,28,regression,XGBoost (L1),0.08073364710641082,0.33907724310927795,,,
+M/G/1 Weibull 2.0,0.3,medium,28,regression,Constant (train median),0.08017923036373222,0.33922917987497847,,,
+M/G/1 Weibull 2.0,0.3,medium,28,classification,Naive (persistence),,,0.06544293695131684,0.06639676113360324,0.06591639871382636
+M/G/1 Weibull 2.0,0.3,medium,28,classification,XGBoost,,,0.0,0.0,0.0
+M/G/1 Weibull 2.0,0.3,medium,29,regression,Naive (persistence),0.14917301128905225,0.46120141714627994,,,
+M/G/1 Weibull 2.0,0.3,medium,29,regression,XGBoost (L2),0.15002194132233965,0.32821871116365664,,,
+M/G/1 Weibull 2.0,0.3,medium,29,regression,XGBoost (L1),0.08041773290945009,0.3374783062375073,,,
+M/G/1 Weibull 2.0,0.3,medium,29,regression,Constant (train median),0.07986348122866894,0.3376287518287408,,,
+M/G/1 Weibull 2.0,0.3,medium,29,classification,Naive (persistence),,,0.07692307692307693,0.07661290322580645,0.07676767676767676
+M/G/1 Weibull 2.0,0.3,medium,29,classification,XGBoost,,,0.0,0.0,0.0
+M/G/1 Weibull 2.0,0.5,medium,25,regression,Naive (persistence),0.5109489051094891,0.9987155103061386,,,
+M/G/1 Weibull 2.0,0.5,medium,25,regression,XGBoost (L2),0.49879120823015594,0.731278065101736,,,
+M/G/1 Weibull 2.0,0.5,medium,25,regression,XGBoost (L1),0.3383719343670498,0.7808735881915266,,,
+M/G/1 Weibull 2.0,0.5,medium,25,regression,Constant (train median),0.3131638560281903,0.7975232236258089,,,
+M/G/1 Weibull 2.0,0.5,medium,25,classification,Naive (persistence),,,0.12517193947730398,0.12569060773480664,0.12543073742246727
+M/G/1 Weibull 2.0,0.5,medium,25,classification,XGBoost,,,0.0,0.0,0.0
+M/G/1 Weibull 2.0,0.5,medium,26,regression,Naive (persistence),0.5358277444405224,1.05135157014588,,,
+M/G/1 Weibull 2.0,0.5,medium,26,regression,XGBoost (L2),0.5120661594892232,0.7783999224063236,,,
+M/G/1 Weibull 2.0,0.5,medium,26,regression,XGBoost (L1),0.3520524136557342,0.8271450780872436,,,
+M/G/1 Weibull 2.0,0.5,medium,26,regression,Constant (train median),0.3273158186677424,0.8483700449362153,,,
+M/G/1 Weibull 2.0,0.5,medium,26,classification,Naive (persistence),,,0.12783906554185595,0.12775616083009078,0.1277975997405125
+M/G/1 Weibull 2.0,0.5,medium,26,classification,XGBoost,,,0.5,0.008430609597924773,0.016581632653061226
+M/G/1 Weibull 2.0,0.5,medium,27,regression,Naive (persistence),0.47546182111038404,0.9459123046486764,,,
+M/G/1 Weibull 2.0,0.5,medium,27,regression,XGBoost (L2),0.4778659561420295,0.6835097098286291,,,
+M/G/1 Weibull 2.0,0.5,medium,27,regression,XGBoost (L1),0.31346362648822346,0.7246156891203153,,,
+M/G/1 Weibull 2.0,0.5,medium,27,regression,Constant (train median),0.2874112850455529,0.7399602344980747,,,
+M/G/1 Weibull 2.0,0.5,medium,27,classification,Naive (persistence),,,0.09202453987730061,0.09216589861751152,0.0920951650038373
+M/G/1 Weibull 2.0,0.5,medium,27,classification,XGBoost,,,0.0,0.0,0.0
+M/G/1 Weibull 2.0,0.5,medium,28,regression,Naive (persistence),0.5343715351275073,1.0383484595429116,,,
+M/G/1 Weibull 2.0,0.5,medium,28,regression,XGBoost (L2),0.5082463607312762,0.7595259174986998,,,
+M/G/1 Weibull 2.0,0.5,medium,28,regression,XGBoost (L1),0.35090483509621057,0.8105863431052941,,,
+M/G/1 Weibull 2.0,0.5,medium,28,regression,Constant (train median),0.3263783892752747,0.8285063304786399,,,
+M/G/1 Weibull 2.0,0.5,medium,28,classification,Naive (persistence),,,0.11904761904761904,0.11904761904761904,0.11904761904761904
+M/G/1 Weibull 2.0,0.5,medium,28,classification,XGBoost,,,0.25,0.0013227513227513227,0.002631578947368421
+M/G/1 Weibull 2.0,0.5,medium,29,regression,Naive (persistence),0.5368283356812236,1.0444440400458423,,,
+M/G/1 Weibull 2.0,0.5,medium,29,regression,XGBoost (L2),0.5106919856577464,0.7579839869681774,,,
+M/G/1 Weibull 2.0,0.5,medium,29,regression,XGBoost (L1),0.3505297478252426,0.8077650470477847,,,
+M/G/1 Weibull 2.0,0.5,medium,29,regression,Constant (train median),0.3254679009861139,0.8246003807207988,,,
+M/G/1 Weibull 2.0,0.5,medium,29,classification,Naive (persistence),,,0.105629348513599,0.10542929292929293,0.10552922590837283
+M/G/1 Weibull 2.0,0.5,medium,29,classification,XGBoost,,,0.8,0.0025252525252525255,0.005034612964128383
+M/G/1 Weibull 2.0,0.7,medium,25,regression,Naive (persistence),1.1562922529921378,1.8126756409014912,,,
+M/G/1 Weibull 2.0,0.7,medium,25,regression,XGBoost (L2),1.0917486236819436,1.4826849312878845,,,
+M/G/1 Weibull 2.0,0.7,medium,25,regression,XGBoost (L1),1.011981771196921,1.5232329870202974,,,
+M/G/1 Weibull 2.0,0.7,medium,25,regression,Constant (train median),0.9950423155891632,1.9183336535153694,,,
+M/G/1 Weibull 2.0,0.7,medium,25,classification,Naive (persistence),,,0.3506216696269982,0.3517462580185317,0.35118306351183065
+M/G/1 Weibull 2.0,0.7,medium,25,classification,XGBoost,,,0.7317073170731707,0.13898788310762653,0.23360287511230907
+M/G/1 Weibull 2.0,0.7,medium,26,regression,Naive (persistence),1.2335539510629763,1.910082606480154,,,
+M/G/1 Weibull 2.0,0.7,medium,26,regression,XGBoost (L2),1.1517757712043388,1.6048971482306897,,,
+M/G/1 Weibull 2.0,0.7,medium,26,regression,XGBoost (L1),1.080612110179493,1.6586746184817978,,,
+M/G/1 Weibull 2.0,0.7,medium,26,regression,Constant (train median),1.1315182511030886,2.228059671489795,,,
+M/G/1 Weibull 2.0,0.7,medium,26,classification,Naive (persistence),,,0.39961759082217974,0.39987244897959184,0.3997449792795665
+M/G/1 Weibull 2.0,0.7,medium,26,classification,XGBoost,,,0.7576530612244898,0.18941326530612246,0.30306122448979594
+M/G/1 Weibull 2.0,0.7,medium,27,regression,Naive (persistence),1.1710018543577407,1.8187973653108653,,,
+M/G/1 Weibull 2.0,0.7,medium,27,regression,XGBoost (L2),1.0982177909311481,1.4789131176046693,,,
+M/G/1 Weibull 2.0,0.7,medium,27,regression,XGBoost (L1),1.0180446863703183,1.5201623569338696,,,
+M/G/1 Weibull 2.0,0.7,medium,27,regression,Constant (train median),0.9960406956347416,1.900707715846794,,,
+M/G/1 Weibull 2.0,0.7,medium,27,classification,Naive (persistence),,,0.347383210396909,0.3478719662328526,0.3476274165202109
+M/G/1 Weibull 2.0,0.7,medium,27,classification,XGBoost,,,0.6492248062015504,0.11783327470981357,0.19946412622804405
+M/G/1 Weibull 2.0,0.7,medium,28,regression,Naive (persistence),1.1891688793146635,1.859002147260153,,,
+M/G/1 Weibull 2.0,0.7,medium,28,regression,XGBoost (L2),1.1286541536330197,1.5544908414609253,,,
+M/G/1 Weibull 2.0,0.7,medium,28,regression,XGBoost (L1),1.053640971699588,1.6045141079661238,,,
+M/G/1 Weibull 2.0,0.7,medium,28,regression,Constant (train median),1.0813586493662641,2.0849524459970388,,,
+M/G/1 Weibull 2.0,0.7,medium,28,classification,Naive (persistence),,,0.4176848874598071,0.4176848874598071,0.4176848874598071
+M/G/1 Weibull 2.0,0.7,medium,28,classification,XGBoost,,,0.7361878453038674,0.17138263665594855,0.27803860198226393
+M/G/1 Weibull 2.0,0.7,medium,29,regression,Naive (persistence),1.275,1.9754885750670492,,,
+M/G/1 Weibull 2.0,0.7,medium,29,regression,XGBoost (L2),1.1735891040862503,1.6351550039742422,,,
+M/G/1 Weibull 2.0,0.7,medium,29,regression,XGBoost (L1),1.108005271816742,1.6917326466380533,,,
+M/G/1 Weibull 2.0,0.7,medium,29,regression,Constant (train median),1.1099699398797596,2.0883659988350174,,,
+M/G/1 Weibull 2.0,0.7,medium,29,classification,Naive (persistence),,,0.3735202492211838,0.37363664693050797,0.37357843900919147
+M/G/1 Weibull 2.0,0.7,medium,29,classification,XGBoost,,,0.6049766718506998,0.12122156435026488,0.2019730010384216
+M/G/1 Weibull 2.0,0.8,medium,25,regression,Naive (persistence),1.615920248472097,2.309281768503803,,,
+M/G/1 Weibull 2.0,0.8,medium,25,regression,XGBoost (L2),1.517513418422172,1.9931917286339134,,,
+M/G/1 Weibull 2.0,0.8,medium,25,regression,XGBoost (L1),1.4408080295323966,2.015349185832952,,,
+M/G/1 Weibull 2.0,0.8,medium,25,regression,Constant (train median),1.651237350966837,2.5918069334041993,,,
+M/G/1 Weibull 2.0,0.8,medium,25,classification,Naive (persistence),,,0.4862348178137652,0.4862348178137652,0.4862348178137652
+M/G/1 Weibull 2.0,0.8,medium,25,classification,XGBoost,,,0.692942254812099,0.3060728744939271,0.42459983150800334
+M/G/1 Weibull 2.0,0.8,medium,26,regression,Naive (persistence),1.6691702969305493,2.362274644313822,,,
+M/G/1 Weibull 2.0,0.8,medium,26,regression,XGBoost (L2),1.5666755340240923,2.0762851935499476,,,
+M/G/1 Weibull 2.0,0.8,medium,26,regression,XGBoost (L1),1.5062872184944418,2.1110004531072466,,,
+M/G/1 Weibull 2.0,0.8,medium,26,regression,Constant (train median),1.8665565069350558,2.943639629895702,,,
+M/G/1 Weibull 2.0,0.8,medium,26,classification,Naive (persistence),,,0.5793418051482567,0.5774602143553101,0.5783994795055303
+M/G/1 Weibull 2.0,0.8,medium,26,classification,XGBoost,,,0.7615681233933161,0.384865215979214,0.511326860841424
+M/G/1 Weibull 2.0,0.8,medium,27,regression,Naive (persistence),1.6151650222867733,2.276125707114409,,,
+M/G/1 Weibull 2.0,0.8,medium,27,regression,XGBoost (L2),1.5178882530206383,1.9729976247976169,,,
+M/G/1 Weibull 2.0,0.8,medium,27,regression,XGBoost (L1),1.4551155716636037,2.0027744120287805,,,
+M/G/1 Weibull 2.0,0.8,medium,27,regression,Constant (train median),1.7407221916161666,2.7385990717966506,,,
+M/G/1 Weibull 2.0,0.8,medium,27,classification,Naive (persistence),,,0.5167161961367014,0.5184494968319046,0.5175813953488372
+M/G/1 Weibull 2.0,0.8,medium,27,classification,XGBoost,,,0.7357755261106781,0.35184494968319047,0.4760463943519919
+M/G/1 Weibull 2.0,0.8,medium,28,regression,Naive (persistence),1.7412247759250914,2.457612213877733,,,
+M/G/1 Weibull 2.0,0.8,medium,28,regression,XGBoost (L2),1.6562450519608996,2.206553584286452,,,
+M/G/1 Weibull 2.0,0.8,medium,28,regression,XGBoost (L1),1.5977934700905139,2.2453827869259935,,,
+M/G/1 Weibull 2.0,0.8,medium,28,regression,Constant (train median),2.208852836613089,3.600395273700373,,,
+M/G/1 Weibull 2.0,0.8,medium,28,classification,Naive (persistence),,,0.6314547837483617,0.6314547837483617,0.6314547837483617
+M/G/1 Weibull 2.0,0.8,medium,28,classification,XGBoost,,,0.7985447930877672,0.4602883355176933,0.5839707349517792
+M/G/1 Weibull 2.0,0.8,medium,29,regression,Naive (persistence),1.714986976557804,2.412524921673526,,,
+M/G/1 Weibull 2.0,0.8,medium,29,regression,XGBoost (L2),1.6032373353352267,2.120527853716326,,,
+M/G/1 Weibull 2.0,0.8,medium,29,regression,XGBoost (L1),1.5446014295710373,2.1575409180487326,,,
+M/G/1 Weibull 2.0,0.8,medium,29,regression,Constant (train median),1.9310258465237427,3.1511940662672457,,,
+M/G/1 Weibull 2.0,0.8,medium,29,classification,Naive (persistence),,,0.5370548604427334,0.5386100386100386,0.5378313253012048
+M/G/1 Weibull 2.0,0.8,medium,29,classification,XGBoost,,,0.7579737335834896,0.38996138996138996,0.5149776927979605
+M/G/1 Weibull 2.0,0.9,medium,25,regression,Naive (persistence),2.2222834251377064,2.9544785352279486,,,
+M/G/1 Weibull 2.0,0.9,medium,25,regression,XGBoost (L2),2.151179572595139,2.762003816418864,,,
+M/G/1 Weibull 2.0,0.9,medium,25,regression,XGBoost (L1),2.117707558763463,2.780927247663089,,,
+M/G/1 Weibull 2.0,0.9,medium,25,regression,Constant (train median),3.9543314972458687,5.968000128879645,,,
+M/G/1 Weibull 2.0,0.9,medium,25,classification,Naive (persistence),,,0.776464542651593,0.776464542651593,0.776464542651593
+M/G/1 Weibull 2.0,0.9,medium,25,classification,XGBoost,,,0.8366111951588502,0.710431654676259,0.7683757121022649
+M/G/1 Weibull 2.0,0.9,medium,26,regression,Naive (persistence),2.186620599869811,2.9429421192167093,,,
+M/G/1 Weibull 2.0,0.9,medium,26,regression,XGBoost (L2),2.145007573778094,2.76263973839996,,,
+M/G/1 Weibull 2.0,0.9,medium,26,regression,XGBoost (L1),2.1038869776417046,2.7772086442630224,,,
+M/G/1 Weibull 2.0,0.9,medium,26,regression,Constant (train median),3.612438035150969,5.232772091392158,,,
+M/G/1 Weibull 2.0,0.9,medium,26,classification,Naive (persistence),,,0.7239366138448707,0.7239366138448707,0.7239366138448707
+M/G/1 Weibull 2.0,0.9,medium,26,classification,XGBoost,,,0.7917525773195876,0.640533778148457,0.7081604426002767
+M/G/1 Weibull 2.0,0.9,medium,27,regression,Naive (persistence),2.2761003455009763,2.9864414119223777,,,
+M/G/1 Weibull 2.0,0.9,medium,27,regression,XGBoost (L2),2.2288183967779815,2.860522856142989,,,
+M/G/1 Weibull 2.0,0.9,medium,27,regression,XGBoost (L1),2.2122507711708215,2.8893827884903898,,,
+M/G/1 Weibull 2.0,0.9,medium,27,regression,Constant (train median),4.780431625857493,6.991908597762647,,,
+M/G/1 Weibull 2.0,0.9,medium,27,classification,Naive (persistence),,,0.798366606170599,0.7969202898550725,0.7976427923844062
+M/G/1 Weibull 2.0,0.9,medium,27,classification,XGBoost,,,0.8599487617421008,0.7297101449275363,0.7894943159545277
+M/G/1 Weibull 2.0,0.9,medium,28,regression,Naive (persistence),2.2790045566070805,3.044279565875817,,,
+M/G/1 Weibull 2.0,0.9,medium,28,regression,XGBoost (L2),2.2295028864725537,2.8915236275301384,,,
+M/G/1 Weibull 2.0,0.9,medium,28,regression,XGBoost (L1),2.192866174532794,2.909733597842533,,,
+M/G/1 Weibull 2.0,0.9,medium,28,regression,Constant (train median),4.842721946822893,7.860457419687976,,,
+M/G/1 Weibull 2.0,0.9,medium,28,classification,Naive (persistence),,,0.8059196617336152,0.8042194092827004,0.8050686378035903
+M/G/1 Weibull 2.0,0.9,medium,28,classification,XGBoost,,,0.8633840212406468,0.7546413502109705,0.8053585500394012
+M/G/1 Weibull 2.0,0.9,medium,29,regression,Naive (persistence),2.156793029195253,2.9023622698511393,,,
+M/G/1 Weibull 2.0,0.9,medium,29,regression,XGBoost (L2),2.162913372886874,2.785716185714259,,,
+M/G/1 Weibull 2.0,0.9,medium,29,regression,XGBoost (L1),2.1225602175251104,2.7979234963788695,,,
+M/G/1 Weibull 2.0,0.9,medium,29,regression,Constant (train median),5.464670238870249,8.828885620111077,,,
+M/G/1 Weibull 2.0,0.9,medium,29,classification,Naive (persistence),,,0.8320135746606335,0.8312299868148427,0.8316215961556581
+M/G/1 Weibull 2.0,0.9,medium,29,classification,XGBoost,,,0.8832116788321168,0.7749105292898851,0.8255242299588642
+M/G/1 Weibull 2.0,0.95,medium,25,regression,Naive (persistence),2.4076911521706474,3.1444613328449353,,,
+M/G/1 Weibull 2.0,0.95,medium,25,regression,XGBoost (L2),2.3780974541337923,3.013821375863317,,,
+M/G/1 Weibull 2.0,0.95,medium,25,regression,XGBoost (L1),2.3525253891926976,3.014550652684045,,,
+M/G/1 Weibull 2.0,0.95,medium,25,regression,Constant (train median),7.719643483050423,11.241293594975991,,,
+M/G/1 Weibull 2.0,0.95,medium,25,classification,Naive (persistence),,,0.900390625,0.900390625,0.900390625
+M/G/1 Weibull 2.0,0.95,medium,25,classification,XGBoost,,,0.9145670431508833,0.8811383928571429,0.8975415660082422
+M/G/1 Weibull 2.0,0.95,medium,26,regression,Naive (persistence),2.4759901857693656,3.218667696660407,,,
+M/G/1 Weibull 2.0,0.95,medium,26,regression,XGBoost (L2),2.4659856214502303,3.1294685427342825,,,
+M/G/1 Weibull 2.0,0.95,medium,26,regression,XGBoost (L1),2.447254126648905,3.134452618206585,,,
+M/G/1 Weibull 2.0,0.95,medium,26,regression,Constant (train median),7.260477692654349,9.573167502307662,,,
+M/G/1 Weibull 2.0,0.95,medium,26,classification,Naive (persistence),,,0.8441345365053322,0.8418325606763022,0.842981977061715
+M/G/1 Weibull 2.0,0.95,medium,26,classification,XGBoost,,,0.8625290023201856,0.8110171802563403,0.8359803232607168
+M/G/1 Weibull 2.0,0.95,medium,27,regression,Naive (persistence),2.546542486605578,3.3164738123335824,,,
+M/G/1 Weibull 2.0,0.95,medium,27,regression,XGBoost (L2),2.51299308250785,3.193929186773658,,,
+M/G/1 Weibull 2.0,0.95,medium,27,regression,XGBoost (L1),2.4980991495657823,3.2032019789258284,,,
+M/G/1 Weibull 2.0,0.95,medium,27,regression,Constant (train median),6.596264583646287,9.191746727442892,,,
+M/G/1 Weibull 2.0,0.95,medium,27,classification,Naive (persistence),,,0.8502202643171806,0.8533529845246868,0.8517837440235381
+M/G/1 Weibull 2.0,0.95,medium,27,classification,XGBoost,,,0.8723486309294254,0.8334561532792926,0.8524590163934426
+M/G/1 Weibull 2.0,0.95,medium,28,regression,Naive (persistence),2.4703319813729907,3.1974637563209107,,,
+M/G/1 Weibull 2.0,0.95,medium,28,regression,XGBoost (L2),2.4348480892518056,3.0677855375024987,,,
+M/G/1 Weibull 2.0,0.95,medium,28,regression,XGBoost (L1),2.4165045338134,3.0745048400536183,,,
+M/G/1 Weibull 2.0,0.95,medium,28,regression,Constant (train median),6.98783235691753,10.41694982340098,,,
+M/G/1 Weibull 2.0,0.95,medium,28,classification,Naive (persistence),,,0.8784609852571018,0.8784609852571018,0.8784609852571018
+M/G/1 Weibull 2.0,0.95,medium,28,classification,XGBoost,,,0.896551724137931,0.8601222581805106,0.8779592585795559
+M/G/1 Weibull 2.0,0.95,medium,29,regression,Naive (persistence),2.4672008012018027,3.223753849679747,,,
+M/G/1 Weibull 2.0,0.95,medium,29,regression,XGBoost (L2),2.4659618295068793,3.1269859391331907,,,
+M/G/1 Weibull 2.0,0.95,medium,29,regression,XGBoost (L1),2.4489841167784716,3.1350328009032813,,,
+M/G/1 Weibull 2.0,0.95,medium,29,regression,Constant (train median),9.0235853780671,14.466453172809901,,,
+M/G/1 Weibull 2.0,0.95,medium,29,classification,Naive (persistence),,,0.9097931034482759,0.9105466593042518,0.9101697254036153
+M/G/1 Weibull 2.0,0.95,medium,29,classification,XGBoost,,,0.9258836944127709,0.8967421314191054,0.9110799438990183
+M/G/1 Weibull 0.5,0.3,medium,25,regression,Naive (persistence),0.4180123550449767,1.1113374767908362,,,
+M/G/1 Weibull 0.5,0.3,medium,25,regression,XGBoost (L2),0.48035892808398667,0.9298566895422917,,,
+M/G/1 Weibull 0.5,0.3,medium,25,regression,XGBoost (L1),0.3009335121095574,0.99903601140143,,,
+M/G/1 Weibull 0.5,0.3,medium,25,regression,Constant (train median),0.2914273328275713,1.0161266044418238,,,
+M/G/1 Weibull 0.5,0.3,medium,25,classification,Naive (persistence),,,0.2709620476610768,0.25112474437627813,0.26066652515389516
+M/G/1 Weibull 0.5,0.3,medium,25,classification,XGBoost,,,0.546875,0.014314928425357873,0.027899561578318056
+M/G/1 Weibull 0.5,0.3,medium,26,regression,Naive (persistence),0.4435863730967247,1.1897663094825626,,,
+M/G/1 Weibull 0.5,0.3,medium,26,regression,XGBoost (L2),0.49525135813750426,0.9707442208801715,,,
+M/G/1 Weibull 0.5,0.3,medium,26,regression,XGBoost (L1),0.3157178865742334,1.0367312687274728,,,
+M/G/1 Weibull 0.5,0.3,medium,26,regression,Constant (train median),0.3061123890897141,1.0544648667025796,,,
+M/G/1 Weibull 0.5,0.3,medium,26,classification,Naive (persistence),,,0.2699135184342285,0.24125305126118796,0.2547798066595059
+M/G/1 Weibull 0.5,0.3,medium,26,classification,XGBoost,,,0.5934065934065934,0.021969080553295363,0.04236955668889761
+M/G/1 Weibull 0.5,0.3,medium,27,regression,Naive (persistence),0.4573702573048408,1.135643430339039,,,
+M/G/1 Weibull 0.5,0.3,medium,27,regression,XGBoost (L2),0.5193475112413425,0.9870427675656076,,,
+M/G/1 Weibull 0.5,0.3,medium,27,regression,XGBoost (L1),0.35419335567336535,1.0960740487050296,,,
+M/G/1 Weibull 0.5,0.3,medium,27,regression,Constant (train median),0.3497056258177061,1.126558618913861,,,
+M/G/1 Weibull 0.5,0.3,medium,27,classification,Naive (persistence),,,0.32152695789059427,0.292621776504298,0.30639414963435213
+M/G/1 Weibull 0.5,0.3,medium,27,classification,XGBoost,,,0.6756756756756757,0.026862464183381087,0.05167068549776094
+M/G/1 Weibull 0.5,0.3,medium,28,regression,Naive (persistence),0.4478613968597726,1.1377272912609213,,,
+M/G/1 Weibull 0.5,0.3,medium,28,regression,XGBoost (L2),0.5027070773057498,0.9428326182620573,,,
+M/G/1 Weibull 0.5,0.3,medium,28,regression,XGBoost (L1),0.32625714068907236,1.0137697566303752,,,
+M/G/1 Weibull 0.5,0.3,medium,28,regression,Constant (train median),0.3160259880887926,1.0277945648664575,,,
+M/G/1 Weibull 0.5,0.3,medium,28,classification,Naive (persistence),,,0.2760310330747244,0.25018504811250925,0.2624733061541448
+M/G/1 Weibull 0.5,0.3,medium,28,classification,XGBoost,,,0.43023255813953487,0.013693560325684678,0.02654232424677188
+M/G/1 Weibull 0.5,0.3,medium,29,regression,Naive (persistence),0.4396135265700483,1.1363390127258701,,,
+M/G/1 Weibull 0.5,0.3,medium,29,regression,XGBoost (L2),0.5062301938097934,0.9803825754349548,,,
+M/G/1 Weibull 0.5,0.3,medium,29,regression,XGBoost (L1),0.330027184315301,1.064054416521372,,,
+M/G/1 Weibull 0.5,0.3,medium,29,regression,Constant (train median),0.3203604190414156,1.078526721126208,,,
+M/G/1 Weibull 0.5,0.3,medium,29,classification,Naive (persistence),,,0.27421437795953507,0.2502946954813359,0.26170912078882497
+M/G/1 Weibull 0.5,0.3,medium,29,classification,XGBoost,,,0.5681818181818182,0.019646365422396856,0.0379794910748196
+M/G/1 Weibull 0.5,0.5,medium,25,regression,Naive (persistence),1.4303337023564764,2.5824176280231677,,,
+M/G/1 Weibull 0.5,0.5,medium,25,regression,XGBoost (L2),1.5286149602954668,2.368075537633864,,,
+M/G/1 Weibull 0.5,0.5,medium,25,regression,XGBoost (L1),1.3553791112584679,2.4922629583271,,,
+M/G/1 Weibull 0.5,0.5,medium,25,regression,Constant (train median),1.5338183351784491,3.7010925888736512,,,
+M/G/1 Weibull 0.5,0.5,medium,25,classification,Naive (persistence),,,0.5165658311725727,0.4884227730863525,0.5021002520302437
+M/G/1 Weibull 0.5,0.5,medium,25,classification,XGBoost,,,0.7655545536519387,0.2312721329338055,0.35523012552301253
+M/G/1 Weibull 0.5,0.5,medium,26,regression,Naive (persistence),1.244240592098405,2.32356121604211,,,
+M/G/1 Weibull 0.5,0.5,medium,26,regression,XGBoost (L2),1.348719202985477,2.0483533885944163,,,
+M/G/1 Weibull 0.5,0.5,medium,26,regression,XGBoost (L1),1.1453952123742541,2.147186588325623,,,
+M/G/1 Weibull 0.5,0.5,medium,26,regression,Constant (train median),1.143385802147399,2.7522817311106436,,,
+M/G/1 Weibull 0.5,0.5,medium,26,classification,Naive (persistence),,,0.4591943957968476,0.4301181102362205,0.4441809249534135
+M/G/1 Weibull 0.5,0.5,medium,26,classification,XGBoost,,,0.7064220183486238,0.17683727034120736,0.28286538966150615
+M/G/1 Weibull 0.5,0.5,medium,27,regression,Naive (persistence),1.4548284960422164,2.6475358185094,,,
+M/G/1 Weibull 0.5,0.5,medium,27,regression,XGBoost (L2),1.5331236723220678,2.3902788607699943,,,
+M/G/1 Weibull 0.5,0.5,medium,27,regression,XGBoost (L1),1.359703805577354,2.503137639040735,,,
+M/G/1 Weibull 0.5,0.5,medium,27,regression,Constant (train median),1.5488126649076517,3.979538695903078,,,
+M/G/1 Weibull 0.5,0.5,medium,27,classification,Naive (persistence),,,0.5128427128427129,0.49047750483025115,0.501410835214447
+M/G/1 Weibull 0.5,0.5,medium,27,classification,XGBoost,,,0.7140381282495667,0.22743582666298648,0.34498639313376595
+M/G/1 Weibull 0.5,0.5,medium,28,regression,Naive (persistence),1.2688588007736943,2.3089332093447656,,,
+M/G/1 Weibull 0.5,0.5,medium,28,regression,XGBoost (L2),1.3532186283834793,2.0226657784544506,,,
+M/G/1 Weibull 0.5,0.5,medium,28,regression,XGBoost (L1),1.162489762675498,2.133674124270716,,,
+M/G/1 Weibull 0.5,0.5,medium,28,regression,Constant (train median),1.158816456688797,2.646660055922929,,,
+M/G/1 Weibull 0.5,0.5,medium,28,classification,Naive (persistence),,,0.45469631596415533,0.4238861386138614,0.4387510008006405
+M/G/1 Weibull 0.5,0.5,medium,28,classification,XGBoost,,,0.6950354609929078,0.1516089108910891,0.24892049784099568
+M/G/1 Weibull 0.5,0.5,medium,29,regression,Naive (persistence),1.3029065200314218,2.425069814054318,,,
+M/G/1 Weibull 0.5,0.5,medium,29,regression,XGBoost (L2),1.393743950043495,2.1335599468198185,,,
+M/G/1 Weibull 0.5,0.5,medium,29,regression,XGBoost (L1),1.196108969353075,2.2322169405222207,,,
+M/G/1 Weibull 0.5,0.5,medium,29,regression,Constant (train median),1.1991097145849698,2.8687716441481808,,,
+M/G/1 Weibull 0.5,0.5,medium,29,classification,Naive (persistence),,,0.46172497402147555,0.4260147011824864,0.4431515957446808
+M/G/1 Weibull 0.5,0.5,medium,29,classification,XGBoost,,,0.6931216931216931,0.1674656439757111,0.26975546975546977
+M/G/1 Weibull 0.5,0.7,medium,25,regression,Naive (persistence),2.6947146989219037,4.062333149550048,,,
+M/G/1 Weibull 0.5,0.7,medium,25,regression,XGBoost (L2),2.780455422323063,3.782439825895216,,,
+M/G/1 Weibull 0.5,0.7,medium,25,regression,XGBoost (L1),2.668626704452353,3.8351631144622607,,,
+M/G/1 Weibull 0.5,0.7,medium,25,regression,Constant (train median),4.183907441493558,7.393500140895446,,,
+M/G/1 Weibull 0.5,0.7,medium,25,classification,Naive (persistence),,,0.6866840731070496,0.6811265781806409,0.6838940354298716
+M/G/1 Weibull 0.5,0.7,medium,25,classification,XGBoost,,,0.7820801440792435,0.5623179022337326,0.6542372881355932
+M/G/1 Weibull 0.5,0.7,medium,26,regression,Naive (persistence),2.6953562005277045,4.131256748484622,,,
+M/G/1 Weibull 0.5,0.7,medium,26,regression,XGBoost (L2),2.796170750334269,3.8530969155598376,,,
+M/G/1 Weibull 0.5,0.7,medium,26,regression,XGBoost (L1),2.6695006507241947,3.8946924471122353,,,
+M/G/1 Weibull 0.5,0.7,medium,26,regression,Constant (train median),4.077625329815303,7.239473296778967,,,
+M/G/1 Weibull 0.5,0.7,medium,26,classification,Naive (persistence),,,0.7056603773584905,0.7061448678338482,0.7059025394646534
+M/G/1 Weibull 0.5,0.7,medium,26,classification,XGBoost,,,0.7866200262352426,0.6175763817370409,0.691923076923077
+M/G/1 Weibull 0.5,0.7,medium,27,regression,Naive (persistence),2.6336483734530836,3.9538682313544937,,,
+M/G/1 Weibull 0.5,0.7,medium,27,regression,XGBoost (L2),2.6903404749240907,3.639789569446681,,,
+M/G/1 Weibull 0.5,0.7,medium,27,regression,XGBoost (L1),2.5730067255615126,3.683825706755734,,,
+M/G/1 Weibull 0.5,0.7,medium,27,regression,Constant (train median),3.8626181400449062,7.123623971313648,,,
+M/G/1 Weibull 0.5,0.7,medium,27,classification,Naive (persistence),,,0.6600985221674877,0.6515397082658023,0.6557911908646004
+M/G/1 Weibull 0.5,0.7,medium,27,classification,XGBoost,,,0.7763005780346821,0.5441653160453809,0.6398284897570271
+M/G/1 Weibull 0.5,0.7,medium,28,regression,Naive (persistence),2.8235730170496662,4.217455645176363,,,
+M/G/1 Weibull 0.5,0.7,medium,28,regression,XGBoost (L2),2.8410553817184474,3.886824521373379,,,
+M/G/1 Weibull 0.5,0.7,medium,28,regression,XGBoost (L1),2.7343846553528093,3.949401447720013,,,
+M/G/1 Weibull 0.5,0.7,medium,28,regression,Constant (train median),4.076829397437255,7.279560746331894,,,
+M/G/1 Weibull 0.5,0.7,medium,28,classification,Naive (persistence),,,0.6618780658724597,0.6518288474810214,0.6568150208623088
+M/G/1 Weibull 0.5,0.7,medium,28,classification,XGBoost,,,0.7722301474084641,0.5603864734299517,0.6494701059788043
+M/G/1 Weibull 0.5,0.7,medium,29,regression,Naive (persistence),2.76200052924054,4.174165431811513,,,
+M/G/1 Weibull 0.5,0.7,medium,29,regression,XGBoost (L2),2.868932317223742,3.896585172393048,,,
+M/G/1 Weibull 0.5,0.7,medium,29,regression,XGBoost (L1),2.7455667074788463,3.9308956763810783,,,
+M/G/1 Weibull 0.5,0.7,medium,29,regression,Constant (train median),4.979888859486636,9.30324444682415,,,
+M/G/1 Weibull 0.5,0.7,medium,29,classification,Naive (persistence),,,0.742905310480472,0.7547816157579218,0.7487963749645993
+M/G/1 Weibull 0.5,0.7,medium,29,classification,XGBoost,,,0.8249182709771159,0.6483014558949471,0.7260230179028133
+M/G/1 Weibull 0.5,0.8,medium,25,regression,Naive (persistence),3.89379729297666,5.380130690358489,,,
+M/G/1 Weibull 0.5,0.8,medium,25,regression,XGBoost (L2),3.9626342588893695,5.198891394257044,,,
+M/G/1 Weibull 0.5,0.8,medium,25,regression,XGBoost (L1),3.912122415248664,5.230047859798831,,,
+M/G/1 Weibull 0.5,0.8,medium,25,regression,Constant (train median),10.100447618032613,15.383174751574959,,,
+M/G/1 Weibull 0.5,0.8,medium,25,classification,Naive (persistence),,,0.8335336538461539,0.8491836734693877,0.841285887585928
+M/G/1 Weibull 0.5,0.8,medium,25,classification,XGBoost,,,0.8634254143646409,0.7973469387755102,0.8290716180371352
+M/G/1 Weibull 0.5,0.8,medium,26,regression,Naive (persistence),3.281729501713683,4.738876133393409,,,
+M/G/1 Weibull 0.5,0.8,medium,26,regression,XGBoost (L2),3.391760568897862,4.480832961580822,,,
+M/G/1 Weibull 0.5,0.8,medium,26,regression,XGBoost (L1),3.2911328529513293,4.502214543691939,,,
+M/G/1 Weibull 0.5,0.8,medium,26,regression,Constant (train median),6.220353282362246,9.403363938583645,,,
+M/G/1 Weibull 0.5,0.8,medium,26,classification,Naive (persistence),,,0.7494866529774127,0.7746179966044142,0.7618451262784387
+M/G/1 Weibull 0.5,0.8,medium,26,classification,XGBoost,,,0.7875178656503097,0.7016129032258065,0.7420875420875421
+M/G/1 Weibull 0.5,0.8,medium,27,regression,Naive (persistence),3.7779441651513532,5.19488628486468,,,
+M/G/1 Weibull 0.5,0.8,medium,27,regression,XGBoost (L2),3.8289768226083707,5.031218484991495,,,
+M/G/1 Weibull 0.5,0.8,medium,27,regression,XGBoost (L1),3.7652972577561514,5.051376210310681,,,
+M/G/1 Weibull 0.5,0.8,medium,27,regression,Constant (train median),11.269440581880415,19.265108369034383,,,
+M/G/1 Weibull 0.5,0.8,medium,27,classification,Naive (persistence),,,0.8629462453836685,0.8718905472636815,0.8673953392452052
+M/G/1 Weibull 0.5,0.8,medium,27,classification,XGBoost,,,0.8962748159714476,0.8329187396351575,0.8634361233480177
+M/G/1 Weibull 0.5,0.8,medium,28,regression,Naive (persistence),3.7793859415739903,5.267535196589089,,,
+M/G/1 Weibull 0.5,0.8,medium,28,regression,XGBoost (L2),3.966514722381031,5.3602293193397434,,,
+M/G/1 Weibull 0.5,0.8,medium,28,regression,XGBoost (L1),3.8715432226921114,5.324063466712539,,,
+M/G/1 Weibull 0.5,0.8,medium,28,regression,Constant (train median),10.743095833555047,20.30744511085134,,,
+M/G/1 Weibull 0.5,0.8,medium,28,classification,Naive (persistence),,,0.8209706959706959,0.83317843866171,0.8270295202952029
+M/G/1 Weibull 0.5,0.8,medium,28,classification,XGBoost,,,0.8546686746987951,0.7911245353159851,0.8216698841698842
+M/G/1 Weibull 0.5,0.8,medium,29,regression,Naive (persistence),3.6188328912466843,5.063160753617855,,,
+M/G/1 Weibull 0.5,0.8,medium,29,regression,XGBoost (L2),3.6578418378298734,4.811658080999688,,,
+M/G/1 Weibull 0.5,0.8,medium,29,regression,XGBoost (L1),3.5856924172548146,4.842218661604878,,,
+M/G/1 Weibull 0.5,0.8,medium,29,regression,Constant (train median),7.607427055702917,12.035398717166254,,,
+M/G/1 Weibull 0.5,0.8,medium,29,classification,Naive (persistence),,,0.7726569749458707,0.7907565685343463,0.781602002503129
+M/G/1 Weibull 0.5,0.8,medium,29,classification,XGBoost,,,0.8236953455571228,0.7394745172522951,0.7793160967472894
+M/G/1 Weibull 0.5,0.9,medium,25,regression,Naive (persistence),4.574594422648712,6.030767963612969,,,
+M/G/1 Weibull 0.5,0.9,medium,25,regression,XGBoost (L2),4.590358841717528,5.865403772208757,,,
+M/G/1 Weibull 0.5,0.9,medium,25,regression,XGBoost (L1),4.559551146898552,5.878742696860548,,,
+M/G/1 Weibull 0.5,0.9,medium,25,regression,Constant (train median),16.949899268370267,23.764195429534443,,,
+M/G/1 Weibull 0.5,0.9,medium,25,classification,Naive (persistence),,,0.8614790286975718,0.8789414414414415,0.8701226309921962
+M/G/1 Weibull 0.5,0.9,medium,25,classification,XGBoost,,,0.8804159445407279,0.8581081081081081,0.8691189050470488
+M/G/1 Weibull 0.5,0.9,medium,26,regression,Naive (persistence),4.723120837297811,6.16370223875922,,,
+M/G/1 Weibull 0.5,0.9,medium,26,regression,XGBoost (L2),4.7396768136878435,6.036277077474728,,,
+M/G/1 Weibull 0.5,0.9,medium,26,regression,XGBoost (L1),4.720118156559738,6.058384709039276,,,
+M/G/1 Weibull 0.5,0.9,medium,26,regression,Constant (train median),19.168041019135217,32.49992152356607,,,
+M/G/1 Weibull 0.5,0.9,medium,26,classification,Naive (persistence),,,0.9077514413837284,0.9180434078393263,0.9128684168143019
+M/G/1 Weibull 0.5,0.9,medium,26,classification,XGBoost,,,0.9224934036939314,0.906057661159702,0.9142016669390424
+M/G/1 Weibull 0.5,0.9,medium,27,regression,Naive (persistence),4.760529546789089,6.19120506241824,,,
+M/G/1 Weibull 0.5,0.9,medium,27,regression,XGBoost (L2),4.823179309152916,6.107091398136932,,,
+M/G/1 Weibull 0.5,0.9,medium,27,regression,XGBoost (L1),4.7942148312383,6.114613767316815,,,
+M/G/1 Weibull 0.5,0.9,medium,27,regression,Constant (train median),25.275289595900283,36.479883985857605,,,
+M/G/1 Weibull 0.5,0.9,medium,27,classification,Naive (persistence),,,0.9388211032823509,0.9456465293404881,0.9422214556743704
+M/G/1 Weibull 0.5,0.9,medium,27,classification,XGBoost,,,0.9450760888577926,0.9352605158386705,0.940142683139029
+M/G/1 Weibull 0.5,0.9,medium,28,regression,Naive (persistence),4.674367495711835,6.1490605412785415,,,
+M/G/1 Weibull 0.5,0.9,medium,28,regression,XGBoost (L2),4.682357547747205,5.996405006022348,,,
+M/G/1 Weibull 0.5,0.9,medium,28,regression,XGBoost (L1),4.646746313752124,6.002364461536816,,,
+M/G/1 Weibull 0.5,0.9,medium,28,regression,Constant (train median),18.878216123499143,27.348075589005443,,,
+M/G/1 Weibull 0.5,0.9,medium,28,classification,Naive (persistence),,,0.8864562118126272,0.8960370560988162,0.8912208855899667
+M/G/1 Weibull 0.5,0.9,medium,28,classification,XGBoost,,,0.9015530402737563,0.8813690169840452,0.8913467794404685
+M/G/1 Weibull 0.5,0.9,medium,29,regression,Naive (persistence),4.436745240731952,5.901152756889853,,,
+M/G/1 Weibull 0.5,0.9,medium,29,regression,XGBoost (L2),4.499537197420669,5.753015132926252,,,
+M/G/1 Weibull 0.5,0.9,medium,29,regression,XGBoost (L1),4.4576952423921385,5.766424568333361,,,
+M/G/1 Weibull 0.5,0.9,medium,29,regression,Constant (train median),15.471444391710172,20.897225551585464,,,
+M/G/1 Weibull 0.5,0.9,medium,29,classification,Naive (persistence),,,0.878330658105939,0.8862973760932945,0.8822960335375686
+M/G/1 Weibull 0.5,0.9,medium,29,classification,XGBoost,,,0.8911088911088911,0.8668610301263362,0.8788177339901477
+M/G/1 Weibull 0.5,0.95,medium,25,regression,Naive (persistence),5.451875135486668,6.925566604565799,,,
+M/G/1 Weibull 0.5,0.95,medium,25,regression,XGBoost (L2),6.953844968987834,9.758804961054649,,,
+M/G/1 Weibull 0.5,0.95,medium,25,regression,XGBoost (L1),6.523765416865542,8.710750503568931,,,
+M/G/1 Weibull 0.5,0.95,medium,25,regression,Constant (train median),119.84624972902667,161.6897262683998,,,
+M/G/1 Weibull 0.5,0.95,medium,25,classification,Naive (persistence),,,0.9914096460360173,0.9940846824408468,0.9927453622137009
+M/G/1 Weibull 0.5,0.95,medium,25,classification,XGBoost,,,0.992226368159204,0.9934620174346201,0.9928438083385189
+M/G/1 Weibull 0.5,0.95,medium,26,regression,Naive (persistence),5.101475620188195,6.549247535775301,,,
+M/G/1 Weibull 0.5,0.95,medium,26,regression,XGBoost (L2),5.126277810155427,6.471178375452801,,,
+M/G/1 Weibull 0.5,0.95,medium,26,regression,XGBoost (L1),5.104335563848475,6.478966248769936,,,
+M/G/1 Weibull 0.5,0.95,medium,26,regression,Constant (train median),37.78865483319076,50.96946000590366,,,
+M/G/1 Weibull 0.5,0.95,medium,26,classification,Naive (persistence),,,0.9541643376187814,0.9576437587657785,0.9559008819823603
+M/G/1 Weibull 0.5,0.95,medium,26,classification,XGBoost,,,0.9553746842548414,0.9548387096774194,0.9551066217732884
+M/G/1 Weibull 0.5,0.95,medium,27,regression,Naive (persistence),4.9586334745762715,6.4751194282553195,,,
+M/G/1 Weibull 0.5,0.95,medium,27,regression,XGBoost (L2),4.993527365772653,6.3700506835962685,,,
+M/G/1 Weibull 0.5,0.95,medium,27,regression,XGBoost (L1),4.962594969854769,6.380335259607939,,,
+M/G/1 Weibull 0.5,0.95,medium,27,regression,Constant (train median),30.743908898305083,38.64721674698109,,,
+M/G/1 Weibull 0.5,0.95,medium,27,classification,Naive (persistence),,,0.9099326599326599,0.9164900381517592,0.9131995776135163
+M/G/1 Weibull 0.5,0.95,medium,27,classification,XGBoost,,,0.925,0.9097075031793133,0.9172900192348793
+M/G/1 Weibull 0.5,0.95,medium,28,regression,Naive (persistence),5.093808731138914,6.525658879321544,,,
+M/G/1 Weibull 0.5,0.95,medium,28,regression,XGBoost (L2),5.117356343472394,6.4536325337400475,,,
+M/G/1 Weibull 0.5,0.95,medium,28,regression,XGBoost (L1),5.095804478910539,6.462244033261426,,,
+M/G/1 Weibull 0.5,0.95,medium,28,regression,Constant (train median),44.822960854856895,59.002285720456754,,,
+M/G/1 Weibull 0.5,0.95,medium,28,classification,Naive (persistence),,,0.9388312397596942,0.9422620135209209,0.9405434980849899
+M/G/1 Weibull 0.5,0.95,medium,28,classification,XGBoost,,,0.9433370247323736,0.933857116754979,0.9385731337801855
+M/G/1 Weibull 0.5,0.95,medium,29,regression,Naive (persistence),4.915112881806109,6.351446803211368,,,
+M/G/1 Weibull 0.5,0.95,medium,29,regression,XGBoost (L2),4.954168436733059,6.25720054364084,,,
+M/G/1 Weibull 0.5,0.95,medium,29,regression,XGBoost (L1),4.926111118828317,6.266669774397321,,,
+M/G/1 Weibull 0.5,0.95,medium,29,regression,Constant (train median),22.39086321381142,28.04213865782437,,,
+M/G/1 Weibull 0.5,0.95,medium,29,classification,Naive (persistence),,,0.9092307692307692,0.9036697247706422,0.906441717791411
+M/G/1 Weibull 0.5,0.95,medium,29,classification,XGBoost,,,0.9148606811145511,0.9036697247706422,0.9092307692307692
+M/PH/1 Erlang-2,0.3,medium,25,regression,Naive (persistence),0.1688522870331515,0.5089938071938056,,,
+M/PH/1 Erlang-2,0.3,medium,25,regression,XGBoost (L2),0.17151446819615,0.3619691499344419,,,
+M/PH/1 Erlang-2,0.3,medium,25,regression,XGBoost (L1),0.09042352941381097,0.3726003052053077,,,
+M/PH/1 Erlang-2,0.3,medium,25,regression,Constant (train median),0.08959295006294586,0.3728343537127913,,,
+M/PH/1 Erlang-2,0.3,medium,25,classification,Naive (persistence),,,0.07025411061285501,0.07030665669409125,0.0702803738317757
+M/PH/1 Erlang-2,0.3,medium,25,classification,XGBoost,,,0.0,0.0,0.0
+M/PH/1 Erlang-2,0.3,medium,26,regression,Naive (persistence),0.1684188170330254,0.5190437290769092,,,
+M/PH/1 Erlang-2,0.3,medium,26,regression,XGBoost (L2),0.1732343645686443,0.37551333747612564,,,
+M/PH/1 Erlang-2,0.3,medium,26,regression,XGBoost (L1),0.09231248795525411,0.3862372166908149,,,
+M/PH/1 Erlang-2,0.3,medium,26,regression,Constant (train median),0.09148348731018371,0.3864680386081991,,,
+M/PH/1 Erlang-2,0.3,medium,26,classification,Naive (persistence),,,0.0891089108910891,0.08917682926829268,0.08914285714285715
+M/PH/1 Erlang-2,0.3,medium,26,classification,XGBoost,,,0.0,0.0,0.0
+M/PH/1 Erlang-2,0.3,medium,27,regression,Naive (persistence),0.2075957346220518,0.5746295206395505,,,
+M/PH/1 Erlang-2,0.3,medium,27,regression,XGBoost (L2),0.19152414440764198,0.4129547694511374,,,
+M/PH/1 Erlang-2,0.3,medium,27,regression,XGBoost (L1),0.11321550095171048,0.4276656621471969,,,
+M/PH/1 Erlang-2,0.3,medium,27,regression,Constant (train median),0.11241267006356044,0.4279218243750082,,,
+M/PH/1 Erlang-2,0.3,medium,27,classification,Naive (persistence),,,0.08989460632362058,0.09039900249376559,0.09014609884986012
+M/PH/1 Erlang-2,0.3,medium,27,classification,XGBoost,,,0.0,0.0,0.0
+M/PH/1 Erlang-2,0.3,medium,28,regression,Naive (persistence),0.18882151331399946,0.5608268536908003,,,
+M/PH/1 Erlang-2,0.3,medium,28,regression,XGBoost (L2),0.18216641548891607,0.39839640928975983,,,
+M/PH/1 Erlang-2,0.3,medium,28,regression,XGBoost (L1),0.10221708313045147,0.4107245377072627,,,
+M/PH/1 Erlang-2,0.3,medium,28,regression,Constant (train median),0.10139731083575007,0.4109623591498586,,,
+M/PH/1 Erlang-2,0.3,medium,28,classification,Naive (persistence),,,0.08902691511387163,0.0899581589958159,0.08949011446409989
+M/PH/1 Erlang-2,0.3,medium,28,classification,XGBoost,,,0.0,0.0,0.0
+M/PH/1 Erlang-2,0.3,medium,29,regression,Naive (persistence),0.1798466708674648,0.5194697019716749,,,
+M/PH/1 Erlang-2,0.3,medium,29,regression,XGBoost (L2),0.17656136520545196,0.36733884842016923,,,
+M/PH/1 Erlang-2,0.3,medium,29,regression,XGBoost (L1),0.09664921129093573,0.37913802708788413,,,
+M/PH/1 Erlang-2,0.3,medium,29,regression,Constant (train median),0.09583070783448855,0.37938087283212824,,,
+M/PH/1 Erlang-2,0.3,medium,29,classification,Naive (persistence),,,0.07950651130911583,0.08033240997229917,0.07991732690320358
+M/PH/1 Erlang-2,0.3,medium,29,classification,XGBoost,,,0.0,0.0,0.0
+M/PH/1 Erlang-2,0.5,medium,25,regression,Naive (persistence),0.6150475902704337,1.1676896068641471,,,
+M/PH/1 Erlang-2,0.5,medium,25,regression,XGBoost (L2),0.5829745994633813,0.8571609065734942,,,
+M/PH/1 Erlang-2,0.5,medium,25,regression,XGBoost (L1),0.41531724959349997,0.9131977358454537,,,
+M/PH/1 Erlang-2,0.5,medium,25,regression,Constant (train median),0.3810746839905323,0.9414816364931152,,,
+M/PH/1 Erlang-2,0.5,medium,25,classification,Naive (persistence),,,0.14210802307288936,0.14195914091147196,0.1420335429769392
+M/PH/1 Erlang-2,0.5,medium,25,classification,XGBoost,,,0.6842105263157895,0.006809848088004191,0.013485477178423237
+M/PH/1 Erlang-2,0.5,medium,26,regression,Naive (persistence),0.5812827753126261,1.1320178002668584,,,
+M/PH/1 Erlang-2,0.5,medium,26,regression,XGBoost (L2),0.5687970062466087,0.842053866039728,,,
+M/PH/1 Erlang-2,0.5,medium,26,regression,XGBoost (L1),0.3981255329692659,0.8928134377554032,,,
+M/PH/1 Erlang-2,0.5,medium,26,regression,Constant (train median),0.36385639370713996,0.9254154240880016,,,
+M/PH/1 Erlang-2,0.5,medium,26,classification,Naive (persistence),,,0.14074914869466515,0.1406693136698809,0.14070921985815601
+M/PH/1 Erlang-2,0.5,medium,26,classification,XGBoost,,,0.5882352941176471,0.011344299489506523,0.022259321090706732
+M/PH/1 Erlang-2,0.5,medium,27,regression,Naive (persistence),0.5561712846347607,1.087598977805666,,,
+M/PH/1 Erlang-2,0.5,medium,27,regression,XGBoost (L2),0.5558865188002136,0.8045971486729951,,,
+M/PH/1 Erlang-2,0.5,medium,27,regression,XGBoost (L1),0.38127949099546715,0.8516679215431899,,,
+M/PH/1 Erlang-2,0.5,medium,27,regression,Constant (train median),0.34579345088161206,0.8780560162986109,,,
+M/PH/1 Erlang-2,0.5,medium,27,classification,Naive (persistence),,,0.13437312537492502,0.1342925659472422,0.13433283358320838
+M/PH/1 Erlang-2,0.5,medium,27,classification,XGBoost,,,0.6153846153846154,0.004796163069544364,0.009518143961927425
+M/PH/1 Erlang-2,0.5,medium,28,regression,Naive (persistence),0.6458417237213049,1.2300563657441772,,,
+M/PH/1 Erlang-2,0.5,medium,28,regression,XGBoost (L2),0.6108131635029422,0.928926431815201,,,
+M/PH/1 Erlang-2,0.5,medium,28,regression,XGBoost (L1),0.4492800460725706,0.994589083011619,,,
+M/PH/1 Erlang-2,0.5,medium,28,regression,Constant (train median),0.41774063632702374,1.0312280703437242,,,
+M/PH/1 Erlang-2,0.5,medium,28,classification,Naive (persistence),,,0.1815944881889764,0.18177339901477832,0.18168389955686853
+M/PH/1 Erlang-2,0.5,medium,28,classification,XGBoost,,,0.5714285714285714,0.007881773399014778,0.015549076773566569
+M/PH/1 Erlang-2,0.5,medium,29,regression,Naive (persistence),0.5873151594407001,1.1330598240751037,,,
+M/PH/1 Erlang-2,0.5,medium,29,regression,XGBoost (L2),0.5713125793751415,0.8376629993794021,,,
+M/PH/1 Erlang-2,0.5,medium,29,regression,XGBoost (L1),0.39898646799436205,0.8884329580347808,,,
+M/PH/1 Erlang-2,0.5,medium,29,regression,Constant (train median),0.36520470777587766,0.9217171031654886,,,
+M/PH/1 Erlang-2,0.5,medium,29,classification,Naive (persistence),,,0.13285158421345192,0.13255684969495285,0.13270405330372015
+M/PH/1 Erlang-2,0.5,medium,29,classification,XGBoost,,,0.7142857142857143,0.008319467554076539,0.01644736842105263
+M/PH/1 Erlang-2,0.7,medium,25,regression,Naive (persistence),1.3442195952714886,2.0591338124813228,,,
+M/PH/1 Erlang-2,0.7,medium,25,regression,XGBoost (L2),1.2532152985134002,1.7186590396309422,,,
+M/PH/1 Erlang-2,0.7,medium,25,regression,XGBoost (L1),1.1753210757779373,1.7686640394254873,,,
+M/PH/1 Erlang-2,0.7,medium,25,regression,Constant (train median),1.2259066319374874,2.297324500314996,,,
+M/PH/1 Erlang-2,0.7,medium,25,classification,Naive (persistence),,,0.407611693325979,0.40885200553250345,0.40823090733324124
+M/PH/1 Erlang-2,0.7,medium,25,classification,XGBoost,,,0.7142857142857143,0.1839557399723375,0.29256489221293447
+M/PH/1 Erlang-2,0.7,medium,26,regression,Naive (persistence),1.375275716863846,2.1084255242472696,,,
+M/PH/1 Erlang-2,0.7,medium,26,regression,XGBoost (L2),1.273206485155615,1.7592489645719152,,,
+M/PH/1 Erlang-2,0.7,medium,26,regression,XGBoost (L1),1.2028816118604833,1.816801984178635,,,
+M/PH/1 Erlang-2,0.7,medium,26,regression,Constant (train median),1.2524563866051734,2.326515194377449,,,
+M/PH/1 Erlang-2,0.7,medium,26,classification,Naive (persistence),,,0.4001064112795956,0.4003194037796114,0.4002128791910591
+M/PH/1 Erlang-2,0.7,medium,26,classification,XGBoost,,,0.6555819477434679,0.14692573862124036,0.2400521852576647
+M/PH/1 Erlang-2,0.7,medium,27,regression,Naive (persistence),1.2883054414269968,2.016044472267349,,,
+M/PH/1 Erlang-2,0.7,medium,27,regression,XGBoost (L2),1.2195653372205013,1.6629927068117112,,,
+M/PH/1 Erlang-2,0.7,medium,27,regression,XGBoost (L1),1.1348648277876736,1.7052253736411698,,,
+M/PH/1 Erlang-2,0.7,medium,27,regression,Constant (train median),1.112486221064235,2.117182838741754,,,
+M/PH/1 Erlang-2,0.7,medium,27,classification,Naive (persistence),,,0.37134952351675377,0.3721503388786198,0.3717494999230651
+M/PH/1 Erlang-2,0.7,medium,27,classification,XGBoost,,,0.6203966005665722,0.13493530499075784,0.2216599190283401
+M/PH/1 Erlang-2,0.7,medium,28,regression,Naive (persistence),1.3126627930274495,2.0379587573388,,,
+M/PH/1 Erlang-2,0.7,medium,28,regression,XGBoost (L2),1.2571630573922372,1.7124662940308477,,,
+M/PH/1 Erlang-2,0.7,medium,28,regression,XGBoost (L1),1.1811712252573627,1.7652307535615162,,,
+M/PH/1 Erlang-2,0.7,medium,28,regression,Constant (train median),1.2273592466439591,2.3239775319102987,,,
+M/PH/1 Erlang-2,0.7,medium,28,classification,Naive (persistence),,,0.42010523400720023,0.42022160664819946,0.4201634122697687
+M/PH/1 Erlang-2,0.7,medium,28,classification,XGBoost,,,0.6715741789354474,0.16426592797783934,0.26396616959715113
+M/PH/1 Erlang-2,0.7,medium,29,regression,Naive (persistence),1.3833784189960925,2.1195721061655695,,,
+M/PH/1 Erlang-2,0.7,medium,29,regression,XGBoost (L2),1.2699323642531266,1.747156936994792,,,
+M/PH/1 Erlang-2,0.7,medium,29,regression,XGBoost (L1),1.1971830665645697,1.8020893521479908,,,
+M/PH/1 Erlang-2,0.7,medium,29,regression,Constant (train median),1.21190261496844,2.2415500526674315,,,
+M/PH/1 Erlang-2,0.7,medium,29,classification,Naive (persistence),,,0.3622222222222222,0.3622222222222222,0.3622222222222222
+M/PH/1 Erlang-2,0.7,medium,29,classification,XGBoost,,,0.6282225237449118,0.12861111111111112,0.21351164399354391
+M/PH/1 Erlang-2,0.8,medium,25,regression,Naive (persistence),1.7096402445134784,2.459258159783672,,,
+M/PH/1 Erlang-2,0.8,medium,25,regression,XGBoost (L2),1.658189932295239,2.163056268323115,,,
+M/PH/1 Erlang-2,0.8,medium,25,regression,XGBoost (L1),1.558310932345686,2.172958977121836,,,
+M/PH/1 Erlang-2,0.8,medium,25,regression,Constant (train median),1.8738350536125865,2.9930105304315378,,,
+M/PH/1 Erlang-2,0.8,medium,25,classification,Naive (persistence),,,0.5408742075408742,0.5410547396528705,0.5409644585349574
+M/PH/1 Erlang-2,0.8,medium,25,classification,XGBoost,,,0.7217010631644778,0.38518024032042725,0.502285092491839
+M/PH/1 Erlang-2,0.8,medium,26,regression,Naive (persistence),1.8384157027690151,2.578855020190547,,,
+M/PH/1 Erlang-2,0.8,medium,26,regression,XGBoost (L2),1.7524704745795836,2.2865386108400343,,,
+M/PH/1 Erlang-2,0.8,medium,26,regression,XGBoost (L1),1.689269445287012,2.32616912344701,,,
+M/PH/1 Erlang-2,0.8,medium,26,regression,Constant (train median),2.1407040208302037,3.3449250154331356,,,
+M/PH/1 Erlang-2,0.8,medium,26,classification,Naive (persistence),,,0.5780748663101605,0.5765333333333333,0.5773030707610147
+M/PH/1 Erlang-2,0.8,medium,26,classification,XGBoost,,,0.7706002034587996,0.404,0.5300909727081875
+M/PH/1 Erlang-2,0.8,medium,27,regression,Naive (persistence),1.8295357804597125,2.594886669410049,,,
+M/PH/1 Erlang-2,0.8,medium,27,regression,XGBoost (L2),1.7667382326581706,2.3180138487213093,,,
+M/PH/1 Erlang-2,0.8,medium,27,regression,XGBoost (L1),1.6919510959967023,2.3501055889310125,,,
+M/PH/1 Erlang-2,0.8,medium,27,regression,Constant (train median),2.2449296409434623,3.86602075531739,,,
+M/PH/1 Erlang-2,0.8,medium,27,classification,Naive (persistence),,,0.5817028027498677,0.5832449628844114,0.5824728620598358
+M/PH/1 Erlang-2,0.8,medium,27,classification,XGBoost,,,0.7366177167219328,0.41224814422057265,0.5286418493965663
+M/PH/1 Erlang-2,0.8,medium,28,regression,Naive (persistence),1.9057085628442665,2.672669965992936,,,
+M/PH/1 Erlang-2,0.8,medium,28,regression,XGBoost (L2),1.8310743698491176,2.408867280107376,,,
+M/PH/1 Erlang-2,0.8,medium,28,regression,XGBoost (L1),1.7672337393075392,2.455370852787475,,,
+M/PH/1 Erlang-2,0.8,medium,28,regression,Constant (train median),2.3922884326489733,3.6834700932533493,,,
+M/PH/1 Erlang-2,0.8,medium,28,classification,Naive (persistence),,,0.6283399036355672,0.6277899343544858,0.6280647985989493
+M/PH/1 Erlang-2,0.8,medium,28,classification,XGBoost,,,0.7918723889099886,0.4562363238512035,0.5789254477301125
+M/PH/1 Erlang-2,0.8,medium,29,regression,Naive (persistence),1.8453794139744553,2.576794476108092,,,
+M/PH/1 Erlang-2,0.8,medium,29,regression,XGBoost (L2),1.765605118105712,2.289224325070402,,,
+M/PH/1 Erlang-2,0.8,medium,29,regression,XGBoost (L1),1.6891296255896033,2.3238086973977414,,,
+M/PH/1 Erlang-2,0.8,medium,29,regression,Constant (train median),2.18106686701728,3.4811430773481136,,,
+M/PH/1 Erlang-2,0.8,medium,29,classification,Naive (persistence),,,0.5954276907269458,0.5952747817154597,0.5953512264029793
+M/PH/1 Erlang-2,0.8,medium,29,classification,XGBoost,,,0.7578849721706865,0.4196199280945044,0.5401652892561983
+M/PH/1 Erlang-2,0.9,medium,25,regression,Naive (persistence),2.4551599819738623,3.2526051386962105,,,
+M/PH/1 Erlang-2,0.9,medium,25,regression,XGBoost (L2),2.423589234526171,3.096692915607778,,,
+M/PH/1 Erlang-2,0.9,medium,25,regression,XGBoost (L1),2.3886704001797496,3.1106333970893245,,,
+M/PH/1 Erlang-2,0.9,medium,25,regression,Constant (train median),5.165640178258474,7.381487330820384,,,
+M/PH/1 Erlang-2,0.9,medium,25,classification,Naive (persistence),,,0.8218340611353712,0.8221930974224552,0.822013540074252
+M/PH/1 Erlang-2,0.9,medium,25,classification,XGBoost,,,0.8672696162307504,0.7750109217999126,0.8185488522320914
+M/PH/1 Erlang-2,0.9,medium,26,regression,Naive (persistence),2.3242201191728005,3.130040874496726,,,
+M/PH/1 Erlang-2,0.9,medium,26,regression,XGBoost (L2),2.296712178328227,2.9628346545595075,,,
+M/PH/1 Erlang-2,0.9,medium,26,regression,XGBoost (L1),2.2543961374744512,2.9716030210477564,,,
+M/PH/1 Erlang-2,0.9,medium,26,regression,Constant (train median),4.430824695808923,6.5575645171034465,,,
+M/PH/1 Erlang-2,0.9,medium,26,classification,Naive (persistence),,,0.7776747062461348,0.7776747062461348,0.7776747062461348
+M/PH/1 Erlang-2,0.9,medium,26,classification,XGBoost,,,0.8346484935437589,0.7195423623995053,0.772832945865161
+M/PH/1 Erlang-2,0.9,medium,27,regression,Naive (persistence),2.5201041510189777,3.326513979848015,,,
+M/PH/1 Erlang-2,0.9,medium,27,regression,XGBoost (L2),2.486134500575408,3.1963792230143415,,,
+M/PH/1 Erlang-2,0.9,medium,27,regression,XGBoost (L1),2.4645980253795505,3.2174459242561397,,,
+M/PH/1 Erlang-2,0.9,medium,27,regression,Constant (train median),5.828701617345151,8.86784506406807,,,
+M/PH/1 Erlang-2,0.9,medium,27,classification,Naive (persistence),,,0.8295000950389659,0.8295000950389659,0.8295000950389659
+M/PH/1 Erlang-2,0.9,medium,27,classification,XGBoost,,,0.8802072091517376,0.7751378065006653,0.8243379826157267
+M/PH/1 Erlang-2,0.9,medium,28,regression,Naive (persistence),2.4077616424636954,3.2192383016583745,,,
+M/PH/1 Erlang-2,0.9,medium,28,regression,XGBoost (L2),2.3804552872776688,3.0491686047717743,,,
+M/PH/1 Erlang-2,0.9,medium,28,regression,XGBoost (L1),2.3337681667561165,3.0613300678211663,,,
+M/PH/1 Erlang-2,0.9,medium,28,regression,Constant (train median),4.843365047571357,7.526517967098969,,,
+M/PH/1 Erlang-2,0.9,medium,28,classification,Naive (persistence),,,0.7753705815279361,0.7753705815279361,0.7753705815279361
+M/PH/1 Erlang-2,0.9,medium,28,classification,XGBoost,,,0.8299475753604194,0.7220638540478905,0.7722560975609756
+M/PH/1 Erlang-2,0.9,medium,29,regression,Naive (persistence),2.3367551326990488,3.1398308563854305,,,
+M/PH/1 Erlang-2,0.9,medium,29,regression,XGBoost (L2),2.31280299888352,2.9752739175448717,,,
+M/PH/1 Erlang-2,0.9,medium,29,regression,XGBoost (L1),2.2691292384026585,2.9828787441605282,,,
+M/PH/1 Erlang-2,0.9,medium,29,regression,Constant (train median),4.353980971457186,6.083556895167918,,,
+M/PH/1 Erlang-2,0.9,medium,29,classification,Naive (persistence),,,0.7829861111111112,0.7807270628967109,0.7818549552152557
+M/PH/1 Erlang-2,0.9,medium,29,classification,XGBoost,,,0.835971707645672,0.7160992498557415,0.7714063714063714
+M/PH/1 Erlang-2,0.95,medium,25,regression,Naive (persistence),2.6858444744880074,3.468933348009262,,,
+M/PH/1 Erlang-2,0.95,medium,25,regression,XGBoost (L2),2.6770185022109154,3.378187349367678,,,
+M/PH/1 Erlang-2,0.95,medium,25,regression,XGBoost (L1),2.6615608450013943,3.3831936868921777,,,
+M/PH/1 Erlang-2,0.95,medium,25,regression,Constant (train median),9.434630213810024,12.56437631363445,,,
+M/PH/1 Erlang-2,0.95,medium,25,classification,Naive (persistence),,,0.8797557538750587,0.8818267419962336,0.8807900305666588
+M/PH/1 Erlang-2,0.95,medium,25,classification,XGBoost,,,0.905703422053232,0.8411016949152542,0.8722079824240205
+M/PH/1 Erlang-2,0.95,medium,26,regression,Naive (persistence),2.652478718077116,3.4537795079208515,,,
+M/PH/1 Erlang-2,0.95,medium,26,regression,XGBoost (L2),2.619957310471704,3.3233864135205096,,,
+M/PH/1 Erlang-2,0.95,medium,26,regression,XGBoost (L1),2.598250572915428,3.3252754711653365,,,
+M/PH/1 Erlang-2,0.95,medium,26,regression,Constant (train median),7.100600901352028,8.92693594005899,,,
+M/PH/1 Erlang-2,0.95,medium,26,classification,Naive (persistence),,,0.8380077369439072,0.8380077369439072,0.8380077369439072
+M/PH/1 Erlang-2,0.95,medium,26,classification,XGBoost,,,0.871313672922252,0.7857833655705996,0.8263412153572337
+M/PH/1 Erlang-2,0.95,medium,27,regression,Naive (persistence),2.7167893445495968,3.54239260822635,,,
+M/PH/1 Erlang-2,0.95,medium,27,regression,XGBoost (L2),2.6877424659049,3.428023934204997,,,
+M/PH/1 Erlang-2,0.95,medium,27,regression,XGBoost (L1),2.6722986902712367,3.436136965938028,,,
+M/PH/1 Erlang-2,0.95,medium,27,regression,Constant (train median),7.409844274197586,9.6120584641627,,,
+M/PH/1 Erlang-2,0.95,medium,27,classification,Naive (persistence),,,0.8067415730337079,0.8067415730337079,0.8067415730337079
+M/PH/1 Erlang-2,0.95,medium,27,classification,XGBoost,,,0.8474913065077,0.7667415730337078,0.8050967437470505
+M/PH/1 Erlang-2,0.95,medium,28,regression,Naive (persistence),2.7148365129437684,3.5208059173641244,,,
+M/PH/1 Erlang-2,0.95,medium,28,regression,XGBoost (L2),2.6809229636895484,3.3915660577972333,,,
+M/PH/1 Erlang-2,0.95,medium,28,regression,XGBoost (L1),2.66563918856649,3.397493510627725,,,
+M/PH/1 Erlang-2,0.95,medium,28,regression,Constant (train median),7.693004857042712,9.975527111620432,,,
+M/PH/1 Erlang-2,0.95,medium,28,classification,Naive (persistence),,,0.8246191848497324,0.8246191848497324,0.8246191848497324
+M/PH/1 Erlang-2,0.95,medium,28,classification,XGBoost,,,0.8629142078983205,0.7826265953067105,0.8208117443868739
+M/PH/1 Erlang-2,0.95,medium,29,regression,Naive (persistence),2.655951129137249,3.469763237245112,,,
+M/PH/1 Erlang-2,0.95,medium,29,regression,XGBoost (L2),2.634989135135582,3.3463717076909743,,,
+M/PH/1 Erlang-2,0.95,medium,29,regression,XGBoost (L1),2.6091812967531824,3.3481851529818574,,,
+M/PH/1 Erlang-2,0.95,medium,29,regression,Constant (train median),7.239397125832457,9.186826262443722,,,
+M/PH/1 Erlang-2,0.95,medium,29,classification,Naive (persistence),,,0.8249648052557484,0.8249648052557484,0.8249648052557484
+M/PH/1 Erlang-2,0.95,medium,29,classification,XGBoost,,,0.8618052014278429,0.7930549038010324,0.8260019550342131
+PH/PH/1 E2/E2,0.3,medium,25,regression,Naive (persistence),0.07303598580841358,0.300109795755425,,,
+PH/PH/1 E2/E2,0.3,medium,25,regression,XGBoost (L2),0.07480135417381797,0.212384694218327,,,
+PH/PH/1 E2/E2,0.3,medium,25,regression,XGBoost (L1),0.0378323161370371,0.21557265715910512,,,
+PH/PH/1 E2/E2,0.3,medium,25,regression,Constant (train median),0.03775975671566143,0.21558628322424644,,,
+PH/PH/1 E2/E2,0.3,medium,25,classification,Naive (persistence),,,0.0273972602739726,0.02694610778443114,0.027169811320754716
+PH/PH/1 E2/E2,0.3,medium,25,classification,XGBoost,,,0.0,0.0,0.0
+PH/PH/1 E2/E2,0.3,medium,26,regression,Naive (persistence),0.07599291677207184,0.2995907487670048,,,
+PH/PH/1 E2/E2,0.3,medium,26,regression,XGBoost (L2),0.07655780699253145,0.21263861771219883,,,
+PH/PH/1 E2/E2,0.3,medium,26,regression,XGBoost (L1),0.03963720465601652,0.2162015972324175,,,
+PH/PH/1 E2/E2,0.3,medium,26,regression,Constant (train median),0.03956488742727043,0.21621587436131623,,,
+PH/PH/1 E2/E2,0.3,medium,26,classification,Naive (persistence),,,0.036931818181818184,0.03651685393258427,0.03672316384180791
+PH/PH/1 E2/E2,0.3,medium,26,classification,XGBoost,,,0.0,0.0,0.0
+PH/PH/1 E2/E2,0.3,medium,27,regression,Naive (persistence),0.06985201272791555,0.28631073515060157,,,
+PH/PH/1 E2/E2,0.3,medium,27,regression,XGBoost (L2),0.07351629538351495,0.204014895003781,,,
+PH/PH/1 E2/E2,0.3,medium,27,regression,XGBoost (L1),0.03653918446092135,0.20718541478567806,,,
+PH/PH/1 E2/E2,0.3,medium,27,regression,Constant (train median),0.03646648820647507,0.2071990858689013,,,
+PH/PH/1 E2/E2,0.3,medium,27,classification,Naive (persistence),,,0.0441400304414003,0.04387291981845688,0.04400606980273141
+PH/PH/1 E2/E2,0.3,medium,27,classification,XGBoost,,,0.0,0.0,0.0
+PH/PH/1 E2/E2,0.3,medium,28,regression,Naive (persistence),0.0777597895375898,0.3086496327075654,,,
+PH/PH/1 E2/E2,0.3,medium,28,regression,XGBoost (L2),0.07766936986594666,0.21964003521849984,,,
+PH/PH/1 E2/E2,0.3,medium,28,regression,XGBoost (L1),0.040900045394608724,0.22321896209617617,,,
+PH/PH/1 E2/E2,0.3,medium,28,regression,Constant (train median),0.04082768390164929,0.2232331665451067,,,
+PH/PH/1 E2/E2,0.3,medium,28,classification,Naive (persistence),,,0.04225352112676056,0.04126547455295736,0.04175365344467641
+PH/PH/1 E2/E2,0.3,medium,28,classification,XGBoost,,,0.0,0.0,0.0
+PH/PH/1 E2/E2,0.3,medium,29,regression,Naive (persistence),0.07753116448768622,0.3111065262901345,,,
+PH/PH/1 E2/E2,0.3,medium,29,regression,XGBoost (L2),0.0779006865743691,0.22395851331977465,,,
+PH/PH/1 E2/E2,0.3,medium,29,regression,XGBoost (L1),0.040763460251325906,0.22475678240342867,,,
+PH/PH/1 E2/E2,0.3,medium,29,regression,Constant (train median),0.04069119286510591,0.22477086516336955,,,
+PH/PH/1 E2/E2,0.3,medium,29,classification,Naive (persistence),,,0.04539007092198582,0.04456824512534819,0.044975404075895994
+PH/PH/1 E2/E2,0.3,medium,29,classification,XGBoost,,,0.0,0.0,0.0
+PH/PH/1 E2/E2,0.5,medium,25,regression,Naive (persistence),0.3105711422845691,0.7058657754743263,,,
+PH/PH/1 E2/E2,0.5,medium,25,regression,XGBoost (L2),0.3176263682671145,0.5093721020129479,,,
+PH/PH/1 E2/E2,0.5,medium,25,regression,XGBoost (L1),0.18424655418242408,0.5313028006927236,,,
+PH/PH/1 E2/E2,0.5,medium,25,regression,Constant (train median),0.17625250501002004,0.5347634466638268,,,
+PH/PH/1 E2/E2,0.5,medium,25,classification,Naive (persistence),,,0.1444568868980963,0.14456481135599553,0.1445108289768484
+PH/PH/1 E2/E2,0.5,medium,25,classification,XGBoost,,,0.2857142857142857,0.0007471049682480389,0.0014903129657228018
+PH/PH/1 E2/E2,0.5,medium,26,regression,Naive (persistence),0.3528232877398667,0.7851520557757664,,,
+PH/PH/1 E2/E2,0.5,medium,26,regression,XGBoost (L2),0.3456873767851295,0.5886050812447343,,,
+PH/PH/1 E2/E2,0.5,medium,26,regression,XGBoost (L1),0.21783194885164572,0.6197816051816836,,,
+PH/PH/1 E2/E2,0.5,medium,26,regression,Constant (train median),0.21073200060123254,0.6289761542023976,,,
+PH/PH/1 E2/E2,0.5,medium,26,classification,Naive (persistence),,,0.18102872411489646,0.18072690896965654,0.18087769063907894
+PH/PH/1 E2/E2,0.5,medium,26,classification,XGBoost,,,0.6,0.005001667222407469,0.00992063492063492
+PH/PH/1 E2/E2,0.5,medium,27,regression,Naive (persistence),0.3534361851332398,0.7706939369555388,,,
+PH/PH/1 E2/E2,0.5,medium,27,regression,XGBoost (L2),0.3434965712598825,0.5657451471742909,,,
+PH/PH/1 E2/E2,0.5,medium,27,regression,XGBoost (L1),0.21645768559579345,0.599642881167407,,,
+PH/PH/1 E2/E2,0.5,medium,27,regression,Constant (train median),0.20892606692045682,0.6036604431923757,,,
+PH/PH/1 E2/E2,0.5,medium,27,classification,Naive (persistence),,,0.1772862330802245,0.1775206611570248,0.1774033696729435
+PH/PH/1 E2/E2,0.5,medium,27,classification,XGBoost,,,0.5,0.0009917355371900827,0.001979544704717915
+PH/PH/1 E2/E2,0.5,medium,28,regression,Naive (persistence),0.33640460691036556,0.7484251534492098,,,
+PH/PH/1 E2/E2,0.5,medium,28,regression,XGBoost (L2),0.33425639015461545,0.5480657298014112,,,
+PH/PH/1 E2/E2,0.5,medium,28,regression,XGBoost (L1),0.20504963071450208,0.5785687493917665,,,
+PH/PH/1 E2/E2,0.5,medium,28,regression,Constant (train median),0.1972458688032048,0.5823733665846685,,,
+PH/PH/1 E2/E2,0.5,medium,28,classification,Naive (persistence),,,0.17160578911095797,0.17172413793103447,0.17166494312306102
+PH/PH/1 E2/E2,0.5,medium,28,classification,XGBoost,,,0.3333333333333333,0.0010344827586206897,0.002062564455139223
+PH/PH/1 E2/E2,0.5,medium,29,regression,Naive (persistence),0.3461769716404449,0.7576645145345189,,,
+PH/PH/1 E2/E2,0.5,medium,29,regression,XGBoost (L2),0.3370474412048394,0.5460678028825873,,,
+PH/PH/1 E2/E2,0.5,medium,29,regression,XGBoost (L1),0.20865283327211046,0.5775472898655325,,,
+PH/PH/1 E2/E2,0.5,medium,29,regression,Constant (train median),0.20097204128670207,0.5812568321838608,,,
+PH/PH/1 E2/E2,0.5,medium,29,classification,Naive (persistence),,,0.16536502546689305,0.16502880379532361,0.1651967435549525
+PH/PH/1 E2/E2,0.5,medium,29,classification,XGBoost,,,0.0,0.0,0.0
+PH/PH/1 E2/E2,0.7,medium,25,regression,Naive (persistence),0.8871864203094487,1.4585556923979106,,,
+PH/PH/1 E2/E2,0.7,medium,25,regression,XGBoost (L2),0.8655645175212601,1.1861843624075525,,,
+PH/PH/1 E2/E2,0.7,medium,25,regression,XGBoost (L1),0.7669464393283971,1.223483137603106,,,
+PH/PH/1 E2/E2,0.7,medium,25,regression,Constant (train median),0.7067748234940664,1.4807191385582124,,,
+PH/PH/1 E2/E2,0.7,medium,25,classification,Naive (persistence),,,0.32397220613781125,0.32406602953953084,0.3240191110467642
+PH/PH/1 E2/E2,0.7,medium,25,classification,XGBoost,,,0.6560509554140127,0.0894874022589053,0.15749235474006115
+PH/PH/1 E2/E2,0.7,medium,26,regression,Naive (persistence),0.8964498522858144,1.4622757821873404,,,
+PH/PH/1 E2/E2,0.7,medium,26,regression,XGBoost (L2),0.8717880884093006,1.1938369213494584,,,
+PH/PH/1 E2/E2,0.7,medium,26,regression,XGBoost (L1),0.7805207469866443,1.2415186154644478,,,
+PH/PH/1 E2/E2,0.7,medium,26,regression,Constant (train median),0.7306093836062291,1.4827129643715053,,,
+PH/PH/1 E2/E2,0.7,medium,26,classification,Naive (persistence),,,0.35048678720445064,0.3514644351464435,0.35097493036211697
+PH/PH/1 E2/E2,0.7,medium,26,classification,XGBoost,,,0.7014652014652014,0.10683403068340307,0.18542725732268217
+PH/PH/1 E2/E2,0.7,medium,27,regression,Naive (persistence),0.932552200691002,1.5146704686536563,,,
+PH/PH/1 E2/E2,0.7,medium,27,regression,XGBoost (L2),0.9000947676943369,1.246665249824673,,,
+PH/PH/1 E2/E2,0.7,medium,27,regression,XGBoost (L1),0.8130315161033085,1.29678493746748,,,
+PH/PH/1 E2/E2,0.7,medium,27,regression,Constant (train median),0.7835861999899855,1.6120850742176875,,,
+PH/PH/1 E2/E2,0.7,medium,27,classification,Naive (persistence),,,0.36160126415591254,0.3623647400369491,0.3619825995254416
+PH/PH/1 E2/E2,0.7,medium,27,classification,XGBoost,,,0.7018121911037891,0.11243072050673,0.19381255686988172
+PH/PH/1 E2/E2,0.7,medium,28,regression,Naive (persistence),0.8778228431225277,1.3982793062462524,,,
+PH/PH/1 E2/E2,0.7,medium,28,regression,XGBoost (L2),0.8452841887759504,1.1176179570833014,,,
+PH/PH/1 E2/E2,0.7,medium,28,regression,XGBoost (L1),0.7569230926107867,1.163478699639664,,,
+PH/PH/1 E2/E2,0.7,medium,28,regression,Constant (train median),0.6954083420960393,1.3692766820538587,,,
+PH/PH/1 E2/E2,0.7,medium,28,classification,Naive (persistence),,,0.3294216261525566,0.3294216261525566,0.3294216261525566
+PH/PH/1 E2/E2,0.7,medium,28,classification,XGBoost,,,0.676923076923077,0.06146968426934898,0.11270491803278689
+PH/PH/1 E2/E2,0.7,medium,29,regression,Naive (persistence),0.8597396094141212,1.3982426913579429,,,
+PH/PH/1 E2/E2,0.7,medium,29,regression,XGBoost (L2),0.8288262358709935,1.0943965061367478,,,
+PH/PH/1 E2/E2,0.7,medium,29,regression,XGBoost (L1),0.7301580224960341,1.125728014655991,,,
+PH/PH/1 E2/E2,0.7,medium,29,regression,Constant (train median),0.643365047571357,1.2867336652500905,,,
+PH/PH/1 E2/E2,0.7,medium,29,classification,Naive (persistence),,,0.27180899908172634,0.27180899908172634,0.27180899908172634
+PH/PH/1 E2/E2,0.7,medium,29,classification,XGBoost,,,0.551094890510949,0.04621977349250077,0.08528664219147133
+PH/PH/1 E2/E2,0.8,medium,25,regression,Naive (persistence),1.2757999098693105,1.8676744634590667,,,
+PH/PH/1 E2/E2,0.8,medium,25,regression,XGBoost (L2),1.2192365430841268,1.6163724107881643,,,
+PH/PH/1 E2/E2,0.8,medium,25,regression,XGBoost (L1),1.168875987957084,1.638468686146168,,,
+PH/PH/1 E2/E2,0.8,medium,25,regression,Constant (train median),1.3525111411546742,2.0736646603125037,,,
+PH/PH/1 E2/E2,0.8,medium,25,classification,Naive (persistence),,,0.49143767423337315,0.49143767423337315,0.49143767423337315
+PH/PH/1 E2/E2,0.8,medium,25,classification,XGBoost,,,0.73125,0.27956989247311825,0.4044943820224719
+PH/PH/1 E2/E2,0.8,medium,26,regression,Naive (persistence),1.3232687396725251,1.9419366934263973,,,
+PH/PH/1 E2/E2,0.8,medium,26,regression,XGBoost (L2),1.2505027595110012,1.666690369394498,,,
+PH/PH/1 E2/E2,0.8,medium,26,regression,XGBoost (L1),1.2108198386956919,1.6968808397896018,,,
+PH/PH/1 E2/E2,0.8,medium,26,regression,Constant (train median),1.3398928446247058,1.9799328762819572,,,
+PH/PH/1 E2/E2,0.8,medium,26,classification,Naive (persistence),,,0.47666411629686306,0.47666411629686306,0.47666411629686306
+PH/PH/1 E2/E2,0.8,medium,26,classification,XGBoost,,,0.6822157434402333,0.2685539403213466,0.3853966511117211
+PH/PH/1 E2/E2,0.8,medium,27,regression,Naive (persistence),1.3554153522607781,1.9431224359163253,,,
+PH/PH/1 E2/E2,0.8,medium,27,regression,XGBoost (L2),1.2608932333640561,1.6672272377609303,,,
+PH/PH/1 E2/E2,0.8,medium,27,regression,XGBoost (L1),1.2287246288988087,1.7057547258023715,,,
+PH/PH/1 E2/E2,0.8,medium,27,regression,Constant (train median),1.3802012918732163,2.0503403738624963,,,
+PH/PH/1 E2/E2,0.8,medium,27,classification,Naive (persistence),,,0.47235272858691724,0.47235272858691724,0.47235272858691724
+PH/PH/1 E2/E2,0.8,medium,27,classification,XGBoost,,,0.6751717369970559,0.2486447415973979,0.36344426835710514
+PH/PH/1 E2/E2,0.8,medium,28,regression,Naive (persistence),1.3065945621150667,1.911805363952349,,,
+PH/PH/1 E2/E2,0.8,medium,28,regression,XGBoost (L2),1.236778587608773,1.6307922589351733,,,
+PH/PH/1 E2/E2,0.8,medium,28,regression,XGBoost (L1),1.1860003239533903,1.6531014087107108,,,
+PH/PH/1 E2/E2,0.8,medium,28,regression,Constant (train median),1.3586700716038256,2.0885701044896683,,,
+PH/PH/1 E2/E2,0.8,medium,28,classification,Naive (persistence),,,0.47883495145631066,0.47883495145631066,0.47883495145631066
+PH/PH/1 E2/E2,0.8,medium,28,classification,XGBoost,,,0.7302904564315352,0.2733980582524272,0.39785250070641426
+PH/PH/1 E2/E2,0.8,medium,29,regression,Naive (persistence),1.3571178208402184,1.9603883614389048,,,
+PH/PH/1 E2/E2,0.8,medium,29,regression,XGBoost (L2),1.2795973477297449,1.692064155416266,,,
+PH/PH/1 E2/E2,0.8,medium,29,regression,XGBoost (L1),1.2523104865026549,1.7353344209159138,,,
+PH/PH/1 E2/E2,0.8,medium,29,regression,Constant (train median),1.3991287366681688,2.0311528977495397,,,
+PH/PH/1 E2/E2,0.8,medium,29,classification,Naive (persistence),,,0.5050881953867028,0.5033806626098716,0.5042329834067051
+PH/PH/1 E2/E2,0.8,medium,29,classification,XGBoost,,,0.6738567730802416,0.2640297498309669,0.37940247753218365
+PH/PH/1 E2/E2,0.9,medium,25,regression,Naive (persistence),1.8454258675078865,2.4743944330532615,,,
+PH/PH/1 E2/E2,0.9,medium,25,regression,XGBoost (L2),1.7876675075513146,2.2890764036258355,,,
+PH/PH/1 E2/E2,0.9,medium,25,regression,XGBoost (L1),1.7412889508860572,2.301422326183063,,,
+PH/PH/1 E2/E2,0.9,medium,25,regression,Constant (train median),2.9553853086976116,4.8079641172206244,,,
+PH/PH/1 E2/E2,0.9,medium,25,classification,Naive (persistence),,,0.707773851590106,0.707773851590106,0.707773851590106
+PH/PH/1 E2/E2,0.9,medium,25,classification,XGBoost,,,0.7898971837282074,0.6243816254416961,0.6974541148608644
+PH/PH/1 E2/E2,0.9,medium,26,regression,Naive (persistence),1.858594962695909,2.4987102977477207,,,
+PH/PH/1 E2/E2,0.9,medium,26,regression,XGBoost (L2),1.8109280442589841,2.324180042820001,,,
+PH/PH/1 E2/E2,0.9,medium,26,regression,XGBoost (L1),1.7711651861670619,2.3421388701955097,,,
+PH/PH/1 E2/E2,0.9,medium,26,regression,Constant (train median),2.987031195233088,4.656257839590682,,,
+PH/PH/1 E2/E2,0.9,medium,26,classification,Naive (persistence),,,0.7088974854932302,0.7093548387096774,0.709126088358594
+PH/PH/1 E2/E2,0.9,medium,26,classification,XGBoost,,,0.7915469839967173,0.6222580645161291,0.6967672024562037
+PH/PH/1 E2/E2,0.9,medium,27,regression,Naive (persistence),1.836262580742076,2.4706580133595013,,,
+PH/PH/1 E2/E2,0.9,medium,27,regression,XGBoost (L2),1.7690395921085218,2.2810450409181464,,,
+PH/PH/1 E2/E2,0.9,medium,27,regression,XGBoost (L1),1.7294044630336842,2.294790726385559,,,
+PH/PH/1 E2/E2,0.9,medium,27,regression,Constant (train median),2.802964298232437,4.34267720717558,,,
+PH/PH/1 E2/E2,0.9,medium,27,classification,Naive (persistence),,,0.7360114777618364,0.736275565123789,0.7361434977578475
+PH/PH/1 E2/E2,0.9,medium,27,classification,XGBoost,,,0.8008241758241759,0.6275565123789021,0.7036813518406759
+PH/PH/1 E2/E2,0.9,medium,28,regression,Naive (persistence),1.8632517149867307,2.5045249720729115,,,
+PH/PH/1 E2/E2,0.9,medium,28,regression,XGBoost (L2),1.8033217229003164,2.3105927391643566,,,
+PH/PH/1 E2/E2,0.9,medium,28,regression,XGBoost (L1),1.758864817484541,2.325331417721996,,,
+PH/PH/1 E2/E2,0.9,medium,28,regression,Constant (train median),2.578438736167443,3.765841641218702,,,
+PH/PH/1 E2/E2,0.9,medium,28,classification,Naive (persistence),,,0.6335845896147404,0.6335845896147404,0.6335845896147404
+PH/PH/1 E2/E2,0.9,medium,28,classification,XGBoost,,,0.710710128055879,0.5113065326633166,0.5947394057476864
+PH/PH/1 E2/E2,0.9,medium,29,regression,Naive (persistence),1.8125281658404686,2.4485083275115374,,,
+PH/PH/1 E2/E2,0.9,medium,29,regression,XGBoost (L2),1.78366319793626,2.2862572728235526,,,
+PH/PH/1 E2/E2,0.9,medium,29,regression,XGBoost (L1),1.739129140120253,2.296932602493492,,,
+PH/PH/1 E2/E2,0.9,medium,29,regression,Constant (train median),2.9322016924540586,4.461189101785839,,,
+PH/PH/1 E2/E2,0.9,medium,29,classification,Naive (persistence),,,0.7208578346592874,0.7183729748362634,0.7196132596685083
+PH/PH/1 E2/E2,0.9,medium,29,classification,XGBoost,,,0.7972309066547566,0.6153050672182007,0.6945525291828794
+PH/PH/1 E2/E2,0.95,medium,25,regression,Naive (persistence),2.189274447949527,2.8656949769936597,,,
+PH/PH/1 E2/E2,0.95,medium,25,regression,XGBoost (L2),2.1812433328323397,2.7630455472625437,,,
+PH/PH/1 E2/E2,0.95,medium,25,regression,XGBoost (L1),2.1647268427157877,2.767829703471191,,,
+PH/PH/1 E2/E2,0.95,medium,25,regression,Constant (train median),6.1454609183315805,8.527754555963828,,,
+PH/PH/1 E2/E2,0.95,medium,25,classification,Naive (persistence),,,0.8771008403361344,0.8771008403361344,0.8771008403361344
+PH/PH/1 E2/E2,0.95,medium,25,classification,XGBoost,,,0.9019553072625698,0.8479516806722689,0.874120194910666
+PH/PH/1 E2/E2,0.95,medium,26,regression,Naive (persistence),2.2655850983926693,2.939784240467611,,,
+PH/PH/1 E2/E2,0.95,medium,26,regression,XGBoost (L2),2.240259755344791,2.8483611560574875,,,
+PH/PH/1 E2/E2,0.95,medium,26,regression,XGBoost (L1),2.2344303603022118,2.858164568078883,,,
+PH/PH/1 E2/E2,0.95,medium,26,regression,Constant (train median),7.147563967753242,11.514166719789761,,,
+PH/PH/1 E2/E2,0.95,medium,26,classification,Naive (persistence),,,0.8566750629722922,0.8566750629722922,0.8566750629722922
+PH/PH/1 E2/E2,0.95,medium,26,classification,XGBoost,,,0.882972972972973,0.8229219143576826,0.8518904823989569
+PH/PH/1 E2/E2,0.95,medium,27,regression,Naive (persistence),2.0252866656652144,2.6792085267067005,,,
+PH/PH/1 E2/E2,0.95,medium,27,regression,XGBoost (L2),2.028313061517812,2.5530072517112403,,,
+PH/PH/1 E2/E2,0.95,medium,27,regression,XGBoost (L1),1.9964257782243726,2.5479139539636666,,,
+PH/PH/1 E2/E2,0.95,medium,27,regression,Constant (train median),4.770967903460017,6.255356725019606,,,
+PH/PH/1 E2/E2,0.95,medium,27,classification,Naive (persistence),,,0.8230429988974641,0.8230429988974641,0.8230429988974641
+PH/PH/1 E2/E2,0.95,medium,27,classification,XGBoost,,,0.8599151000606429,0.7816979051819184,0.8189431129078834
+PH/PH/1 E2/E2,0.95,medium,28,regression,Naive (persistence),2.2445546041760553,2.9126622223957876,,,
+PH/PH/1 E2/E2,0.95,medium,28,regression,XGBoost (L2),2.2666395325658555,2.8581224257792948,,,
+PH/PH/1 E2/E2,0.95,medium,28,regression,XGBoost (L1),2.255044482725598,2.8632271484556417,,,
+PH/PH/1 E2/E2,0.95,medium,28,regression,Constant (train median),8.308397175905062,11.721923265971643,,,
+PH/PH/1 E2/E2,0.95,medium,28,classification,Naive (persistence),,,0.902288291297812,0.902288291297812,0.902288291297812
+PH/PH/1 E2/E2,0.95,medium,28,classification,XGBoost,,,0.9245149911816578,0.8755637213963587,0.8993737668353778
+PH/PH/1 E2/E2,0.95,medium,29,regression,Naive (persistence),2.163737419257924,2.816772017161695,,,
+PH/PH/1 E2/E2,0.95,medium,29,regression,XGBoost (L2),2.1610183823741997,2.724967538317164,,,
+PH/PH/1 E2/E2,0.95,medium,29,regression,XGBoost (L1),2.143169370072909,2.72750124490367,,,
+PH/PH/1 E2/E2,0.95,medium,29,regression,Constant (train median),6.760052075509488,9.394600835642168,,,
+PH/PH/1 E2/E2,0.95,medium,29,classification,Naive (persistence),,,0.8914362778152394,0.8914362778152394,0.8914362778152394
+PH/PH/1 E2/E2,0.95,medium,29,classification,XGBoost,,,0.9105188005711566,0.8599685322544393,0.884522020575656

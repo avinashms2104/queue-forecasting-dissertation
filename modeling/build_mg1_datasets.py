@@ -12,7 +12,9 @@ once M/PH/1 is also in place next week.
 
 Congestion threshold is computed separately per (shape, rho) combination,
 consistent with the M/M/1 approach of defining "congested" relative to
-each system's own observed distribution.
+each system's own observed distribution. UPDATE: it is now computed from the
+20 training runs only (previously all 30 runs, including the test runs); see
+check_threshold_leakage.py for the effect (3 of 12 M/G/1 settings change).
 
 Train/validation/test split: identical run-level logic to build_datasets.py
 (run_id 0-19 -> train, 20-24 -> val, 25-29 -> test), since the M/G/1
@@ -112,7 +114,11 @@ def build_all():
             raw_path = DATA_DIR / f"mg1_timeseries_shape{shape}_rho{rho}.csv"
             raw = pd.read_csv(raw_path)
 
-            threshold = congestion_threshold(raw["queue_length"])
+            # threshold from the 20 TRAINING runs only (run_id 0-19), so the label cut-off
+            # never sees the validation/test runs (fix flagged in notebook Section 7.4).
+            # The old all-runs value is printed alongside for comparison.
+            threshold = congestion_threshold(raw.loc[raw["run_id"] < N_TRAIN_RUNS, "queue_length"])
+            threshold_all_runs = congestion_threshold(raw["queue_length"])
 
             run_feature_dfs = []
             for run_id, g in raw.groupby("run_id"):
@@ -136,7 +142,7 @@ def build_all():
             split_counts = rho_feat["split"].value_counts().to_dict()
             print(f"shape={shape}, rho={rho}: {len(rho_feat)} usable rows | "
                   f"split counts = {split_counts} | "
-                  f"congestion threshold (queue_length) = {threshold:.2f} | "
+                  f"congestion threshold (train runs) = {threshold:.2f}, (all runs, old) = {threshold_all_runs:.2f} | "
                   f"medium-horizon congestion rate = {congestion_rate:.1%}")
 
 
