@@ -1,5 +1,5 @@
 """
-XGBoost baseline (history-only features) for all five queue types, evaluated
+XGBoost baseline (history-only features) for all seven queue types, evaluated
 exactly like the Random Forest baselines: trained once on the 20 training runs,
 scored separately on each of the 5 held-out test runs, against naive persistence.
 
@@ -65,6 +65,8 @@ QUEUES = [
     ("M/G/1 Weibull 0.5", lambda r: DATA / "mg1" / "processed" / f"history_only_shape0.5_rho{r}.csv"),
     ("M/PH/1 Erlang-2", lambda r: DATA / "mph1" / "processed" / f"history_only_erlang2_rho{r}.csv"),
     ("PH/PH/1 E2/E2", lambda r: DATA / "phph1" / "processed" / f"history_only_arrE2_srvE2_rho{r}.csv"),
+    ("H2/PH/1 H2/E2", lambda r: DATA / "h2ph1" / "processed" / f"history_only_rho{r}.csv"),
+    ("MAP/PH/1 MMPP2/E2", lambda r: DATA / "mapph1" / "processed" / f"history_only_rho{r}.csv"),
 ]
 
 
@@ -112,6 +114,10 @@ def load_rf_reference():
         ("M/PH/1 Erlang-2", "mph1_model_comparison", lambda d: d[d.erlang_k == 2]),
         ("PH/PH/1 E2/E2", "phph1_model_comparison",
          lambda d: d[(d.arrival_erlang_k == 2) & (d.service_erlang_k == 2)]),
+        ("H2/PH/1 H2/E2", "h2ph1_model_comparison",
+         lambda d: d[(d.arrival_process == "H2") & (d.service_erlang_k == 2)]),
+        ("MAP/PH/1 MMPP2/E2", "mapph1_model_comparison",
+         lambda d: d[(d.arrival_process == "MMPP2") & (d.service_erlang_k == 2)]),
     ]
     reg, clf = [], []
     for q, stem, flt in specs:

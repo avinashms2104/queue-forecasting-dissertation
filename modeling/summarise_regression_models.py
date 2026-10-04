@@ -43,6 +43,12 @@ parts = [
     load("phph1_model_comparison_regression.csv", "PH/PH/1 E2/E2",
          lambda d: (d.arrival_erlang_k == 2) & (d.service_erlang_k == 2)),
 ]
+if (RESULTS / "h2ph1_model_comparison_regression.csv").exists():
+    parts.append(load("h2ph1_model_comparison_regression.csv", "H2/PH/1 H2/E2",
+                      lambda d: (d.arrival_process == "H2") & (d.service_erlang_k == 2)))
+if (RESULTS / "mapph1_model_comparison_regression.csv").exists():
+    parts.append(load("mapph1_model_comparison_regression.csv", "MAP/PH/1 MMPP2/E2",
+                      lambda d: (d.arrival_process == "MMPP2") & (d.service_erlang_k == 2)))
 runs = pd.concat(parts, ignore_index=True)
 QUEUES = list(dict.fromkeys(runs.queue))
 

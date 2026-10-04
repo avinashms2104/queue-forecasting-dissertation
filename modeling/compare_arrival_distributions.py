@@ -1,8 +1,16 @@
 """
-Arrival-side counterpart of compare_service_distributions.py: compares
-M/PH/1 (Poisson arrivals, C_a^2=1.0) against PH/PH/1 (Erlang-2 arrivals,
-C_a^2=0.5), holding service fixed at Erlang-2 (C_s^2=0.5 in both), to
-isolate the effect of arrival variance on its own.
+Arrival-side counterpart of compare_service_distributions.py: compares four
+arrival processes, holding service fixed at Erlang-2 (C_s^2=0.5 in all four),
+to isolate the effect of the arrival process on its own:
+
+    PH/PH/1   Erlang-2 renewal arrivals   C_a^2=0.5, gaps independent  (smooth)
+    M/PH/1    Poisson arrivals            C_a^2=1.0, gaps independent  (random)
+    H2/PH/1   hyperexponential arrivals   C_a^2=1.68, gaps independent (variable)
+    MAP/PH/1  MMPP-2 arrivals             C_a^2=1.68, gaps correlated  (variable and correlated)
+
+H2/PH/1 and MAP/PH/1 have the same gap distribution mean and C_a^2, so the
+difference between those two columns is the effect of correlation alone.
+Each is included only if its results files exist.
 
 Reads the existing results CSVs (medium horizon, history-only features,
 Random Forest, mean over the 5 test runs). Trains nothing.
@@ -35,15 +43,31 @@ reg_mph1 = load("mph1_model_comparison_regression.csv")
 reg_phph1 = load("phph1_model_comparison_regression.csv")
 clf_mph1 = load("mph1_model_comparison_classification.csv")
 clf_phph1 = load("phph1_model_comparison_classification.csv")
+HAVE_H2 = (RESULTS / "h2ph1_model_comparison_regression.csv").exists()
+if HAVE_H2:
+    reg_h2ph1 = load("h2ph1_model_comparison_regression.csv")
+    clf_h2ph1 = load("h2ph1_model_comparison_classification.csv")
+HAVE_MAP = (RESULTS / "mapph1_model_comparison_regression.csv").exists()
+if HAVE_MAP:
+    reg_mapph1 = load("mapph1_model_comparison_regression.csv")
+    clf_mapph1 = load("mapph1_model_comparison_classification.csv")
 
 # (label, C_a^2, row filter, regression rows, classification rows). Service is
-# Erlang-2 (C_s^2 = 0.5) in both, so only the arrival process differs.
+# Erlang-2 (C_s^2 = 0.5) in every row, so only the arrival process differs.
 SPEC = [
     ("M/PH/1  (C_a^2=1.0, C_s^2=0.5)", 1.0,
      lambda d: d[d.erlang_k == 2], reg_mph1, clf_mph1),
     ("PH/PH/1 (C_a^2=0.5, C_s^2=0.5)", 0.5,
      lambda d: d[(d.arrival_erlang_k == 2) & (d.service_erlang_k == 2)], reg_phph1, clf_phph1),
 ]
+if HAVE_H2:
+    SPEC.append(("H2/PH/1 (C_a^2=1.68 independent, C_s^2=0.5)", 1.68,
+                 lambda d: d[(d.arrival_process == "H2") & (d.service_erlang_k == 2)],
+                 reg_h2ph1, clf_h2ph1))
+if HAVE_MAP:
+    SPEC.append(("MAP/PH/1 (C_a^2=1.68 correlated, C_s^2=0.5)", 1.68,
+                 lambda d: d[(d.arrival_process == "MMPP2") & (d.service_erlang_k == 2)],
+                 reg_mapph1, clf_mapph1))
 
 reg_table, f1_table = {}, {}
 for label, ca2, filt, reg, clf in SPEC:
@@ -87,7 +111,7 @@ for ax in axes:
 axes[0].set_ylabel("Relative improvement (%)")
 axes[1].set_ylabel("F1 difference")
 axes[0].legend(fontsize=8)
-fig.suptitle("Effect of arrival variance, service fixed at Erlang-2 (medium horizon, history-only)")
+fig.suptitle("Effect of the arrival process, service fixed at Erlang-2 (medium horizon, history-only)")
 fig.tight_layout()
 fig.savefig(PLOTS / "arrival_variance_comparison.png", dpi=130)
 print("\nSaved: results/arrival_variance_comparison.csv")

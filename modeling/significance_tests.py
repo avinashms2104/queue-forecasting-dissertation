@@ -18,10 +18,13 @@ Design
   a distribution-free check. Rank-based tests are NOT used as the primary
   test: with n = 5 the smallest possible two-sided p from a sign or Wilcoxon
   test is 0.0625, so they could never reach 5%.
-* Multiple testing: 30 (queue x rho) tests per metric at the medium horizon,
-  120 over all horizons. Uncorrected, about 5% of true-null tests would look
-  "significant" by chance, so Holm-adjusted p-values are reported (they
-  control the family-wise error rate; adjusted within each metric).
+* Multiple testing: one test per (queue x rho) and metric at the medium
+  horizon (42 with all seven queue types), and four times that over all
+  horizons. The family grows each time a queue type is added (30 tests with
+  five types), so Holm-adjusted p-values grow slightly too. Uncorrected,
+  about 5% of true-null tests would look "significant" by chance, so
+  Holm-adjusted p-values are reported (they control the family-wise error
+  rate; adjusted within each metric).
 * Limitation: 5 test runs gives low power, so "not significant" means "not
   shown", not "no difference". Only run-to-run variation is captured, because
   each model is trained once on the 20 training runs.
@@ -57,6 +60,12 @@ parts = [
     load("phph1_model_comparison_regression.csv", "PH/PH/1 E2/E2",
          lambda d: (d.arrival_erlang_k == 2) & (d.service_erlang_k == 2)),
 ]
+if (RESULTS / "h2ph1_model_comparison_regression.csv").exists():
+    parts.append(load("h2ph1_model_comparison_regression.csv", "H2/PH/1 H2/E2",
+                      lambda d: (d.arrival_process == "H2") & (d.service_erlang_k == 2)))
+if (RESULTS / "mapph1_model_comparison_regression.csv").exists():
+    parts.append(load("mapph1_model_comparison_regression.csv", "MAP/PH/1 MMPP2/E2",
+                      lambda d: (d.arrival_process == "MMPP2") & (d.service_erlang_k == 2)))
 runs = pd.concat(parts, ignore_index=True)
 QUEUES = list(dict.fromkeys(runs.queue))
 RHOS = sorted(runs.rho.unique())
@@ -115,7 +124,7 @@ for metric in ["MAE", "RMSE"]:
     tab = pd.DataFrame({q: {rho: cell(sub[(sub.queue == q) & (sub.rho == rho)].iloc[0]) for rho in RHOS}
                         for q in QUEUES})
     print("=" * 120)
-    print(f"{metric}, MEDIUM horizon (30 tests, Holm-adjusted)")
+    print(f"{metric}, MEDIUM horizon ({len(sub)} tests, Holm-adjusted)")
     print("=" * 120)
     pd.set_option("display.width", 250)
     print(tab.to_string())
@@ -125,8 +134,10 @@ print("=" * 120)
 print(f"SUMMARY: cells where the difference is significant at {ALPHA:.0%} after Holm correction")
 print("=" * 120)
 for metric in ["MAE", "RMSE"]:
-    for label, col, hsel in [("medium horizon (30 tests)", "p_holm_medium", res.horizon == "medium"),
-                             ("all four horizons (120 tests)", "p_holm_all", res.horizon.notna())]:
+    n_med = int(((res.metric == metric) & (res.horizon == "medium")).sum())
+    n_all = int((res.metric == metric).sum())
+    for label, col, hsel in [(f"medium horizon ({n_med} tests)", "p_holm_medium", res.horizon == "medium"),
+                             (f"all four horizons ({n_all} tests)", "p_holm_all", res.horizon.notna())]:
         s = res[(res.metric == metric) & hsel]
         sig = s[s[col] < ALPHA]
         print(f"{metric:5s} {label:30s}: RF significantly better in {(sig.mean_diff > 0).sum():3d}, "

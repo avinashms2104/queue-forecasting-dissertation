@@ -4,8 +4,9 @@ M/PH/1 did) instead of from the 20 TRAINING runs only change anything?
 
 Notebook Section 7.4 flags this as a small departure from strict test
 separation: the 80th-percentile threshold used to LABEL congestion was
-estimated with the 5 test runs included. PH/PH/1 already uses the
-training-runs-only threshold. This script checks, for every older queue type
+estimated with the 5 test runs included. PH/PH/1, H2/PH/1 and MAP/PH/1 already use the
+training-runs-only threshold (they are listed here only so the table covers
+every queue type). This script checks, for every older queue type
 and every rho, whether the two thresholds differ. Because queue length is an
 integer, the threshold is an integer-valued percentile, so if the two values
 are equal, every congestion label -- and therefore every classification
@@ -33,6 +34,8 @@ STAGES = [
     ("M/G/1 Weibull 0.5", lambda rho: DATA / "mg1" / f"mg1_timeseries_shape0.5_rho{rho}.csv"),
     ("M/PH/1 Erlang-2", lambda rho: DATA / "mph1" / f"mph1_timeseries_erlang2_rho{rho}.csv"),
     ("PH/PH/1 E2/E2", lambda rho: DATA / "phph1" / f"phph1_timeseries_arrE2_srvE2_rho{rho}.csv"),
+    ("H2/PH/1 H2/E2", lambda rho: DATA / "h2ph1" / f"h2ph1_timeseries_rho{rho}.csv"),
+    ("MAP/PH/1 MMPP2/E2", lambda rho: DATA / "mapph1" / f"mapph1_timeseries_rho{rho}.csv"),
 ]
 
 rows = []
