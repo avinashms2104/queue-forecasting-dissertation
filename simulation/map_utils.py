@@ -93,6 +93,39 @@ class MAP:
         Z = np.linalg.inv(Pi - (self.D0 + self.D1))                 # fundamental matrix
         return 1.0 - 2.0 * self.lam + 2.0 * float(self.theta @ self.D1 @ Z @ self.D1 @ one) / self.lam
 
+    # ---------- exact properties of the COUNTS of arrivals in a window ----------
+    def count_variance(self, t):
+        """Var(N_t): variance of the number of arrivals in a window of length t.
+
+        Stationary MAP (Neuts 1979; Narayana & Neuts 1992), with D = D0 + D1,
+        Z = (1 theta - D)^{-1} and d = theta D1:
+            Var(N_t) = (lam - 2 lam^2 + 2 d Z D1 1) t - 2 d (I - e^{D t}) Z^2 D1 1
+        Checked against simulated counts in check_map_levels.py.
+        """
+        from scipy.linalg import expm
+        if t <= 0:
+            return 0.0
+        m, one = self.m, np.ones(self.m)
+        D = self.D0 + self.D1
+        Z = np.linalg.inv(np.outer(one, self.theta) - D)
+        d = self.theta @ self.D1
+        slope = self.lam - 2 * self.lam ** 2 + 2 * float(d @ Z @ self.D1 @ one)
+        return slope * t - 2 * float(d @ (np.eye(m) - expm(D * t)) @ Z @ Z @ self.D1 @ one)
+
+    def vtm(self, t):
+        """Variance-to-mean ratio of the counts, Var(N_t) / E[N_t].
+
+        1 for Poisson at every t. For a MAP it moves from 1 (tiny windows) to
+        idc_limit() (very long windows); the shape of that curve is the dependence.
+        """
+        return self.count_variance(t) / (self.lam * t)
+
+    def count_corr(self, tau, k):
+        """Correlation between arrival counts in two windows of length tau, k windows apart."""
+        V = self.count_variance
+        cov = 0.5 * (V((k + 1) * tau) - 2 * V(k * tau) + V((k - 1) * tau))
+        return cov / V(tau)
+
     def scaled(self, lam_new):
         """Same MAP with all rates multiplied so that the arrival rate becomes lam_new.
 
@@ -190,3 +223,99 @@ def bursty_mmpp2(lam, ratio=4.0, busy_share=0.25, mean_busy_arrivals=10.0):
     r21 = r12 * p / (1 - p)                      # gives time share p in the busy state
     return mmpp2(lam1, lam2, r12, r21,
                  name=f"MMPP2(rate={lam:g}, ratio={ratio:g}, busy={p:g}, burst={mean_busy_arrivals:g})")
+
+# ---------- the three controlled burst levels (Azam, 12 Oct) ----------
+# Azam: "the three MAP models have approximately the same mean arrival rate and
+# arrival-count variability (measured over a specified time interval), but
+# different dependence structures."
+#
+# All three are MMPP-2 (bursty_mmpp2) and are matched EXACTLY on
+#   - the arrival rate                          lam
+#   - the variability of a single gap           gap scv = 1.684 (same as H2/PH/1)
+#   - the arrival-count variability             VtM over MATCH_WINDOW mean gaps = 3.486
+# They differ only in how long a burst lasts (arrivals per busy spell), i.e. in how
+# long the dependence lasts: weak = short memory, strong = long memory.
+# 'medium' is the original MAP/PH/1 process, unchanged, so its data are reused.
+# For weak and strong, busy_share and ratio are solved so that both matches hold.
+MATCH_WINDOW = 10.0          # in mean interarrival times (= 10 / lam time units)
+
+MAP_LEVELS = {
+    "weak":   dict(mean_busy_arrivals=5.0,  p_bracket=(0.03, 0.12)),
+    "medium": dict(mean_busy_arrivals=10.0, ratio=4.0, busy_share=0.25),
+    "strong": dict(mean_busy_arrivals=40.0, p_bracket=(0.36, 0.50)),
+}
+_LEVEL_CACHE = {}
+
+
+def _solve_level(level):
+    """(busy_share, ratio) for a level, found at lam = 1 (the shape does not depend on lam)."""
+    from scipy.optimize import brentq
+    if level in _LEVEL_CACHE:
+        return _LEVEL_CACHE[level]
+    spec = MAP_LEVELS[level]
+    burst = spec["mean_busy_arrivals"]
+    if "ratio" in spec:
+        out = (spec["busy_share"], spec["ratio"])
+    else:
+        ref = map_level("medium", 1.0)
+        target_vtm, target_scv = ref.vtm(MATCH_WINDOW), ref.scv
+
+        def ratio_for(p):          # ratio giving the target VtM for this busy share
+            f = lambda r: bursty_mmpp2(1.0, r, p, burst).vtm(MATCH_WINDOW) - target_vtm
+            return brentq(f, 1.001, 200.0, xtol=1e-13)
+
+        g = lambda p: bursty_mmpp2(1.0, ratio_for(p), p, burst).scv - target_scv
+        p = brentq(g, *spec["p_bracket"], xtol=1e-13)
+        out = (p, ratio_for(p))
+    _LEVEL_CACHE[level] = out
+    return out
+
+
+def map_level(level, lam):
+    """The MMPP-2 for burst level 'weak' | 'medium' | 'strong' at arrival rate lam."""
+    p, ratio = _solve_level(level)
+    burst = MAP_LEVELS[level]["mean_busy_arrivals"]
+    M = bursty_mmpp2(lam, ratio=ratio, busy_share=p, mean_busy_arrivals=burst)
+    M.name = f"MMPP2-{level}(rate={lam:g}, ratio={ratio:.3f}, busy={p:.3f}, burst={burst:g})"
+    return M
+
+
+
+# ---------- MAPs fitted to the real call-centre arrivals (callcenter_fit_map.py) ----------
+# Two stable periods were found in the weekday data (Nov-Dec 1999): a busy afternoon and a
+# quieter evening. Each fitted MMPP-2 is stored at arrival rate 1 in
+# results/callcenter_map_fit.json and is rescaled here to the rate lam = rho of the queue.
+CALLCENTRE_LEVELS = ("cc_afternoon", "cc_evening")
+
+
+def callcentre_map(level, lam):
+    import json
+    from pathlib import Path
+    path = Path(__file__).resolve().parent.parent / "results" / "callcenter_map_fit.json"
+    if not path.exists():
+        raise FileNotFoundError(f"{path} not found: run simulation/callcenter_fit_map.py first")
+    fits = json.loads(path.read_text())
+    keys = sorted(fits, key=lambda k: fits[k]["period"])          # earliest period first
+    key = keys[0] if level == "cc_afternoon" else keys[-1]
+    f = fits[key]
+    M = MAP(np.array(f["D0"]), np.array(f["D1"])).scaled(lam)
+    M.name = f"CallCentre-{level[3:]}({f['period']}, rate={lam:g})"
+    return M
+
+
+# ---------- one table of all MAP/PH/1 arrival settings, used by every MAP/PH/1 script ----------
+#   level: (arrival label written into the data, file suffix, seed tag)
+LEVEL_INFO = {
+    "medium": ("MMPP2", "", 77),
+    "weak": ("MMPP2-weak", "_weak", 78),
+    "strong": ("MMPP2-strong", "_strong", 79),
+    "cc_afternoon": ("CallCentre-afternoon", "_cc_afternoon", 80),
+    "cc_evening": ("CallCentre-evening", "_cc_evening", 81),
+}
+
+
+def arrival_map(level, lam):
+    """The arrival MAP for any MAP/PH/1 setting at arrival rate lam."""
+    if level in CALLCENTRE_LEVELS:
+        return callcentre_map(level, lam)
+    return map_level(level, lam)

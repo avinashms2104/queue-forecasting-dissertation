@@ -17,13 +17,20 @@ Feature sets (identical to the build_*_datasets.py scripts):
 Both models are trained and scored on exactly the same rows (rows where every
 rich feature is defined), so any difference is due to the features alone.
 
+--map-levels runs the arrival-dependence comparison instead: H2/PH/1 (no
+dependence) and MAP/PH/1 with weak, medium and strong bursts, all with the same
+C_a^2 = 1.684 and the same Erlang-2 service. The rich features include recent
+arrival counts and arrival rates, so this answers whether arrival-history
+features help more when arrivals are correlated.
+
 Usage
 -----
     python modeling/horizon_sweep_rich_features.py               # M/M/1, M/PH/1, PH/PH/1
     python modeling/horizon_sweep_rich_features.py --all-queues  # all seven queue types
+    python modeling/horizon_sweep_rich_features.py --map-levels  # H2 + MAP weak/medium/strong
 
-Writes: results/horizon_sweep_rich_features.csv
-        results/plots/horizon_sweep_rich_features.png
+Writes: results/horizon_sweep_rich_features{_map_levels}.csv
+        results/plots/horizon_sweep_rich_features{_map_levels}.png
 """
 
 import argparse
@@ -63,6 +70,13 @@ EXTRA_QUEUES = [
     ("MAP/PH/1 MMPP2/E2", DATA / "mapph1" / f"mapph1_timeseries_rho{RHO}.csv"),
 ]
 
+MAP_LEVEL_QUEUES = [
+    ("H2 (no bursts)", DATA / "h2ph1" / f"h2ph1_timeseries_rho{RHO}.csv"),
+    ("MAP weak", DATA / "mapph1" / f"mapph1_timeseries_weak_rho{RHO}.csv"),
+    ("MAP medium", DATA / "mapph1" / f"mapph1_timeseries_rho{RHO}.csv"),
+    ("MAP strong", DATA / "mapph1" / f"mapph1_timeseries_strong_rho{RHO}.csv"),
+]
+
 HIST_COLS = [f"queue_length_lag{k}" for k in range(LOOKBACK)]
 RICH_COLS = HIST_COLS + [f"{c}_lag{k}" for c in RICH_BASE for k in range(LOOKBACK)] + ["recent_utilisation_lag0"]
 
@@ -83,10 +97,11 @@ def build_lags(raw):
     return pd.concat(parts, ignore_index=True)
 
 
-def main(all_queues):
+def main(all_queues, map_levels=False):
     RESULTS.mkdir(parents=True, exist_ok=True)
     PLOTS.mkdir(parents=True, exist_ok=True)
-    queues = MAIN_QUEUES + (EXTRA_QUEUES if all_queues else [])
+    queues = MAP_LEVEL_QUEUES if map_levels else MAIN_QUEUES + (EXTRA_QUEUES if all_queues else [])
+    tag = "_map_levels" if map_levels else ""
     rows = []
     for queue, path in queues:
         if not path.exists():
@@ -126,7 +141,7 @@ def main(all_queues):
     summ["MAE_impr_pct"] = 100 * (1 - summ["MAE"] / summ["MAE_persistence"])
     summ["RMSE_impr_pct"] = 100 * (1 - summ["RMSE"] / summ["RMSE_persistence"])
     summ.insert(1, "rho", RHO)
-    summ.to_csv(RESULTS / "horizon_sweep_rich_features.csv", index=False)
+    summ.to_csv(RESULTS / f"horizon_sweep_rich_features{tag}.csv", index=False)
 
     qlist = [q for q, _ in queues if q in set(summ.queue)]
     pd.set_option("display.width", 220)
@@ -157,13 +172,15 @@ def main(all_queues):
     axes[0, 0].legend(fontsize=8)
     fig.suptitle(f"Horizon sweep at rho = {RHO}: queue-history-only vs additional features")
     fig.tight_layout()
-    fig.savefig(PLOTS / "horizon_sweep_rich_features.png", dpi=130)
+    fig.savefig(PLOTS / f"horizon_sweep_rich_features{tag}.png", dpi=130)
     plt.close(fig)
-    print("\nSaved: results/horizon_sweep_rich_features.csv")
-    print("Saved: results/plots/horizon_sweep_rich_features.png")
+    print(f"\nSaved: results/horizon_sweep_rich_features{tag}.csv")
+    print(f"Saved: results/plots/horizon_sweep_rich_features{tag}.png")
 
 
 if __name__ == "__main__":
     ap = argparse.ArgumentParser()
     ap.add_argument("--all-queues", action="store_true")
-    main(ap.parse_args().all_queues)
+    ap.add_argument("--map-levels", action="store_true")
+    a = ap.parse_args()
+    main(a.all_queues, a.map_levels)

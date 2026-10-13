@@ -28,11 +28,16 @@ Step 2 - report (test runs only):
 Resampling is applied to the training rows only; validation and test runs keep
 their original class proportions.
 
+--map-levels reports the same comparison for H2/PH/1 and MAP/PH/1 with weak,
+medium and strong bursts (the approach is still chosen on M/M/1 validation runs).
+
 Usage:  python modeling/class_imbalance_summary.py
-Writes: results/class_imbalance_selection.csv   (validation scores used for the choice)
-        results/class_imbalance_summary.csv     (test scores at low and high rho)
+        python modeling/class_imbalance_summary.py --map-levels
+Writes: results/class_imbalance_selection.csv          (validation scores used for the choice)
+        results/class_imbalance_summary{_map_levels}.csv  (test scores at low and high rho)
 """
 
+import argparse
 from pathlib import Path
 
 import numpy as np
@@ -52,6 +57,14 @@ SELECT_QUEUE = "M/M/1"
 REPORT_QUEUES = ["M/M/1", "M/PH/1 Erlang-2", "PH/PH/1 E2/E2"]
 CANDIDATES = ["Class weighting", "Oversampling", "Undersampling"]
 PATHS = dict(ALL_QUEUES)
+DATA = Path(__file__).resolve().parent.parent / "data"
+MAP_LEVEL_PATHS = {
+    "H2 (no bursts)": lambda r: DATA / "h2ph1" / "processed" / f"history_only_rho{r}.csv",
+    "MAP weak": lambda r: DATA / "mapph1" / "processed" / f"history_only_weak_rho{r}.csv",
+    "MAP medium": lambda r: DATA / "mapph1" / "processed" / f"history_only_rho{r}.csv",
+    "MAP strong": lambda r: DATA / "mapph1" / "processed" / f"history_only_strong_rho{r}.csv",
+}
+PATHS.update(MAP_LEVEL_PATHS)
 
 
 def fit(method, X, y, rng):
@@ -85,7 +98,9 @@ def load(queue, rho):
     return df, feat, tr[feat].to_numpy(), tr[f"target_congested_{HORIZON}"].to_numpy()
 
 
-def main():
+def main(map_levels=False):
+    report_queues = list(MAP_LEVEL_PATHS) if map_levels else REPORT_QUEUES
+    tag = "_map_levels" if map_levels else ""
     rng = np.random.default_rng(SEED)
 
     # ---------- step 1: choose on M/M/1 validation runs ----------
@@ -113,7 +128,7 @@ def main():
 
     # ---------- step 2: report on test runs at low and high rho ----------
     rows = []
-    for queue in REPORT_QUEUES:
+    for queue in report_queues:
         if not PATHS[queue](LOW_RHO).exists():
             print(f"(skipping {queue}: no processed data found)")
             continue
@@ -132,7 +147,7 @@ def main():
                                  f1=s[:, 2].mean(), f1_std=s[:, 2].std(ddof=1)))
             print(f"report: {queue} rho={rho} done", flush=True)
     res = pd.DataFrame(rows)
-    res.to_csv(RESULTS / "class_imbalance_summary.csv", index=False)
+    res.to_csv(RESULTS / f"class_imbalance_summary{tag}.csv", index=False)
 
     print("\n" + "=" * 100)
     print(f"STEP 2: test runs (25-29), medium horizon. Congestion precision / recall / F1, mean (std) over 5 runs")
@@ -154,8 +169,10 @@ def main():
             p = s.loc[f"{chosen} RF"] - s.loc["Persistence"]
             print(f"{queue:18s} rho={rho}: precision {d.precision:+.3f}, recall {d.recall:+.3f}, "
                   f"F1 {d.f1:+.3f}   |  vs persistence: F1 {p.f1:+.3f}")
-    print("\nSaved: results/class_imbalance_selection.csv, results/class_imbalance_summary.csv")
+    print(f"\nSaved: results/class_imbalance_selection.csv, results/class_imbalance_summary{tag}.csv")
 
 
 if __name__ == "__main__":
-    main()
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--map-levels", action="store_true")
+    main(ap.parse_args().map_levels)

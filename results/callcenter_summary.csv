@@ -1,0 +1,301 @@
+quantity,arrival,rho,value
+gap_scv,none (H2),,1.684121621621622
+gap_scv,weak,,1.6841216216216155
+gap_scv,medium,,1.6841216216216217
+gap_scv,strong,,1.6841216216216293
+gap_scv,cc afternoon,,1.0119176018883627
+gap_scv,cc evening,,1.088584366136835
+gap_corr_1,none (H2),,0.0
+gap_corr_1,weak,,0.1519339079814125
+gap_corr_1,medium,,0.16468323890590694
+gap_corr_1,strong,,0.18701315720025075
+gap_corr_1,cc afternoon,,0.005807540522621019
+gap_corr_1,cc evening,,0.03534307600432808
+vtm_10,none (H2),,1.5923616583915148
+vtm_10,weak,,3.485874415842708
+vtm_10,medium,,3.485874415842714
+vtm_10,strong,,3.4858744158426886
+vtm_10,cc afternoon,,1.0573726795705525
+vtm_10,cc evening,,1.3215662946805864
+idc_limit,none (H2),,1.684121621621625
+idc_limit,weak,,3.7151996567876817
+idc_limit,medium,,4.616071428571425
+idc_limit,strong,,9.632580052365629
+idc_limit,cc afternoon,,1.8655203581517474
+idc_limit,cc evening,,1.6743584655269004
+Lq,none (H2),0.3,0.1273337853656934
+Lq,none (H2),0.5,0.5135111902911816
+Lq,none (H2),0.7,1.7322714743428604
+Lq,none (H2),0.8,3.437042959902449
+Lq,none (H2),0.9,8.785468445304991
+Lq,none (H2),0.95,19.651576521523424
+Lq,weak,0.3,0.4587095378588187
+Lq,weak,0.5,1.4996385641439156
+Lq,weak,0.7,4.155549245356381
+Lq,weak,0.8,7.592095916605293
+Lq,weak,0.9,18.05429385089336
+Lq,weak,0.95,39.09247369908592
+Lq,medium,0.3,0.2330654321064454
+Lq,medium,0.5,1.2356930491410087
+Lq,medium,0.7,4.380979797269566
+Lq,medium,0.8,8.541620031081617
+Lq,medium,0.9,21.237924589398872
+Lq,medium,0.95,46.77350940119114
+Lq,strong,0.3,0.1628216582193942
+Lq,strong,0.5,0.9692749277052743
+Lq,strong,0.7,5.936244083108044
+Lq,strong,0.8,13.969276721669209
+Lq,strong,0.9,39.04470868474967
+Lq,strong,0.95,89.60977636615131
+Lq,cc afternoon,0.3,0.0976025995887343
+Lq,cc afternoon,0.5,0.3837964820714135
+Lq,cc afternoon,0.7,1.299120748659499
+Lq,cc afternoon,0.8,2.682338262074728
+Lq,cc afternoon,0.9,7.691417146844085
+Lq,cc afternoon,0.95,18.986734380217055
+Lq,cc evening,0.3,0.1056185223410942
+Lq,cc evening,0.5,0.4347256851116046
+Lq,cc evening,0.7,1.5521177175287
+Lq,cc evening,0.8,3.1975528665059527
+Lq,cc evening,0.9,8.477291157590258
+Lq,cc evening,0.95,19.276209090282524
+half_life,none (H2),0.3,2.0
+half_life,none (H2),0.5,5.0
+half_life,none (H2),0.7,12.0
+half_life,none (H2),0.8,25.0
+half_life,none (H2),0.9,104.0
+half_life,none (H2),0.95,256.0
+half_life,weak,0.3,9.0
+half_life,weak,0.5,14.0
+half_life,weak,0.7,28.0
+half_life,weak,0.8,61.0
+half_life,weak,0.9,174.0
+half_life,weak,0.95,462.0
+half_life,medium,0.3,6.0
+half_life,medium,0.5,15.0
+half_life,medium,0.7,35.0
+half_life,medium,0.8,63.0
+half_life,medium,0.9,161.0
+half_life,medium,0.95,
+half_life,strong,0.3,4.0
+half_life,strong,0.5,16.0
+half_life,strong,0.7,60.0
+half_life,strong,0.8,116.0
+half_life,strong,0.9,321.0
+half_life,strong,0.95,
+half_life,cc afternoon,0.3,2.0
+half_life,cc afternoon,0.5,4.0
+half_life,cc afternoon,0.7,10.0
+half_life,cc afternoon,0.8,28.0
+half_life,cc afternoon,0.9,125.0
+half_life,cc afternoon,0.95,278.0
+half_life,cc evening,0.3,2.0
+half_life,cc evening,0.5,5.0
+half_life,cc evening,0.7,14.0
+half_life,cc evening,0.8,29.0
+half_life,cc evening,0.9,106.0
+half_life,cc evening,0.95,312.0
+rf_gain,none (H2),0.3,4.58109529092279
+rf_gain,none (H2),0.5,2.99162028494366
+rf_gain,none (H2),0.7,4.8311765090408
+rf_gain,none (H2),0.8,3.1243175703924897
+rf_gain,none (H2),0.9,1.3302478627291499
+rf_gain,none (H2),0.95,0.51490442326014
+rf_gain,weak,0.3,-1.4038138826055
+rf_gain,weak,0.5,1.51109484301371
+rf_gain,weak,0.7,1.42873638994249
+rf_gain,weak,0.8,0.9686158343872999
+rf_gain,weak,0.9,-0.62559557712504
+rf_gain,weak,0.95,-0.25970092075617
+rf_gain,medium,0.3,-6.53374411269058
+rf_gain,medium,0.5,-5.80190817075996
+rf_gain,medium,0.7,-0.22122303698681
+rf_gain,medium,0.8,1.9102154950506398
+rf_gain,medium,0.9,1.1137704328407798
+rf_gain,medium,0.95,-0.07671805728677
+rf_gain,strong,0.3,-4.47156655270342
+rf_gain,strong,0.5,-8.43862810102407
+rf_gain,strong,0.7,-2.8190377033034
+rf_gain,strong,0.8,2.4773468930655103
+rf_gain,strong,0.9,4.71617284674465
+rf_gain,strong,0.95,-1.78302080990364
+rf_gain,cc afternoon,0.3,0.7557844979537001
+rf_gain,cc afternoon,0.5,2.07988227480799
+rf_gain,cc afternoon,0.7,4.2407253986851305
+rf_gain,cc afternoon,0.8,3.81921089561564
+rf_gain,cc afternoon,0.9,1.1273176020643
+rf_gain,cc afternoon,0.95,-0.15729575796905002
+rf_gain,cc evening,0.3,1.8714982613861901
+rf_gain,cc evening,0.5,0.40400727903057
+rf_gain,cc evening,0.7,2.28946705873832
+rf_gain,cc evening,0.8,1.46194694577943
+rf_gain,cc evening,0.9,0.99799029083392
+rf_gain,cc evening,0.95,-0.50288724103841
+rich_minus_history,none (H2),0.3,0.03400494757262962
+rich_minus_history,none (H2),0.5,-0.0118738759884498
+rich_minus_history,none (H2),0.7,0.013119917967509664
+rich_minus_history,none (H2),0.8,0.028080741407300547
+rich_minus_history,none (H2),0.9,0.03719448261988023
+rich_minus_history,none (H2),0.95,0.0035399095466600583
+rich_minus_history,weak,0.3,0.2812718897490398
+rich_minus_history,weak,0.5,0.15887622711125982
+rich_minus_history,weak,0.7,0.12387105109591001
+rich_minus_history,weak,0.8,0.14987459799645997
+rich_minus_history,weak,0.9,0.0018450355228499804
+rich_minus_history,weak,0.95,0.0013301638992700426
+rich_minus_history,medium,0.3,0.6642170735981399
+rich_minus_history,medium,0.5,0.5682497685895997
+rich_minus_history,medium,0.7,0.5684323370373401
+rich_minus_history,medium,0.8,0.3319550418597801
+rich_minus_history,medium,0.9,0.2867448021103203
+rich_minus_history,medium,0.95,0.18366340827836
+rich_minus_history,strong,0.3,1.6323806784917898
+rich_minus_history,strong,0.5,3.0691951988960806
+rich_minus_history,strong,0.7,2.63478825899486
+rich_minus_history,strong,0.8,2.92453140359261
+rich_minus_history,strong,0.9,3.52157170594017
+rich_minus_history,strong,0.95,4.38328275488273
+rich_minus_history,cc afternoon,0.3,0.08436380443575986
+rich_minus_history,cc afternoon,0.5,-0.03429812558175005
+rich_minus_history,cc afternoon,0.7,0.03668492345977992
+rich_minus_history,cc afternoon,0.8,0.02579512360963987
+rich_minus_history,cc afternoon,0.9,0.02591269710205979
+rich_minus_history,cc afternoon,0.95,0.0015548462353400239
+rich_minus_history,cc evening,0.3,0.10834585923497997
+rich_minus_history,cc evening,0.5,0.09425530870327997
+rich_minus_history,cc evening,0.7,0.08308255161463984
+rich_minus_history,cc evening,0.8,0.11262568071727985
+rich_minus_history,cc evening,0.9,0.06210954902582011
+rich_minus_history,cc evening,0.95,0.01760922733494996
+f1_gap,none (H2),0.3,-0.1138142520691517
+f1_gap,none (H2),0.5,-0.1826225545763185
+f1_gap,none (H2),0.7,-0.10199075735918361
+f1_gap,none (H2),0.8,-0.03779274472380434
+f1_gap,none (H2),0.9,-0.005220500022638186
+f1_gap,none (H2),0.95,1.2338148869583954e-05
+f1_gap,weak,0.3,-0.1085707332118464
+f1_gap,weak,0.5,-0.03468437277265418
+f1_gap,weak,0.7,7.408380782436552e-05
+f1_gap,weak,0.8,-0.004143212568996635
+f1_gap,weak,0.9,-4.1524360407718675e-05
+f1_gap,weak,0.95,-0.002293685534420553
+f1_gap,medium,0.3,-0.2342301237482914
+f1_gap,medium,0.5,-0.07962840384522019
+f1_gap,medium,0.7,-0.002894979636625772
+f1_gap,medium,0.8,0.001468744201120309
+f1_gap,medium,0.9,0.0008511544487768141
+f1_gap,medium,0.95,-0.00018660519885882465
+f1_gap,strong,0.3,-0.1983145641807308
+f1_gap,strong,0.5,-0.12209906437202256
+f1_gap,strong,0.7,0.008086663254101123
+f1_gap,strong,0.8,0.007153489920805889
+f1_gap,strong,0.9,0.010190186082271402
+f1_gap,strong,0.95,-0.0020837017765725774
+f1_gap,cc afternoon,0.3,-0.0832778694664134
+f1_gap,cc afternoon,0.5,-0.1603714552376717
+f1_gap,cc afternoon,0.7,-0.12303267111008781
+f1_gap,cc afternoon,0.8,-0.03957586940757607
+f1_gap,cc afternoon,0.9,-0.002359316071958273
+f1_gap,cc afternoon,0.95,-0.0018325389210671617
+f1_gap,cc evening,0.3,-0.1009627137856028
+f1_gap,cc evening,0.5,-0.1787146016308173
+f1_gap,cc evening,0.7,-0.08359313933353218
+f1_gap,cc evening,0.8,-0.02587389227930914
+f1_gap,cc evening,0.9,-0.0023253041169989386
+f1_gap,cc evening,0.95,-0.00132467969464789
+warned_5_ahead,cc afternoon,0.5,0.0
+warned_5_ahead,cc afternoon,0.7,0.0088680229525299
+warned_5_ahead,cc afternoon,0.8,0.0361050328227571
+warned_5_ahead,cc afternoon,0.9,0.3412162162162162
+warned_5_ahead,cc evening,0.5,0.0
+warned_5_ahead,cc evening,0.7,0.007069913589945
+warned_5_ahead,cc evening,0.8,0.1058981233243967
+warned_5_ahead,cc evening,0.9,0.434010152284264
+warned_5_ahead,medium,0.5,0.0434012400354295
+warned_5_ahead,medium,0.7,0.2463768115942029
+warned_5_ahead,medium,0.8,0.3922902494331066
+warned_5_ahead,medium,0.9,0.396551724137931
+warned_5_ahead,none (H2),0.5,0.0
+warned_5_ahead,none (H2),0.7,0.0033222591362126
+warned_5_ahead,none (H2),0.8,0.0869098712446351
+warned_5_ahead,none (H2),0.9,0.3134328358208955
+warned_5_ahead,strong,0.5,0.358974358974359
+warned_5_ahead,strong,0.7,0.4466019417475728
+warned_5_ahead,strong,0.8,0.6305220883534136
+warned_5_ahead,strong,0.9,0.6981132075471698
+warned_5_ahead,weak,0.5,0.0
+warned_5_ahead,weak,0.7,0.0011933174224343
+warned_5_ahead,weak,0.8,0.0286298568507157
+warned_5_ahead,weak,0.9,0.0809716599190283
+cost_cut_vs_persistence,cc afternoon,0.5,2.5065044201345366
+cost_cut_vs_persistence,cc afternoon,0.7,2.2269343659983454
+cost_cut_vs_persistence,cc afternoon,0.8,8.771763012204914
+cost_cut_vs_persistence,cc afternoon,0.9,21.976381613425577
+cost_cut_vs_persistence,cc evening,0.5,1.0299065920277184
+cost_cut_vs_persistence,cc evening,0.7,2.646914141318224
+cost_cut_vs_persistence,cc evening,0.8,9.688845453532934
+cost_cut_vs_persistence,cc evening,0.9,20.926162994124642
+cost_cut_vs_persistence,medium,0.5,5.001686376017023
+cost_cut_vs_persistence,medium,0.7,15.838121916681946
+cost_cut_vs_persistence,medium,0.8,21.336266662763936
+cost_cut_vs_persistence,medium,0.9,25.998021652255776
+cost_cut_vs_persistence,none (H2),0.5,0.6187028772425163
+cost_cut_vs_persistence,none (H2),0.7,2.2513102409640773
+cost_cut_vs_persistence,none (H2),0.8,9.88251111992584
+cost_cut_vs_persistence,none (H2),0.9,23.895415160527065
+cost_cut_vs_persistence,strong,0.5,16.498258613776308
+cost_cut_vs_persistence,strong,0.7,31.382054331254917
+cost_cut_vs_persistence,strong,0.8,33.79248669470045
+cost_cut_vs_persistence,strong,0.9,43.76684343877203
+cost_cut_vs_persistence,weak,0.5,1.018788001267379
+cost_cut_vs_persistence,weak,0.7,4.066957069093313
+cost_cut_vs_persistence,weak,0.8,8.692581021475087
+cost_cut_vs_persistence,weak,0.9,11.593386170208264
+rule_cost_cut_vs_persistence,cc afternoon,0.5,0.0
+rule_cost_cut_vs_persistence,cc afternoon,0.7,2.5297147683987053
+rule_cost_cut_vs_persistence,cc afternoon,0.8,8.739675242635592
+rule_cost_cut_vs_persistence,cc afternoon,0.9,22.387919142883472
+rule_cost_cut_vs_persistence,cc evening,0.5,0.0
+rule_cost_cut_vs_persistence,cc evening,0.7,2.5497878073094116
+rule_cost_cut_vs_persistence,cc evening,0.8,9.834642420013907
+rule_cost_cut_vs_persistence,cc evening,0.9,20.232781420329772
+rule_cost_cut_vs_persistence,medium,0.5,2.5484029601975378
+rule_cost_cut_vs_persistence,medium,0.7,12.56446255162742
+rule_cost_cut_vs_persistence,medium,0.8,16.21643444948132
+rule_cost_cut_vs_persistence,medium,0.9,22.283515752398884
+rule_cost_cut_vs_persistence,none (H2),0.5,0.0
+rule_cost_cut_vs_persistence,none (H2),0.7,2.473939309259887
+rule_cost_cut_vs_persistence,none (H2),0.8,10.047258193048037
+rule_cost_cut_vs_persistence,none (H2),0.9,24.337662504107893
+rule_cost_cut_vs_persistence,strong,0.5,7.195856857903515
+rule_cost_cut_vs_persistence,strong,0.7,26.597802487164536
+rule_cost_cut_vs_persistence,strong,0.8,28.600560676268884
+rule_cost_cut_vs_persistence,strong,0.9,35.06786819619702
+rule_cost_cut_vs_persistence,weak,0.5,0.0
+rule_cost_cut_vs_persistence,weak,0.7,2.563207711429516
+rule_cost_cut_vs_persistence,weak,0.8,8.327289903762026
+rule_cost_cut_vs_persistence,weak,0.9,11.256336506728548
+quantile_vs_margin,cc afternoon,0.5,8.173348843279237
+quantile_vs_margin,cc afternoon,0.7,3.1927363433209233
+quantile_vs_margin,cc afternoon,0.8,0.7031829203871465
+quantile_vs_margin,cc afternoon,0.9,-0.06759314896651603
+quantile_vs_margin,cc evening,0.5,6.252076195257327
+quantile_vs_margin,cc evening,0.7,1.4807555139583206
+quantile_vs_margin,cc evening,0.8,0.5115348676640763
+quantile_vs_margin,cc evening,0.9,0.17336974867887545
+quantile_vs_margin,medium,0.5,2.0821220495973125
+quantile_vs_margin,medium,0.7,3.9880174603569407
+quantile_vs_margin,medium,0.8,4.226488795595252
+quantile_vs_margin,medium,0.9,3.239946421799522
+quantile_vs_margin,none (H2),0.5,5.530415844196668
+quantile_vs_margin,none (H2),0.7,1.560241232865478
+quantile_vs_margin,none (H2),0.8,0.9100597169793612
+quantile_vs_margin,none (H2),0.9,0.7556390784339562
+quantile_vs_margin,strong,0.5,6.3142413901891565
+quantile_vs_margin,strong,0.7,9.936115097329035
+quantile_vs_margin,strong,0.8,10.659479243105052
+quantile_vs_margin,strong,0.9,11.602794565986096
+quantile_vs_margin,weak,0.5,2.1162896329872227
+quantile_vs_margin,weak,0.7,1.2311556635855925
+quantile_vs_margin,weak,0.8,1.174170656341822
+quantile_vs_margin,weak,0.9,0.04686441878027914

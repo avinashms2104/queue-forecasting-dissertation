@@ -41,13 +41,25 @@ checked for MAP input in check_map_utils.py: against Pollaczek-Khinchine,
 against the PH/PH/1 solver, and against a brute-force solution of the full
 Markov chain. z = (simulated - exact) / standard error over the 30 runs.
 
+Arrival settings (--level)
+--------------------------
+    medium        the original MMPP-2 above (default)
+    weak, strong  MMPP-2s with the same rate, gap variability and 10-gap count
+                  variability as medium, but shorter / longer bursts (map_utils.MAP_LEVELS)
+    cc_afternoon  MMPP-2 fitted to the real call-centre arrivals, 11:00-15:30
+    cc_evening    MMPP-2 fitted to the real call-centre arrivals, 19:30-22:30
+                  (callcenter_fit_map.py; rescaled so that lambda = rho)
+
 Usage
 -----
-    python simulation/mapph1_simulator.py
+    python simulation/mapph1_simulator.py --level medium
 
-Writes ../data/mapph1/mapph1_timeseries_rho{rho}.csv
-and    ../results/mapph1_validation.csv
+Writes ../data/mapph1/mapph1_timeseries{suffix}_rho{rho}.csv
+and    ../results/mapph1{suffix}_validation.csv
+(suffix is "" for medium, "_weak", "_strong", "_cc_afternoon", "_cc_evening")
 """
+
+import argparse
 
 import numpy as np
 import pandas as pd
@@ -64,21 +76,22 @@ from mg1_simulator import (
     POST_WARMUP_LENGTH,
 )
 from ph_utils import erlang
-from map_utils import bursty_mmpp2
+from map_utils import arrival_map, LEVEL_INFO
 from qbd_solver import solve_qbd
 
 SERVICE_ERLANG_K = 2
-ARRIVAL_LABEL = "MMPP2"          # written into every row, so the datasets say which MAP was used
-SEED_TAG = 77                    # integer, keeps hash()-based seeds reproducible and distinct from PH/PH/1
+LEVEL = "medium"                 # set from --level in __main__
+ARRIVAL_LABEL, SUFFIX, SEED_TAG = LEVEL_INFO[LEVEL]
+LEVELS = {k: dict(label=v[0], suffix=v[1], seed_tag=v[2]) for k, v in LEVEL_INFO.items()}
 
 ROOT = Path(__file__).resolve().parent.parent
 OUT_DIR = ROOT / "data" / "mapph1"
 RES_DIR = ROOT / "results"
 
 
-def make_arrivals(rho):
+def make_arrivals(rho, level=None):
     """The arrival MAP at arrival rate lambda = rho (mean service time is 1)."""
-    return bursty_mmpp2(rho * 1.0 / MEAN_SERVICE_TIME)
+    return arrival_map(level or LEVEL, rho * 1.0 / MEAN_SERVICE_TIME)
 
 
 def scaled_lengths_mapph1(rho, idc, cs2):
@@ -163,7 +176,7 @@ def run_all(write_csv=True):
 
         rho_df = pd.concat(rho_dfs, ignore_index=True)
         if write_csv:
-            rho_df.to_csv(OUT_DIR / f"mapph1_timeseries_rho{rho}.csv", index=False)
+            rho_df.to_csv(OUT_DIR / f"mapph1_timeseries{SUFFIX}_rho{rho}.csv", index=False)
 
         ia_all = np.concatenate(ia_all)
         run_lq = np.array(run_lq)
@@ -184,11 +197,15 @@ def run_all(write_csv=True):
               f"exact Lq (QBD)={exact['Lq']:.3f}, error={s['error_pct']:+.2f}%, z={z:+.2f}")
 
     res = pd.DataFrame(summary)
-    res.to_csv(RES_DIR / "mapph1_validation.csv", index=False)
+    res.to_csv(RES_DIR / f"mapph1{SUFFIX}_validation.csv", index=False)
     print(f"\n|z| > 2 in {int((res.z.abs() > 2).sum())} of {len(res)} settings "
           f"(largest |z| = {res.z.abs().max():.2f})")
-    print("Saved validation summary -> results/mapph1_validation.csv")
+    print(f"Saved validation summary -> results/mapph1{SUFFIX}_validation.csv")
 
 
 if __name__ == "__main__":
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--level", default="medium", choices=list(LEVEL_INFO))
+    LEVEL = ap.parse_args().level
+    ARRIVAL_LABEL, SUFFIX, SEED_TAG = LEVEL_INFO[LEVEL]
     run_all()

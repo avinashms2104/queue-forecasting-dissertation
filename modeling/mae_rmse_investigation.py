@@ -30,9 +30,10 @@ Usage
 -----
     python modeling/mae_rmse_investigation.py               # M/M/1, M/PH/1, PH/PH/1
     python modeling/mae_rmse_investigation.py --all-queues  # all seven queue types
+    python modeling/mae_rmse_investigation.py --map-levels  # H2 + MAP weak/medium/strong
 
-Writes: results/mae_rmse_investigation.csv
-        results/plots/mae_rmse_trajectories.png
+Writes: results/mae_rmse_investigation{_map_levels}.csv
+        results/plots/mae_rmse_trajectories{_map_levels}.png
 """
 
 import argparse
@@ -68,6 +69,14 @@ EXTRA_QUEUES = [
     ("M/G/1 Weibull 0.5", lambda r: DATA / "mg1" / "processed" / f"history_only_shape0.5_rho{r}.csv"),
     ("H2/PH/1 H2/E2", lambda r: DATA / "h2ph1" / "processed" / f"history_only_rho{r}.csv"),
     ("MAP/PH/1 MMPP2/E2", lambda r: DATA / "mapph1" / "processed" / f"history_only_rho{r}.csv"),
+]
+
+
+MAP_LEVEL_QUEUES = [
+    ("H2 (no bursts)", lambda r: DATA / "h2ph1" / "processed" / f"history_only_rho{r}.csv"),
+    ("MAP weak", lambda r: DATA / "mapph1" / "processed" / f"history_only_weak_rho{r}.csv"),
+    ("MAP medium", lambda r: DATA / "mapph1" / "processed" / f"history_only_rho{r}.csv"),
+    ("MAP strong", lambda r: DATA / "mapph1" / "processed" / f"history_only_strong_rho{r}.csv"),
 ]
 
 
@@ -117,7 +126,7 @@ def run_setting(queue, rho, path):
     return rows, val
 
 
-def plot_trajectories(store, queues):
+def plot_trajectories(store, queues, tag=""):
     fig, axes = plt.subplots(len(queues), len(PLOT_RHOS), figsize=(13, 3.2 * len(queues)), squeeze=False)
     for i, q in enumerate(queues):
         for j, rho in enumerate(PLOT_RHOS):
@@ -145,13 +154,14 @@ def plot_trajectories(store, queues):
                 ax.legend(fontsize=7, loc="upper left")
     fig.suptitle("Actual vs predicted queue length, 10 time units ahead (history-only features)")
     fig.tight_layout()
-    fig.savefig(PLOTS / "mae_rmse_trajectories.png", dpi=130)
+    fig.savefig(PLOTS / f"mae_rmse_trajectories{tag}.png", dpi=130)
     plt.close(fig)
 
 
-def main(all_queues):
+def main(all_queues, map_levels=False):
     PLOTS.mkdir(parents=True, exist_ok=True)
-    queues = MAIN_QUEUES + (EXTRA_QUEUES if all_queues else [])
+    queues = MAP_LEVEL_QUEUES if map_levels else MAIN_QUEUES + (EXTRA_QUEUES if all_queues else [])
+    tag = "_map_levels" if map_levels else ""
     rows, store = [], {}
     for queue, path_fn in queues:
         if not path_fn(RHOS[0]).exists():
@@ -165,7 +175,7 @@ def main(all_queues):
             print(f"done: {queue} rho={rho}", flush=True)
 
     res = pd.DataFrame(rows)
-    res.to_csv(RESULTS / "mae_rmse_investigation.csv", index=False)
+    res.to_csv(RESULTS / f"mae_rmse_investigation{tag}.csv", index=False)
     qlist = [q for q, _ in queues if q in set(res.queue)]
     pd.set_option("display.width", 220)
 
@@ -213,12 +223,14 @@ def main(all_queues):
                   f"RF {R.sq_share_over:.0%}")
     print("(positive gap = Random Forest better)")
 
-    plot_trajectories(store, qlist)
-    print("\nSaved: results/mae_rmse_investigation.csv")
-    print("Saved: results/plots/mae_rmse_trajectories.png")
+    plot_trajectories(store, qlist, tag)
+    print(f"\nSaved: results/mae_rmse_investigation{tag}.csv")
+    print(f"Saved: results/plots/mae_rmse_trajectories{tag}.png")
 
 
 if __name__ == "__main__":
     ap = argparse.ArgumentParser()
     ap.add_argument("--all-queues", action="store_true")
-    main(ap.parse_args().all_queues)
+    ap.add_argument("--map-levels", action="store_true")
+    a = ap.parse_args()
+    main(a.all_queues, a.map_levels)

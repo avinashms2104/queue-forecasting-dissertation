@@ -19,15 +19,19 @@ unchanged, so the numbers are comparable.
 
 Usage
 -----
-    python modeling/mapph1_autocorrelation_analysis.py
+    python modeling/mapph1_autocorrelation_analysis.py --level medium
+    (levels: medium, weak, strong, cc_afternoon, cc_evening; see mapph1_simulator.py)
 
-Produces:
-    results/plots/mapph1_autocorrelation_by_rho.png
-    results/mapph1_autocorrelation_summary.csv
+Produces (SFX = "" for medium, "_weak", "_strong", "_cc_afternoon", "_cc_evening"):
+    results/plots/mapph1{SFX}_autocorrelation_by_rho.png
+    results/mapph1{SFX}_autocorrelation_summary.csv
 And prints a half-life comparison against M/PH/1 and PH/PH/1 using
 results/mph1_autocorrelation_summary.csv and
 results/phph1_autocorrelation_summary.csv if they exist.
 """
+
+import argparse
+import sys
 
 import numpy as np
 import pandas as pd
@@ -35,6 +39,9 @@ import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "simulation"))
+from map_utils import LEVEL_INFO
 
 DATA_DIR = Path(__file__).resolve().parent.parent / "data" / "mapph1"
 RESULTS_DIR = Path(__file__).resolve().parent.parent / "results"
@@ -58,7 +65,8 @@ def autocorrelation_for_run(series, max_lag):
     return acf
 
 
-def compute_all():
+def compute_all(level="medium"):
+    label, sfx, _ = LEVEL_INFO[level]
     RESULTS_DIR.mkdir(parents=True, exist_ok=True)
     PLOTS_DIR.mkdir(parents=True, exist_ok=True)
 
@@ -66,7 +74,7 @@ def compute_all():
     acf_by_rho = {}
 
     for rho in RHOS:
-        raw = pd.read_csv(DATA_DIR / f"mapph1_timeseries_rho{rho}.csv")
+        raw = pd.read_csv(DATA_DIR / f"mapph1_timeseries{sfx}_rho{rho}.csv")
         raw = raw[raw["run_id"].isin(TRAIN_RUN_IDS)]
 
         run_acfs = []
@@ -80,18 +88,18 @@ def compute_all():
         below_half = np.where(mean_acf < 0.5)[0]
         half_life = int(below_half[0]) + 1 if len(below_half) > 0 else np.nan
 
-        summary_rows.append({"arrival_process": "MMPP2", "service_erlang_k": 2, "rho": rho,
+        summary_rows.append({"arrival_process": label, "service_erlang_k": 2, "rho": rho,
                              "acf_lag1": mean_acf[0], "acf_lag5": mean_acf[4],
                              "acf_lag10": mean_acf[9], "acf_lag20": mean_acf[19],
                              "acf_lag50": mean_acf[49], "half_life_lag": half_life})
-        print(f"MMPP2/E2, rho={rho}: ACF(1)={mean_acf[0]:.3f}, "
+        print(f"{label}/E2, rho={rho}: ACF(1)={mean_acf[0]:.3f}, "
               f"ACF(10)={mean_acf[9]:.3f}, ACF(20)={mean_acf[19]:.3f}, "
               f"ACF(50)={mean_acf[49]:.3f}, half-life = "
               f"{half_life if not np.isnan(half_life) else '> ' + str(MAX_LAG)}")
 
     summary_df = pd.DataFrame(summary_rows)
-    summary_df.to_csv(RESULTS_DIR / "mapph1_autocorrelation_summary.csv", index=False)
-    print("\nSaved: results/mapph1_autocorrelation_summary.csv")
+    summary_df.to_csv(RESULTS_DIR / f"mapph1{sfx}_autocorrelation_summary.csv", index=False)
+    print(f"\nSaved: results/mapph1{sfx}_autocorrelation_summary.csv")
 
     fig, ax = plt.subplots(figsize=(7, 6))
     lags = np.arange(1, MAX_LAG + 1)
@@ -100,19 +108,19 @@ def compute_all():
     ax.axhline(0.5, color="black", linestyle=":", linewidth=0.8)
     ax.set_xlabel("Lag (time units)")
     ax.set_ylabel("Autocorrelation of queue_length")
-    ax.set_title("MAP/PH/1 (bursty MMPP-2 / Erlang-2) queue-length persistence vs. traffic intensity")
+    ax.set_title(f"MAP/PH/1 ({label} / Erlang-2) queue-length persistence vs. traffic intensity")
     ax.legend(fontsize=8, loc="center left", bbox_to_anchor=(1.02, 0.5))
     fig.tight_layout()
-    fig.savefig(PLOTS_DIR / "mapph1_autocorrelation_by_rho.png", dpi=130, bbox_inches="tight")
+    fig.savefig(PLOTS_DIR / f"mapph1{sfx}_autocorrelation_by_rho.png", dpi=130, bbox_inches="tight")
     plt.close(fig)
-    print("Saved: results/plots/mapph1_autocorrelation_by_rho.png")
+    print(f"Saved: results/plots/mapph1{sfx}_autocorrelation_by_rho.png")
 
-    print_comparison(summary_df)
+    print_comparison()
     return summary_df
 
 
-def print_comparison(mapph1_df):
-    """Half-life (lags until ACF < 0.5) for the three arrival processes, same Erlang-2 service."""
+def print_comparison():
+    """Half-life (lags until ACF < 0.5) for every arrival process with the same Erlang-2 service."""
     tables = {}
     p = RESULTS_DIR / "phph1_autocorrelation_summary.csv"
     if p.exists():
@@ -124,9 +132,18 @@ def print_comparison(mapph1_df):
         d = pd.read_csv(p)
         d = d[d["erlang_k"] == 2]
         tables["M/PH/1 random"] = d.set_index("rho")["half_life_lag"]
-    tables["MAP/PH/1 bursty"] = mapph1_df.set_index("rho")["half_life_lag"]
+    p = RESULTS_DIR / "h2ph1_autocorrelation_summary.csv"
+    if p.exists():
+        tables["H2 (no bursts)"] = pd.read_csv(p).set_index("rho")["half_life_lag"]
+    names = {"weak": "MAP weak", "medium": "MAP medium", "strong": "MAP strong",
+             "cc_afternoon": "call centre afternoon", "cc_evening": "call centre evening"}
+    for lv, col in names.items():
+        p = RESULTS_DIR / f"mapph1{LEVEL_INFO[lv][1]}_autocorrelation_summary.csv"
+        if p.exists():
+            tables[col] = pd.to_numeric(pd.read_csv(p).set_index("rho")["half_life_lag"], errors="coerce")
 
     comp = pd.DataFrame(tables)
+    pd.set_option("display.width", 200)
     print("\n" + "=" * 90)
     print("HALF-LIFE OF QUEUE-LENGTH PERSISTENCE (lags until autocorrelation < 0.5)")
     print("Effect of the arrival process alone (same Erlang-2 service in every column)")
@@ -137,4 +154,6 @@ def print_comparison(mapph1_df):
 
 
 if __name__ == "__main__":
-    compute_all()
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--level", default="medium", choices=list(LEVEL_INFO))
+    compute_all(ap.parse_args().level)

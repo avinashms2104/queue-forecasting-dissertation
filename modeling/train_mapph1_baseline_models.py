@@ -13,17 +13,19 @@ from the rich feature set, so these constant columns are never predictors.
 
 Usage
 -----
-    python modeling/train_mapph1_baseline_models.py                # both feature sets (slow)
-    python modeling/train_mapph1_baseline_models.py --history-only  # faster first pass
+    python modeling/train_mapph1_baseline_models.py --level medium                 # both feature sets (slow)
+    python modeling/train_mapph1_baseline_models.py --level medium --history-only  # faster first pass
+    (levels: medium, weak, strong, cc_afternoon, cc_evening; see mapph1_simulator.py)
 
-Produces:
-    results/mapph1_model_comparison_regression.csv
-    results/mapph1_model_comparison_classification.csv
-    results/plots/mapph1_regression_mae_by_rho.png
-    results/plots/mapph1_classification_recall_by_rho.png
+Produces (SFX = "" for medium, "_weak", "_strong", "_cc_afternoon", "_cc_evening"):
+    results/mapph1{SFX}_model_comparison_regression.csv
+    results/mapph1{SFX}_model_comparison_classification.csv
+    results/plots/mapph1{SFX}_regression_mae_by_rho.png
+    results/plots/mapph1{SFX}_classification_recall_by_rho.png
 """
 
 import argparse
+import sys
 import numpy as np
 import pandas as pd
 import matplotlib
@@ -38,12 +40,18 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.metrics import (mean_absolute_error, mean_squared_error,
                              precision_score, recall_score, f1_score, accuracy_score)
 
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "simulation"))
+from map_utils import LEVEL_INFO
+
 DATA_DIR = Path(__file__).resolve().parent.parent / "data" / "mapph1" / "processed"
 RESULTS_DIR = Path(__file__).resolve().parent.parent / "results"
 PLOTS_DIR = RESULTS_DIR / "plots"
 
 RHOS = [0.3, 0.5, 0.7, 0.8, 0.9, 0.95]
-SETTINGS = [("MMPP2", 2)]     # (arrival process label, service Erlang order)
+LEVEL = "medium"                                      # set from --level in __main__
+SFX = LEVEL_INFO[LEVEL][1]                            # file suffix, "" for medium
+TAG = ""                                              # dataset file prefix, e.g. "weak_"
+SETTINGS = [(LEVEL_INFO[LEVEL][0], 2)]                # (arrival process label, service Erlang order)
 HORIZONS = ["short", "medium", "long", "extra_long"]
 RANDOM_SEED = 42
 
@@ -72,7 +80,7 @@ def get_feature_cols(df, dataset_name):
 
 
 def evaluate_regression(dataset_name, ka, ks, rho, horizon):
-    df = pd.read_csv(DATA_DIR / f"{dataset_name}_rho{rho}.csv")
+    df = pd.read_csv(DATA_DIR / f"{dataset_name}_{TAG}rho{rho}.csv")
     feat_cols = get_feature_cols(df, dataset_name)
     target_col = f"target_qlen_{horizon}"
 
@@ -123,7 +131,7 @@ def evaluate_regression(dataset_name, ka, ks, rho, horizon):
 
 
 def evaluate_classification(dataset_name, ka, ks, rho, horizon):
-    df = pd.read_csv(DATA_DIR / f"{dataset_name}_rho{rho}.csv")
+    df = pd.read_csv(DATA_DIR / f"{dataset_name}_{TAG}rho{rho}.csv")
     feat_cols = get_feature_cols(df, dataset_name)
     target_col = f"target_congested_{horizon}"
 
@@ -211,7 +219,7 @@ def make_plots(reg_df, clf_df):
         ax.set_ylabel("Mean MAE across 5 test runs (medium horizon)")
         ax.set_title("MAP/PH/1 regression accuracy vs. utilisation\n(history-only features)")
         ax.legend(); fig.tight_layout()
-        fig.savefig(PLOTS_DIR / "mapph1_regression_mae_by_rho.png", dpi=130); plt.close(fig)
+        fig.savefig(PLOTS_DIR / f"mapph1{SFX}_regression_mae_by_rho.png", dpi=130); plt.close(fig)
 
         sub = clf_s[(clf_s.model == "Random Forest") & (clf_s.horizon == "medium") &
                     (clf_s.dataset == "history_only") & (clf_s.arrival_process == ka) & (clf_s.service_erlang_k == ks)].sort_values("rho")
@@ -224,7 +232,7 @@ def make_plots(reg_df, clf_df):
         ax.set_ylabel("Mean recall on 'congested' class (medium horizon)")
         ax.set_title("MAP/PH/1 congestion detection vs. utilisation\n(history-only features)")
         ax.legend(); ax.set_ylim(0, 1.05); fig.tight_layout()
-        fig.savefig(PLOTS_DIR / "mapph1_classification_recall_by_rho.png", dpi=130); plt.close(fig)
+        fig.savefig(PLOTS_DIR / f"mapph1{SFX}_classification_recall_by_rho.png", dpi=130); plt.close(fig)
     print("Saved 2 plots to results/plots/")
 
 
@@ -278,10 +286,10 @@ def run_all(history_only=False):
         print(f"Finished dataset: {dataset_name}", flush=True)
 
     reg_df, clf_df = pd.DataFrame(reg_rows), pd.DataFrame(clf_rows)
-    reg_df.to_csv(RESULTS_DIR / "mapph1_model_comparison_regression.csv", index=False)
-    clf_df.to_csv(RESULTS_DIR / "mapph1_model_comparison_classification.csv", index=False)
-    print("\nSaved: results/mapph1_model_comparison_regression.csv")
-    print("Saved: results/mapph1_model_comparison_classification.csv")
+    reg_df.to_csv(RESULTS_DIR / f"mapph1{SFX}_model_comparison_regression.csv", index=False)
+    clf_df.to_csv(RESULTS_DIR / f"mapph1{SFX}_model_comparison_classification.csv", index=False)
+    print(f"\nSaved: results/mapph1{SFX}_model_comparison_regression.csv")
+    print(f"Saved: results/mapph1{SFX}_model_comparison_classification.csv")
 
     make_plots(reg_df, clf_df)
     print_summary(reg_df, clf_df)
@@ -292,5 +300,10 @@ if __name__ == "__main__":
     ap = argparse.ArgumentParser()
     ap.add_argument("--history-only", action="store_true",
                     help="skip the rich feature set (much faster)")
+    ap.add_argument("--level", default="medium", choices=list(LEVEL_INFO))
     args = ap.parse_args()
+    LEVEL = args.level
+    SFX = LEVEL_INFO[LEVEL][1]
+    TAG = SFX[1:] + "_" if SFX else ""
+    SETTINGS = [(LEVEL_INFO[LEVEL][0], 2)]
     run_all(history_only=args.history_only)
