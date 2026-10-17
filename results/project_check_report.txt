@@ -1,0 +1,246 @@
+Project check, 2026-10-17 15:35, folder C:\Users\avina\OneDrive\Desktop\project\Dissertation-Queue-Forecasting
+
+====================================================================================================
+1. SCRIPTS
+====================================================================================================
+  OK    simulation/: all 19 expected scripts present
+  OK    simulation/: every script is mentioned in README.md
+  OK    modeling/: all 44 expected scripts present
+  OK    modeling/: every script is mentioned in README.md
+  OK    call-centre raw data present (data/callcenter/raw/november.txt, december.txt)
+
+====================================================================================================
+2. DATASETS (one line per queue setting and rho)
+====================================================================================================
+  OK    M/M/1, rho=0.3: 569,164 rows, split/threshold/labels/alignment OK, threshold 0 (train runs), congestion rate 9.0%, persistence MAE 0.232 = results file, test congestion rate = results file, alignment checked on 95% of rows
+  OK    M/M/1, rho=0.5: 594,965 rows, split/threshold/labels/alignment OK, threshold 1 (train runs), congestion rate 12.5%, persistence MAE 0.730 = results file, test congestion rate = results file, alignment checked on 99% of rows
+  OK    M/M/1, rho=0.7: 598,591 rows, split/threshold/labels/alignment OK, threshold 3 (train runs), congestion rate 17.0%, persistence MAE 1.578 = results file, test congestion rate = results file, alignment checked on 100% of rows
+  OK    M/M/1, rho=0.8: 598,927 rows, split/threshold/labels/alignment OK, threshold 6 (train runs), congestion rate 16.6%, persistence MAE 2.142 = results file, test congestion rate = results file, alignment checked on 100% of rows
+  OK    M/M/1, rho=0.9: 599,045 rows, split/threshold/labels/alignment OK, threshold 14 (train runs), congestion rate 18.5%, persistence MAE 2.765 = results file, test congestion rate = results file, alignment checked on 100% of rows
+  OK    M/M/1, rho=0.95: 599,091 rows, split/threshold/labels/alignment OK, threshold 31 (train runs), congestion rate 19.3%, persistence MAE 3.173 = results file, test congestion rate = results file, alignment checked on 100% of rows
+  OK    M/G/1 Weibull 2.0, rho=0.3: 570,873 rows, split/threshold/labels/alignment OK, threshold 0 (train runs), congestion rate 6.6%, persistence MAE 0.152 = results file, test congestion rate = results file, alignment checked on 95% of rows
+  OK    M/G/1 Weibull 2.0, rho=0.5: 595,559 rows, split/threshold/labels/alignment OK, threshold 1 (train runs), congestion rate 7.4%, persistence MAE 0.519 = results file, test congestion rate = results file, alignment checked on 99% of rows
+  OK    M/G/1 Weibull 2.0, rho=0.7: 598,718 rows, split/threshold/labels/alignment OK, threshold 2 (train runs), congestion rate 14.7%, persistence MAE 1.205 = results file, test congestion rate = results file, alignment checked on 100% of rows
+  OK    M/G/1 Weibull 2.0, rho=0.8: 599,039 rows, split/threshold/labels/alignment OK, threshold 4 (train runs), congestion rate 15.3%, persistence MAE 1.671 = results file, test congestion rate = results file, alignment checked on 100% of rows
+  OK    M/G/1 Weibull 2.0, rho=0.9: 599,106 rows, split/threshold/labels/alignment OK, threshold 8 (train runs), congestion rate 20.1%, persistence MAE 2.224 = results file, test congestion rate = results file, alignment checked on 100% of rows
+  OK    M/G/1 Weibull 2.0, rho=0.95: 599,126 rows, split/threshold/labels/alignment OK, threshold 18 (train runs), congestion rate 19.3%, persistence MAE 2.474 = results file, test congestion rate = results file, alignment checked on 100% of rows
+  OK    M/G/1 Weibull 0.5, rho=0.3: 552,495 rows, split/threshold/labels/alignment OK, threshold 0 (train runs), congestion rate 13.9%, persistence MAE 0.441 = results file, test congestion rate = results file, alignment checked on 92% of rows
+  OK    M/G/1 Weibull 0.5, rho=0.5: 571,676 rows, split/threshold/labels/alignment OK, threshold 2 (train runs), congestion rate 17.0%, persistence MAE 1.340 = results file, test congestion rate = results file, alignment checked on 96% of rows
+  OK    M/G/1 Weibull 0.5, rho=0.7: 569,462 rows, split/threshold/labels/alignment OK, threshold 9 (train runs), congestion rate 15.9%, persistence MAE 2.722 = results file, test congestion rate = results file, alignment checked on 96% of rows
+  OK    M/G/1 Weibull 0.5, rho=0.8: 566,752 rows, split/threshold/labels/alignment OK, threshold 17 (train runs), congestion rate 17.9%, persistence MAE 3.670 = results file, test congestion rate = results file, alignment checked on 95% of rows
+  OK    M/G/1 Weibull 0.5, rho=0.9: 563,589 rows, split/threshold/labels/alignment OK, threshold 40 (train runs), congestion rate 18.7%, persistence MAE 4.634 = results file, test congestion rate = results file, alignment checked on 95% of rows
+  OK    M/G/1 Weibull 0.5, rho=0.95: 562,988 rows, split/threshold/labels/alignment OK, threshold 91 (train runs), congestion rate 18.7%, persistence MAE 5.104 = results file, test congestion rate = results file, alignment checked on 95% of rows
+  OK    M/PH/1 Erlang-2, rho=0.3: 570,432 rows, split/threshold/labels/alignment OK, threshold 0 (train runs), congestion rate 7.4%, persistence MAE 0.183 = results file, test congestion rate = results file, alignment checked on 95% of rows
+  OK    M/PH/1 Erlang-2, rho=0.5: 595,524 rows, split/threshold/labels/alignment OK, threshold 1 (train runs), congestion rate 9.2%, persistence MAE 0.597 = results file, test congestion rate = results file, alignment checked on 99% of rows
+  OK    M/PH/1 Erlang-2, rho=0.7: 598,687 rows, split/threshold/labels/alignment OK, threshold 2 (train runs), congestion rate 17.7%, persistence MAE 1.341 = results file, test congestion rate = results file, alignment checked on 100% of rows
+  OK    M/PH/1 Erlang-2, rho=0.8: 599,013 rows, split/threshold/labels/alignment OK, threshold 4 (train runs), congestion rate 19.1%, persistence MAE 1.826 = results file, test congestion rate = results file, alignment checked on 100% of rows
+  OK    M/PH/1 Erlang-2, rho=0.9: 599,106 rows, split/threshold/labels/alignment OK, threshold 10 (train runs), congestion rate 18.5%, persistence MAE 2.409 = results file, test congestion rate = results file, alignment checked on 100% of rows
+  OK    M/PH/1 Erlang-2, rho=0.95: 599,123 rows, split/threshold/labels/alignment OK, threshold 22 (train runs), congestion rate 18.7%, persistence MAE 2.685 = results file, test congestion rate = results file, alignment checked on 100% of rows
+  OK    PH/PH/1 E2/E2, rho=0.3: 592,754 rows, split/threshold/labels/alignment OK, threshold 0 (train runs), congestion rate 3.5%, persistence MAE 0.075 = results file, test congestion rate = results file, alignment checked on 99% of rows
+  OK    PH/PH/1 E2/E2, rho=0.5: 598,953 rows, split/threshold/labels/alignment OK, threshold 0 (train runs), congestion rate 14.5%, persistence MAE 0.340 = results file, test congestion rate = results file, alignment checked on 100% of rows
+  OK    PH/PH/1 E2/E2, rho=0.7: 599,118 rows, split/threshold/labels/alignment OK, threshold 1 (train runs), congestion rate 18.1%, persistence MAE 0.891 = results file, test congestion rate = results file, alignment checked on 100% of rows
+  OK    PH/PH/1 E2/E2, rho=0.8: 599,129 rows, split/threshold/labels/alignment OK, threshold 3 (train runs), congestion rate 14.1%, persistence MAE 1.324 = results file, test congestion rate = results file, alignment checked on 100% of rows
+  OK    PH/PH/1 E2/E2, rho=0.9: 599,130 rows, split/threshold/labels/alignment OK, threshold 7 (train runs), congestion rate 16.8%, persistence MAE 1.843 = results file, test congestion rate = results file, alignment checked on 100% of rows
+  OK    PH/PH/1 E2/E2, rho=0.95: 599,130 rows, split/threshold/labels/alignment OK, threshold 14 (train runs), congestion rate 19.2%, persistence MAE 2.178 = results file, test congestion rate = results file, alignment checked on 100% of rows
+  OK    H2/PH/1, rho=0.3: 530,891 rows, split/threshold/labels/alignment OK, threshold 0 (train runs), congestion rate 9.2%, persistence MAE 0.248 = results file, test congestion rate = results file, alignment checked on 90% of rows
+  OK    H2/PH/1, rho=0.5: 578,277 rows, split/threshold/labels/alignment OK, threshold 1 (train runs), congestion rate 13.3%, persistence MAE 0.780 = results file, test congestion rate = results file, alignment checked on 97% of rows
+  OK    H2/PH/1, rho=0.7: 593,402 rows, split/threshold/labels/alignment OK, threshold 3 (train runs), congestion rate 17.8%, persistence MAE 1.638 = results file, test congestion rate = results file, alignment checked on 99% of rows
+  OK    H2/PH/1, rho=0.8: 596,359 rows, split/threshold/labels/alignment OK, threshold 6 (train runs), congestion rate 18.3%, persistence MAE 2.272 = results file, test congestion rate = results file, alignment checked on 99% of rows
+  OK    H2/PH/1, rho=0.9: 598,200 rows, split/threshold/labels/alignment OK, threshold 16 (train runs), congestion rate 17.8%, persistence MAE 2.901 = results file, test congestion rate = results file, alignment checked on 100% of rows
+  OK    H2/PH/1, rho=0.95: 598,863 rows, split/threshold/labels/alignment OK, threshold 33 (train runs), congestion rate 19.3%, persistence MAE 3.330 = results file, test congestion rate = results file, alignment checked on 100% of rows
+  OK    MAP/PH/1 medium, rho=0.3: 529,953 rows, split/threshold/labels/alignment OK, threshold 0 (train runs), congestion rate 12.2%, persistence MAE 0.382 = results file, test congestion rate = results file, alignment checked on 89% of rows
+  OK    MAP/PH/1 medium, rho=0.5: 582,160 rows, split/threshold/labels/alignment OK, threshold 2 (train runs), congestion rate 16.2%, persistence MAE 1.218 = results file, test congestion rate = results file, alignment checked on 97% of rows
+  OK    MAP/PH/1 medium, rho=0.7: 595,531 rows, split/threshold/labels/alignment OK, threshold 8 (train runs), congestion rate 18.8%, persistence MAE 2.632 = results file, test congestion rate = results file, alignment checked on 99% of rows
+  OK    MAP/PH/1 medium, rho=0.8: 597,857 rows, split/threshold/labels/alignment OK, threshold 15 (train runs), congestion rate 19.3%, persistence MAE 3.408 = results file, test congestion rate = results file, alignment checked on 100% of rows
+  OK    MAP/PH/1 medium, rho=0.9: 598,720 rows, split/threshold/labels/alignment OK, threshold 34 (train runs), congestion rate 20.1%, persistence MAE 4.181 = results file, test congestion rate = results file, alignment checked on 100% of rows
+  OK    MAP/PH/1 medium, rho=0.95: 599,005 rows, split/threshold/labels/alignment OK, threshold 87 (train runs), congestion rate 17.6%, persistence MAE 4.581 = results file, test congestion rate = results file, alignment checked on 100% of rows
+  OK    MAP/PH/1 weak, rho=0.3: 537,592 rows, split/threshold/labels/alignment OK, threshold 0 (train runs), congestion rate 13.8%, persistence MAE 0.710 = results file, test congestion rate = results file, alignment checked on 90% of rows
+  OK    MAP/PH/1 weak, rho=0.5: 587,072 rows, split/threshold/labels/alignment OK, threshold 2 (train runs), congestion rate 17.6%, persistence MAE 1.651 = results file, test congestion rate = results file, alignment checked on 98% of rows
+  OK    MAP/PH/1 weak, rho=0.7: 596,897 rows, split/threshold/labels/alignment OK, threshold 7 (train runs), congestion rate 19.4%, persistence MAE 2.764 = results file, test congestion rate = results file, alignment checked on 100% of rows
+  OK    MAP/PH/1 weak, rho=0.8: 598,446 rows, split/threshold/labels/alignment OK, threshold 14 (train runs), congestion rate 20.0%, persistence MAE 3.391 = results file, test congestion rate = results file, alignment checked on 100% of rows
+  OK    MAP/PH/1 weak, rho=0.9: 598,909 rows, split/threshold/labels/alignment OK, threshold 30 (train runs), congestion rate 19.7%, persistence MAE 3.962 = results file, test congestion rate = results file, alignment checked on 100% of rows
+  OK    MAP/PH/1 weak, rho=0.95: 599,048 rows, split/threshold/labels/alignment OK, threshold 70 (train runs), congestion rate 18.9%, persistence MAE 4.332 = results file, test congestion rate = results file, alignment checked on 100% of rows
+  OK    MAP/PH/1 strong, rho=0.3: 527,376 rows, split/threshold/labels/alignment OK, threshold 0 (train runs), congestion rate 11.2%, persistence MAE 0.297 = results file, test congestion rate = results file, alignment checked on 89% of rows
+  OK    MAP/PH/1 strong, rho=0.5: 577,076 rows, split/threshold/labels/alignment OK, threshold 1 (train runs), congestion rate 20.4%, persistence MAE 0.923 = results file, test congestion rate = results file, alignment checked on 96% of rows
+  OK    MAP/PH/1 strong, rho=0.7: 593,464 rows, split/threshold/labels/alignment OK, threshold 11 (train runs), congestion rate 19.0%, persistence MAE 2.251 = results file, test congestion rate = results file, alignment checked on 99% of rows
+  OK    MAP/PH/1 strong, rho=0.8: 596,828 rows, split/threshold/labels/alignment OK, threshold 25 (train runs), congestion rate 20.1%, persistence MAE 3.208 = results file, test congestion rate = results file, alignment checked on 100% of rows
+  OK    MAP/PH/1 strong, rho=0.9: 598,437 rows, split/threshold/labels/alignment OK, threshold 65 (train runs), congestion rate 19.0%, persistence MAE 4.133 = results file, test congestion rate = results file, alignment checked on 100% of rows
+  OK    MAP/PH/1 strong, rho=0.95: 598,810 rows, split/threshold/labels/alignment OK, threshold 149 (train runs), congestion rate 20.4%, persistence MAE 4.849 = results file, test congestion rate = results file, alignment checked on 100% of rows
+  OK    MAP/PH/1 cc_afternoon, rho=0.3: 569,852 rows, split/threshold/labels/alignment OK, threshold 0 (train runs), congestion rate 7.5%, persistence MAE 0.183 = results file, test congestion rate = results file, alignment checked on 95% of rows
+  OK    MAP/PH/1 cc_afternoon, rho=0.5: 595,342 rows, split/threshold/labels/alignment OK, threshold 1 (train runs), congestion rate 9.3%, persistence MAE 0.598 = results file, test congestion rate = results file, alignment checked on 99% of rows
+  OK    MAP/PH/1 cc_afternoon, rho=0.7: 598,657 rows, split/threshold/labels/alignment OK, threshold 2 (train runs), congestion rate 19.0%, persistence MAE 1.342 = results file, test congestion rate = results file, alignment checked on 100% of rows
+  OK    MAP/PH/1 cc_afternoon, rho=0.8: 599,007 rows, split/threshold/labels/alignment OK, threshold 5 (train runs), congestion rate 16.3%, persistence MAE 1.907 = results file, test congestion rate = results file, alignment checked on 100% of rows
+  OK    MAP/PH/1 cc_afternoon, rho=0.9: 599,102 rows, split/threshold/labels/alignment OK, threshold 13 (train runs), congestion rate 18.7%, persistence MAE 2.414 = results file, test congestion rate = results file, alignment checked on 100% of rows
+  OK    MAP/PH/1 cc_afternoon, rho=0.95: 599,119 rows, split/threshold/labels/alignment OK, threshold 27 (train runs), congestion rate 22.3%, persistence MAE 2.795 = results file, test congestion rate = results file, alignment checked on 100% of rows
+  OK    MAP/PH/1 cc_evening, rho=0.3: 563,934 rows, split/threshold/labels/alignment OK, threshold 0 (train runs), congestion rate 8.0%, persistence MAE 0.205 = results file, test congestion rate = results file, alignment checked on 94% of rows
+  OK    MAP/PH/1 cc_evening, rho=0.5: 593,301 rows, split/threshold/labels/alignment OK, threshold 1 (train runs), congestion rate 10.7%, persistence MAE 0.644 = results file, test congestion rate = results file, alignment checked on 99% of rows
+  OK    MAP/PH/1 cc_evening, rho=0.7: 598,262 rows, split/threshold/labels/alignment OK, threshold 3 (train runs), congestion rate 15.6%, persistence MAE 1.461 = results file, test congestion rate = results file, alignment checked on 100% of rows
+  OK    MAP/PH/1 cc_evening, rho=0.8: 598,837 rows, split/threshold/labels/alignment OK, threshold 6 (train runs), congestion rate 16.9%, persistence MAE 1.999 = results file, test congestion rate = results file, alignment checked on 100% of rows
+  OK    MAP/PH/1 cc_evening, rho=0.9: 599,061 rows, split/threshold/labels/alignment OK, threshold 15 (train runs), congestion rate 19.8%, persistence MAE 2.747 = results file, test congestion rate = results file, alignment checked on 100% of rows
+  OK    MAP/PH/1 cc_evening, rho=0.95: 599,107 rows, split/threshold/labels/alignment OK, threshold 34 (train runs), congestion rate 18.4%, persistence MAE 3.027 = results file, test congestion rate = results file, alignment checked on 100% of rows
+  OK    MAP/PH/1 cc_afternoon_realsvc, rho=0.3: 567,285 rows, split/threshold/labels/alignment OK, threshold 0 (train runs), congestion rate 10.0%, persistence MAE 0.288 = results file, test congestion rate = results file, alignment checked on 95% of rows
+  OK    MAP/PH/1 cc_afternoon_realsvc, rho=0.5: 593,565 rows, split/threshold/labels/alignment OK, threshold 1 (train runs), congestion rate 14.6%, persistence MAE 0.837 = results file, test congestion rate = results file, alignment checked on 99% of rows
+  OK    MAP/PH/1 cc_afternoon_realsvc, rho=0.7: 597,184 rows, split/threshold/labels/alignment OK, threshold 4 (train runs), congestion rate 16.5%, persistence MAE 1.866 = results file, test congestion rate = results file, alignment checked on 100% of rows
+  OK    MAP/PH/1 cc_afternoon_realsvc, rho=0.8: 597,875 rows, split/threshold/labels/alignment OK, threshold 8 (train runs), congestion rate 17.2%, persistence MAE 2.438 = results file, test congestion rate = results file, alignment checked on 100% of rows
+  OK    MAP/PH/1 cc_afternoon_realsvc, rho=0.9: 597,865 rows, split/threshold/labels/alignment OK, threshold 21 (train runs), congestion rate 19.2%, persistence MAE 3.157 = results file, test congestion rate = results file, alignment checked on 100% of rows
+  OK    MAP/PH/1 cc_afternoon_realsvc, rho=0.95: 598,054 rows, split/threshold/labels/alignment OK, threshold 48 (train runs), congestion rate 18.1%, persistence MAE 3.527 = results file, test congestion rate = results file, alignment checked on 100% of rows
+  OK    MAP/PH/1 cc_evening_realsvc, rho=0.3: 559,410 rows, split/threshold/labels/alignment OK, threshold 0 (train runs), congestion rate 11.8%, persistence MAE 0.344 = results file, test congestion rate = results file, alignment checked on 93% of rows
+  OK    MAP/PH/1 cc_evening_realsvc, rho=0.5: 587,552 rows, split/threshold/labels/alignment OK, threshold 1 (train runs), congestion rate 18.5%, persistence MAE 1.021 = results file, test congestion rate = results file, alignment checked on 98% of rows
+  OK    MAP/PH/1 cc_evening_realsvc, rho=0.7: 592,616 rows, split/threshold/labels/alignment OK, threshold 6 (train runs), congestion rate 16.4%, persistence MAE 2.187 = results file, test congestion rate = results file, alignment checked on 99% of rows
+  OK    MAP/PH/1 cc_evening_realsvc, rho=0.8: 593,107 rows, split/threshold/labels/alignment OK, threshold 11 (train runs), congestion rate 18.5%, persistence MAE 2.943 = results file, test congestion rate = results file, alignment checked on 99% of rows
+  OK    MAP/PH/1 cc_evening_realsvc, rho=0.9: 593,233 rows, split/threshold/labels/alignment OK, threshold 26 (train runs), congestion rate 18.8%, persistence MAE 3.659 = results file, test congestion rate = results file, alignment checked on 99% of rows
+  OK    MAP/PH/1 cc_evening_realsvc, rho=0.95: 592,834 rows, split/threshold/labels/alignment OK, threshold 54 (train runs), congestion rate 20.3%, persistence MAE 4.058 = results file, test congestion rate = results file, alignment checked on 99% of rows
+  threshold method: training runs only in 78 files, all runs in 0 (expected all runs only for M/M/1 and M/PH/1, where the labels are identical); raw series missing for 0 files
+  (65 s)
+
+====================================================================================================
+3. RESULTS PER QUEUE SETTING (validation, model comparison, autocorrelation)
+====================================================================================================
+  OK    validation M/M/1: 6 rho, largest |z| = 1.81, 0 with |z| > 2
+  OK    validation M/G/1 Weibull 2.0: 6 rho, largest |z| = 1.56, 0 with |z| > 2
+  OK    validation M/G/1 Weibull 0.5: 6 rho, largest |z| = 1.23, 0 with |z| > 2
+  OK    validation M/PH/1 Erlang-2: 6 rho, largest |z| = 1.93, 0 with |z| > 2
+  OK    validation PH/PH/1 Erlang-2/Erlang-2: 6 rho, largest |z| = 1.29, 0 with |z| > 2
+  OK    validation H2/PH/1 H2/Erlang-2: 6 rho, largest |z| = 2.40, 1 with |z| > 2
+  OK    validation MAP/PH/1 MMPP-2/Erlang-2: 6 rho, largest |z| = 1.98, 0 with |z| > 2
+  OK    validation MAP/PH/1 medium: 6 rho, largest |z| = 1.98, 0 with |z| > 2
+  OK    validation MAP/PH/1 weak: 6 rho, largest |z| = 1.75, 0 with |z| > 2
+  OK    validation MAP/PH/1 strong: 6 rho, largest |z| = 1.43, 0 with |z| > 2
+  OK    validation MAP/PH/1 cc_afternoon: 6 rho, largest |z| = 1.34, 0 with |z| > 2
+  OK    validation MAP/PH/1 cc_evening: 6 rho, largest |z| = 2.20, 1 with |z| > 2
+  OK    validation MAP/PH/1 cc_afternoon_realsvc: 6 rho, largest |z| = 2.52, 1 with |z| > 2
+  OK    validation MAP/PH/1 cc_evening_realsvc: 6 rho, largest |z| = 1.17, 0 with |z| > 2
+  OK    M/M/1 regression: 6 rho x 4 horizons x 2 feature sets, 4 models, 5 test runs (25-29)
+  OK    M/M/1 classification: 6 rho x 4 horizons x 2 feature sets, 4 models, 5 test runs (25-29)
+  OK    M/M/1 autocorrelation: 6 rho
+  OK    M/G/1 Weibull 2.0 regression: 6 rho x 4 horizons x 2 feature sets, 4 models, 5 test runs (25-29)
+  OK    M/G/1 Weibull 2.0 classification: 6 rho x 4 horizons x 2 feature sets, 4 models, 5 test runs (25-29)
+  OK    M/G/1 Weibull 2.0 autocorrelation: 6 rho
+  OK    M/G/1 Weibull 0.5 regression: 6 rho x 4 horizons x 2 feature sets, 4 models, 5 test runs (25-29)
+  OK    M/G/1 Weibull 0.5 classification: 6 rho x 4 horizons x 2 feature sets, 4 models, 5 test runs (25-29)
+  OK    M/G/1 Weibull 0.5 autocorrelation: 6 rho
+  OK    M/PH/1 Erlang-2 regression: 6 rho x 4 horizons x 2 feature sets, 4 models, 5 test runs (25-29)
+  OK    M/PH/1 Erlang-2 classification: 6 rho x 4 horizons x 2 feature sets, 4 models, 5 test runs (25-29)
+  OK    M/PH/1 Erlang-2 autocorrelation: 6 rho
+  OK    PH/PH/1 E2/E2 regression: 6 rho x 4 horizons x 2 feature sets, 4 models, 5 test runs (25-29)
+  OK    PH/PH/1 E2/E2 classification: 6 rho x 4 horizons x 2 feature sets, 4 models, 5 test runs (25-29)
+  OK    PH/PH/1 E2/E2 autocorrelation: 6 rho
+  OK    H2/PH/1 regression: 6 rho x 4 horizons x 2 feature sets, 4 models, 5 test runs (25-29)
+  OK    H2/PH/1 classification: 6 rho x 4 horizons x 2 feature sets, 4 models, 5 test runs (25-29)
+  OK    H2/PH/1 autocorrelation: 6 rho
+  OK    MAP/PH/1 medium regression: 6 rho x 4 horizons x 2 feature sets, 4 models, 5 test runs (25-29)
+  OK    MAP/PH/1 medium classification: 6 rho x 4 horizons x 2 feature sets, 4 models, 5 test runs (25-29)
+  OK    MAP/PH/1 medium autocorrelation: 6 rho
+  OK    MAP/PH/1 weak regression: 6 rho x 4 horizons x 2 feature sets, 4 models, 5 test runs (25-29)
+  OK    MAP/PH/1 weak classification: 6 rho x 4 horizons x 2 feature sets, 4 models, 5 test runs (25-29)
+  OK    MAP/PH/1 weak autocorrelation: 6 rho
+  OK    MAP/PH/1 strong regression: 6 rho x 4 horizons x 2 feature sets, 4 models, 5 test runs (25-29)
+  OK    MAP/PH/1 strong classification: 6 rho x 4 horizons x 2 feature sets, 4 models, 5 test runs (25-29)
+  OK    MAP/PH/1 strong autocorrelation: 6 rho
+  OK    MAP/PH/1 cc_afternoon regression: 6 rho x 4 horizons x 2 feature sets, 4 models, 5 test runs (25-29)
+  OK    MAP/PH/1 cc_afternoon classification: 6 rho x 4 horizons x 2 feature sets, 4 models, 5 test runs (25-29)
+  OK    MAP/PH/1 cc_afternoon autocorrelation: 6 rho
+  OK    MAP/PH/1 cc_evening regression: 6 rho x 4 horizons x 2 feature sets, 4 models, 5 test runs (25-29)
+  OK    MAP/PH/1 cc_evening classification: 6 rho x 4 horizons x 2 feature sets, 4 models, 5 test runs (25-29)
+  OK    MAP/PH/1 cc_evening autocorrelation: 6 rho
+  OK    MAP/PH/1 cc_afternoon_realsvc regression: 6 rho x 4 horizons x 2 feature sets, 4 models, 5 test runs (25-29)
+  OK    MAP/PH/1 cc_afternoon_realsvc classification: 6 rho x 4 horizons x 2 feature sets, 4 models, 5 test runs (25-29)
+  OK    MAP/PH/1 cc_afternoon_realsvc autocorrelation: 6 rho
+  OK    MAP/PH/1 cc_evening_realsvc regression: 6 rho x 4 horizons x 2 feature sets, 4 models, 5 test runs (25-29)
+  OK    MAP/PH/1 cc_evening_realsvc classification: 6 rho x 4 horizons x 2 feature sets, 4 models, 5 test runs (25-29)
+  OK    MAP/PH/1 cc_evening_realsvc autocorrelation: 6 rho
+
+====================================================================================================
+4. ANALYSIS OUTPUTS (files exist and are not empty)
+====================================================================================================
+  OK    51 of 51 analysis result files present
+  OK    61 of 61 figures present
+
+====================================================================================================
+5. CONSISTENCY BETWEEN FILES
+====================================================================================================
+  OK    validation_z_scores.csv (PH/PH/1 Erlang-2/Erlang-2) matches phph1_validation.csv
+  OK    validation_z_scores.csv (H2/PH/1 H2/Erlang-2) matches h2ph1_validation.csv
+  OK    validation_z_scores.csv (MAP/PH/1 MMPP-2/Erlang-2) matches mapph1_validation.csv
+  OK    call centre afternoon: exact L_q with real service above Erlang-2 at every rho (rho 0.8: 2.68 -> 4.35)
+  OK    call centre evening: exact L_q with real service above Erlang-2 at every rho (rho 0.8: 3.20 -> 6.03)
+  OK    service H2 used for afternoon has C_s^2 = 1.474; observed in the data 1.474
+  OK    service H2 for afternoon has mean 1.0000 (should be 1)
+  OK    service H2 used for evening has C_s^2 = 2.195; observed in the data 2.195
+  OK    service H2 for evening has mean 1.0000 (should be 1)
+  OK    Persistence: cost identical in early_warning_onsets.csv and early_warning_fair_summary.csv (48 settings)
+  OK    Lowered-threshold rule: cost identical in early_warning_onsets.csv and early_warning_fair_summary.csv (48 settings)
+  OK    RF classifier, rich features: cost identical in early_warning_onsets.csv and early_warning_fair_summary.csv (48 settings)
+  OK    Persistence: cost identical in early_warning_onsets_callcenter.csv and early_warning_fair_summary_callcenter.csv (24 settings)
+  OK    Lowered-threshold rule: cost identical in early_warning_onsets_callcenter.csv and early_warning_fair_summary_callcenter.csv (24 settings)
+  OK    RF classifier, rich features: cost identical in early_warning_onsets_callcenter.csv and early_warning_fair_summary_callcenter.csv (24 settings)
+  OK    call-centre (Erlang-2) early-warning costs identical in the full and --callcenter runs (96 rows)
+  OK    callcenter_service_summary.csv L_q equals the validation files
+  OK    cc_afternoon_realsvc data labelled CallCentre-afternoon-realsvc / service 0
+  OK    cc_evening_realsvc data labelled CallCentre-evening-realsvc / service 0
+
+====================================================================================================
+6. GIT
+====================================================================================================
+  branch: ## main...origin/main
+  last commit: 05f337f 2026-10-14 README: dependence levels, early warning, call-centre case study
+  OK    data/ is ignored by git (large files are not committed; tested data/mapph1/processed/history_only_cc_afternoon_realsvc_rho0.3.csv)
+  not committed in the project folder: 2 file(s)
+        M README.md
+        ?? check_project.py
+  not committed in modeling/: 3 file(s)
+        M modeling/train_mapph1_baseline_models.py
+        ?? modeling/callcenter_service_summary.py
+        ?? modeling/early_warning_fair_comparison.py
+  not committed in plots/: 1 file(s)
+        D plots/map_levels_properties.png
+  not committed in simulation/: 6 file(s)
+        M simulation/check_map_levels.py
+        M simulation/map_utils.py
+        M simulation/mapph1_simulator.py
+        ?? simulation/callcenter_fit_check.py
+        ?? simulation/callcenter_service_fit.py
+        ?? simulation/map_timescales.py
+  not committed in results/: 35 file(s)
+        ?? results/callcenter_fit_check.csv
+        ?? results/callcenter_service_fit.json
+        ?? results/callcenter_service_summary.csv
+        ?? results/callcenter_service_times.csv
+        ?? results/callcenter_stability.csv
+        ?? results/early_warning_fair_paired.csv
+        ?? results/early_warning_fair_paired_callcenter.csv
+        ?? results/early_warning_fair_runs.csv
+        ?? results/early_warning_fair_runs_callcenter.csv
+        ?? results/early_warning_fair_summary.csv
+        ?? results/early_warning_fair_summary_callcenter.csv
+        ?? results/map_dependence_measures.csv
+        ?? results/map_timescales_idc.csv
+        ?? results/mapph1_cc_afternoon_realsvc_autocorrelation_summary.csv
+        ?? results/mapph1_cc_afternoon_realsvc_model_comparison_classification.csv
+        ?? results/mapph1_cc_afternoon_realsvc_model_comparison_regression.csv
+        ?? results/mapph1_cc_afternoon_realsvc_validation.csv
+        ?? results/mapph1_cc_evening_realsvc_autocorrelation_summary.csv
+        ?? results/mapph1_cc_evening_realsvc_model_comparison_classification.csv
+        ?? results/mapph1_cc_evening_realsvc_model_comparison_regression.csv
+        ?? results/mapph1_cc_evening_realsvc_validation.csv
+        ?? results/plots/callcenter_fit_check.png
+        ?? results/plots/callcenter_service_summary.png
+        ?? results/plots/callcenter_service_times.png
+        ?? results/plots/early_warning_fair.png
+        ?? results/plots/early_warning_fair_callcenter.png
+        ?? results/plots/map_levels_properties.png
+        ?? results/plots/map_timescales_idc.png
+        ?? results/plots/mapph1_cc_afternoon_realsvc_autocorrelation_by_rho.png
+        ?? results/plots/mapph1_cc_afternoon_realsvc_classification_recall_by_rho.png
+        ?? results/plots/mapph1_cc_afternoon_realsvc_regression_mae_by_rho.png
+        ?? results/plots/mapph1_cc_evening_realsvc_autocorrelation_by_rho.png
+        ?? results/plots/mapph1_cc_evening_realsvc_classification_recall_by_rho.png
+        ?? results/plots/mapph1_cc_evening_realsvc_regression_mae_by_rho.png
+        ?? results/project_check_report.txt
+  (M = modified, ?? = new; run  git add -A ; git commit ; git push  to save them)
+
+====================================================================================================
+SUMMARY
+====================================================================================================
+  158 OK, 0 warnings, 0 failures   (66 s)
+  No failures: every input, output and cross-check is consistent.

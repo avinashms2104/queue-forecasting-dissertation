@@ -15,9 +15,14 @@ Usage
 -----
     python modeling/train_mapph1_baseline_models.py --level medium                 # both feature sets (slow)
     python modeling/train_mapph1_baseline_models.py --level medium --history-only  # faster first pass
-    (levels: medium, weak, strong, cc_afternoon, cc_evening; see mapph1_simulator.py)
+    (levels: medium, weak, strong, cc_afternoon, cc_evening,
+     cc_afternoon_realsvc, cc_evening_realsvc; see mapph1_simulator.py)
 
-Produces (SFX = "" for medium, "_weak", "_strong", "_cc_afternoon", "_cc_evening"):
+The _realsvc levels use the fitted H2 service (real call-centre C_s^2), so
+their service label is 0 instead of the Erlang order 2.
+
+Produces (SFX = "" for medium, "_weak", "_strong", "_cc_afternoon", "_cc_evening",
+          "_cc_afternoon_realsvc", "_cc_evening_realsvc"):
     results/mapph1{SFX}_model_comparison_regression.csv
     results/mapph1{SFX}_model_comparison_classification.csv
     results/plots/mapph1{SFX}_regression_mae_by_rho.png
@@ -305,5 +310,5 @@ if __name__ == "__main__":
     LEVEL = args.level
     SFX = LEVEL_INFO[LEVEL][1]
     TAG = SFX[1:] + "_" if SFX else ""
-    SETTINGS = [(LEVEL_INFO[LEVEL][0], 2)]
+    SETTINGS = [(LEVEL_INFO[LEVEL][0], 0 if LEVEL.endswith("_realsvc") else 2)]
     run_all(history_only=args.history_only)

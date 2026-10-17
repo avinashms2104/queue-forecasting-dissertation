@@ -1,0 +1,185 @@
+quantity,setting,rho,value
+Lq,"afternoon, Erlang-2",0.3,0.0976025995887343
+Lq,"afternoon, Erlang-2",0.5,0.3837964820714135
+Lq,"afternoon, Erlang-2",0.7,1.299120748659499
+Lq,"afternoon, Erlang-2",0.8,2.682338262074728
+Lq,"afternoon, Erlang-2",0.9,7.691417146844085
+Lq,"afternoon, Erlang-2",0.95,18.986734380217055
+Lq,"afternoon, real service",0.3,0.1609346613380136
+Lq,"afternoon, real service",0.5,0.6325501788512509
+Lq,"afternoon, real service",0.7,2.1326078654215395
+Lq,"afternoon, real service",0.8,4.351603246538062
+Lq,"afternoon, real service",0.9,11.93332207190252
+Lq,"afternoon, real service",0.95,28.193963314725416
+Lq,"evening, Erlang-2",0.3,0.1056185223410942
+Lq,"evening, Erlang-2",0.5,0.4347256851116046
+Lq,"evening, Erlang-2",0.7,1.5521177175287
+Lq,"evening, Erlang-2",0.8,3.1975528665059527
+Lq,"evening, Erlang-2",0.9,8.477291157590258
+Lq,"evening, Erlang-2",0.95,19.276209090282524
+Lq,"evening, real service",0.3,0.2227239203752727
+Lq,"evening, real service",0.5,0.8940968407937198
+Lq,"evening, real service",0.7,3.0263986223676254
+Lq,"evening, real service",0.8,6.028490992174644
+Lq,"evening, real service",0.9,15.483078918700125
+Lq,"evening, real service",0.95,34.72133736015137
+half_life,"afternoon, Erlang-2",0.3,2.0
+half_life,"afternoon, Erlang-2",0.5,4.0
+half_life,"afternoon, Erlang-2",0.7,10.0
+half_life,"afternoon, Erlang-2",0.8,28.0
+half_life,"afternoon, Erlang-2",0.9,125.0
+half_life,"afternoon, Erlang-2",0.95,278.0
+half_life,"afternoon, real service",0.3,3.0
+half_life,"afternoon, real service",0.5,6.0
+half_life,"afternoon, real service",0.7,18.0
+half_life,"afternoon, real service",0.8,43.0
+half_life,"afternoon, real service",0.9,173.0
+half_life,"afternoon, real service",0.95,362.0
+half_life,"evening, Erlang-2",0.3,2.0
+half_life,"evening, Erlang-2",0.5,5.0
+half_life,"evening, Erlang-2",0.7,14.0
+half_life,"evening, Erlang-2",0.8,29.0
+half_life,"evening, Erlang-2",0.9,106.0
+half_life,"evening, Erlang-2",0.95,312.0
+half_life,"evening, real service",0.3,5.0
+half_life,"evening, real service",0.5,11.0
+half_life,"evening, real service",0.7,26.0
+half_life,"evening, real service",0.8,47.0
+half_life,"evening, real service",0.9,155.0
+half_life,"evening, real service",0.95,349.0
+rf_gain,"afternoon, Erlang-2",0.3,0.7557844979537001
+rf_gain,"afternoon, Erlang-2",0.5,2.07988227480799
+rf_gain,"afternoon, Erlang-2",0.7,4.2407253986851305
+rf_gain,"afternoon, Erlang-2",0.8,3.81921089561564
+rf_gain,"afternoon, Erlang-2",0.9,1.1273176020643
+rf_gain,"afternoon, Erlang-2",0.95,-0.15729575796905002
+rf_gain,"afternoon, real service",0.3,-0.62390069980304
+rf_gain,"afternoon, real service",0.5,-0.5574647913090399
+rf_gain,"afternoon, real service",0.7,2.32855328630676
+rf_gain,"afternoon, real service",0.8,0.9154880476078899
+rf_gain,"afternoon, real service",0.9,-0.7674779860398799
+rf_gain,"afternoon, real service",0.95,-0.56140514146219
+rf_gain,"evening, Erlang-2",0.3,1.8714982613861901
+rf_gain,"evening, Erlang-2",0.5,0.40400727903057
+rf_gain,"evening, Erlang-2",0.7,2.28946705873832
+rf_gain,"evening, Erlang-2",0.8,1.46194694577943
+rf_gain,"evening, Erlang-2",0.9,0.99799029083392
+rf_gain,"evening, Erlang-2",0.95,-0.50288724103841
+rf_gain,"evening, real service",0.3,-10.294297303071689
+rf_gain,"evening, real service",0.5,-5.00516091439608
+rf_gain,"evening, real service",0.7,-0.9792596894006901
+rf_gain,"evening, real service",0.8,-2.04940605481775
+rf_gain,"evening, real service",0.9,-4.25564484789233
+rf_gain,"evening, real service",0.95,-6.52752182786662
+rich_minus_history,"afternoon, Erlang-2",0.3,0.08436380443575986
+rich_minus_history,"afternoon, Erlang-2",0.5,-0.03429812558175005
+rich_minus_history,"afternoon, Erlang-2",0.7,0.03668492345977992
+rich_minus_history,"afternoon, Erlang-2",0.8,0.02579512360963987
+rich_minus_history,"afternoon, Erlang-2",0.9,0.02591269710205979
+rich_minus_history,"afternoon, Erlang-2",0.95,0.0015548462353400239
+rich_minus_history,"afternoon, real service",0.3,-0.05725546193536002
+rich_minus_history,"afternoon, real service",0.5,0.036127266919059986
+rich_minus_history,"afternoon, real service",0.7,-0.05620577847538
+rich_minus_history,"afternoon, real service",0.8,0.045959080290660204
+rich_minus_history,"afternoon, real service",0.9,0.008687006467519964
+rich_minus_history,"afternoon, real service",0.95,0.0
+rich_minus_history,"evening, Erlang-2",0.3,0.10834585923497997
+rich_minus_history,"evening, Erlang-2",0.5,0.09425530870327997
+rich_minus_history,"evening, Erlang-2",0.7,0.08308255161463984
+rich_minus_history,"evening, Erlang-2",0.8,0.11262568071727985
+rich_minus_history,"evening, Erlang-2",0.9,0.06210954902582011
+rich_minus_history,"evening, Erlang-2",0.95,0.01760922733494996
+rich_minus_history,"evening, real service",0.3,0.15606063366470835
+rich_minus_history,"evening, real service",0.5,0.27022252369854005
+rich_minus_history,"evening, real service",0.7,0.12666236058631997
+rich_minus_history,"evening, real service",0.8,0.0752986490862102
+rich_minus_history,"evening, real service",0.9,0.028331027056239577
+rich_minus_history,"evening, real service",0.95,0.022609231335839475
+f1_gap,"afternoon, Erlang-2",0.3,-0.0832778694664134
+f1_gap,"afternoon, Erlang-2",0.5,-0.1603714552376717
+f1_gap,"afternoon, Erlang-2",0.7,-0.12303267111008781
+f1_gap,"afternoon, Erlang-2",0.8,-0.03957586940757607
+f1_gap,"afternoon, Erlang-2",0.9,-0.002359316071958273
+f1_gap,"afternoon, Erlang-2",0.95,-0.0018325389210671617
+f1_gap,"afternoon, real service",0.3,-0.1461815780895621
+f1_gap,"afternoon, real service",0.5,-0.2053045423799423
+f1_gap,"afternoon, real service",0.7,-0.0751929369456738
+f1_gap,"afternoon, real service",0.8,-0.029341629974700356
+f1_gap,"afternoon, real service",0.9,-0.005535803044958265
+f1_gap,"afternoon, real service",0.95,-0.0011631990924398927
+f1_gap,"evening, Erlang-2",0.3,-0.1009627137856028
+f1_gap,"evening, Erlang-2",0.5,-0.1787146016308173
+f1_gap,"evening, Erlang-2",0.7,-0.08359313933353218
+f1_gap,"evening, Erlang-2",0.8,-0.02587389227930914
+f1_gap,"evening, Erlang-2",0.9,-0.0023253041169989386
+f1_gap,"evening, Erlang-2",0.95,-0.00132467969464789
+f1_gap,"evening, real service",0.3,-0.1978369576398257
+f1_gap,"evening, real service",0.5,-0.1891855741852215
+f1_gap,"evening, real service",0.7,-0.039360488932961624
+f1_gap,"evening, real service",0.8,-0.011844810515291071
+f1_gap,"evening, real service",0.9,-0.005636962566997639
+f1_gap,"evening, real service",0.95,-0.0010319953117235992
+ew_rf_vs_persistence,"afternoon, Erlang-2",0.5,2.3139556060269424
+ew_rf_vs_persistence,"afternoon, Erlang-2",0.7,2.1832391432577225
+ew_rf_vs_persistence,"afternoon, Erlang-2",0.8,8.072748130499047
+ew_rf_vs_persistence,"afternoon, Erlang-2",0.9,19.89820182255185
+ew_rf_vs_persistence,"afternoon, real service",0.5,-0.1500436805201421
+ew_rf_vs_persistence,"afternoon, real service",0.7,5.051761337859226
+ew_rf_vs_persistence,"afternoon, real service",0.8,16.679693786710928
+ew_rf_vs_persistence,"afternoon, real service",0.9,29.274366986538325
+ew_rf_vs_persistence,"evening, Erlang-2",0.5,0.9470047152352778
+ew_rf_vs_persistence,"evening, Erlang-2",0.7,2.5888512792894414
+ew_rf_vs_persistence,"evening, Erlang-2",0.8,9.476224808731436
+ew_rf_vs_persistence,"evening, Erlang-2",0.9,20.763316347990237
+ew_rf_vs_persistence,"evening, real service",0.5,2.0464015898941224
+ew_rf_vs_persistence,"evening, real service",0.7,12.01502227798175
+ew_rf_vs_persistence,"evening, real service",0.8,21.871748712633767
+ew_rf_vs_persistence,"evening, real service",0.9,23.99955979230315
+ew_rule_vs_persistence,"afternoon, Erlang-2",0.5,0.0
+ew_rule_vs_persistence,"afternoon, Erlang-2",0.7,2.524897222085672
+ew_rule_vs_persistence,"afternoon, Erlang-2",0.8,8.610380056972964
+ew_rule_vs_persistence,"afternoon, Erlang-2",0.9,20.81830232103436
+ew_rule_vs_persistence,"afternoon, real service",0.5,0.0
+ew_rule_vs_persistence,"afternoon, real service",0.7,5.495701092534813
+ew_rule_vs_persistence,"afternoon, real service",0.8,16.916771968200656
+ew_rule_vs_persistence,"afternoon, real service",0.9,29.424096121721863
+ew_rule_vs_persistence,"evening, Erlang-2",0.5,0.0
+ew_rule_vs_persistence,"evening, Erlang-2",0.7,2.558840076133941
+ew_rule_vs_persistence,"evening, Erlang-2",0.8,9.612422038702276
+ew_rule_vs_persistence,"evening, Erlang-2",0.9,20.254724516111047
+ew_rule_vs_persistence,"evening, real service",0.5,2.1180975509499245
+ew_rule_vs_persistence,"evening, real service",0.7,11.94623339130535
+ew_rule_vs_persistence,"evening, real service",0.8,21.70350208436893
+ew_rule_vs_persistence,"evening, real service",0.9,24.33177754544683
+ew_rf_vs_rule,"afternoon, Erlang-2",0.5,2.3139556060269424
+ew_rf_vs_rule,"afternoon, Erlang-2",0.7,-0.3513074387179871
+ew_rf_vs_rule,"afternoon, Erlang-2",0.8,-0.6499992074634119
+ew_rf_vs_rule,"afternoon, Erlang-2",0.9,-1.2749256970496137
+ew_rf_vs_rule,"afternoon, real service",0.5,-0.1500436805201421
+ew_rf_vs_rule,"afternoon, real service",0.7,-0.4683066858531148
+ew_rf_vs_rule,"afternoon, real service",0.8,-0.3003384055979108
+ew_rf_vs_rule,"afternoon, real service",0.9,-0.2311628034456347
+ew_rf_vs_rule,"evening, Erlang-2",0.5,0.9470047152352778
+ew_rf_vs_rule,"evening, Erlang-2",0.7,0.0290269185185043
+ew_rf_vs_rule,"evening, Erlang-2",0.8,-0.1564902852658733
+ew_rf_vs_rule,"evening, Erlang-2",0.9,0.6375480518813825
+ew_rf_vs_rule,"evening, real service",0.5,-0.0736833273858117
+ew_rf_vs_rule,"evening, real service",0.7,0.0610149234591572
+ew_rf_vs_rule,"evening, real service",0.8,0.1764462333544991
+ew_rf_vs_rule,"evening, real service",0.9,-0.3810952337248174
+ew_rf_runs_better,"afternoon, Erlang-2",0.5,5.0
+ew_rf_runs_better,"afternoon, Erlang-2",0.7,1.0
+ew_rf_runs_better,"afternoon, Erlang-2",0.8,2.0
+ew_rf_runs_better,"afternoon, Erlang-2",0.9,1.0
+ew_rf_runs_better,"afternoon, real service",0.5,2.0
+ew_rf_runs_better,"afternoon, real service",0.7,0.0
+ew_rf_runs_better,"afternoon, real service",0.8,2.0
+ew_rf_runs_better,"afternoon, real service",0.9,2.0
+ew_rf_runs_better,"evening, Erlang-2",0.5,4.0
+ew_rf_runs_better,"evening, Erlang-2",0.7,2.0
+ew_rf_runs_better,"evening, Erlang-2",0.8,1.0
+ew_rf_runs_better,"evening, Erlang-2",0.9,3.0
+ew_rf_runs_better,"evening, real service",0.5,2.0
+ew_rf_runs_better,"evening, real service",0.7,2.0
+ew_rf_runs_better,"evening, real service",0.8,3.0
+ew_rf_runs_better,"evening, real service",0.9,2.0

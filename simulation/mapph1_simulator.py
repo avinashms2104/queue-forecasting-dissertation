@@ -49,6 +49,10 @@ Arrival settings (--level)
     cc_afternoon  MMPP-2 fitted to the real call-centre arrivals, 11:00-15:30
     cc_evening    MMPP-2 fitted to the real call-centre arrivals, 19:30-22:30
                   (callcenter_fit_map.py; rescaled so that lambda = rho)
+    cc_afternoon_realsvc, cc_evening_realsvc
+                  the same arrivals, but service is a balanced H2 with the C_s^2
+                  observed in the call-centre data (callcenter_service_fit.py), mean 1;
+                  the service_erlang_k column is 0 for these settings
 
 Usage
 -----
@@ -56,7 +60,8 @@ Usage
 
 Writes ../data/mapph1/mapph1_timeseries{suffix}_rho{rho}.csv
 and    ../results/mapph1{suffix}_validation.csv
-(suffix is "" for medium, "_weak", "_strong", "_cc_afternoon", "_cc_evening")
+(suffix is "" for medium, "_weak", "_strong", "_cc_afternoon", "_cc_evening",
+ "_cc_afternoon_realsvc", "_cc_evening_realsvc")
 """
 
 import argparse
@@ -76,10 +81,10 @@ from mg1_simulator import (
     POST_WARMUP_LENGTH,
 )
 from ph_utils import erlang
-from map_utils import arrival_map, LEVEL_INFO
+from map_utils import arrival_map, service_ph, service_label_k, LEVEL_INFO
 from qbd_solver import solve_qbd
 
-SERVICE_ERLANG_K = 2
+SERVICE_ERLANG_K = 2             # 2 = Erlang-2 service; 0 = fitted H2 (the _realsvc levels)
 LEVEL = "medium"                 # set from --level in __main__
 ARRIVAL_LABEL, SUFFIX, SEED_TAG = LEVEL_INFO[LEVEL]
 LEVELS = {k: dict(label=v[0], suffix=v[1], seed_tag=v[2]) for k, v in LEVEL_INFO.items()}
@@ -145,11 +150,11 @@ def lag1_corr(x):
 def run_all(write_csv=True):
     OUT_DIR.mkdir(parents=True, exist_ok=True)
     RES_DIR.mkdir(parents=True, exist_ok=True)
-    srv = erlang(SERVICE_ERLANG_K, MEAN_SERVICE_TIME)
+    srv = service_ph(LEVEL, MEAN_SERVICE_TIME)
     summary = []
 
     probe = make_arrivals(0.7)
-    print(f"\n=== MAP/PH/1: {probe.name} arrivals / Erlang-{SERVICE_ERLANG_K} service ===")
+    print(f"\n=== MAP/PH/1: {probe.name} arrivals / {srv.name} service ===")
     print(f"    arrival gaps: C_a^2={probe.scv:.3f}, lag-1 corr={probe.lag_corr(1):.3f}, "
           f"IDC={probe.idc_limit():.3f} | service C_s^2={srv.scv:.3f}")
 
@@ -208,4 +213,5 @@ if __name__ == "__main__":
     ap.add_argument("--level", default="medium", choices=list(LEVEL_INFO))
     LEVEL = ap.parse_args().level
     ARRIVAL_LABEL, SUFFIX, SEED_TAG = LEVEL_INFO[LEVEL]
+    SERVICE_ERLANG_K = service_label_k(LEVEL)
     run_all()

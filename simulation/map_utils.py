@@ -319,3 +319,40 @@ def arrival_map(level, lam):
     if level in CALLCENTRE_LEVELS:
         return callcentre_map(level, lam)
     return map_level(level, lam)
+
+
+
+# ---------- sensitivity check: call-centre MAPs with the OBSERVED service variability ----------
+# (Azam, 16 Oct) Same fitted arrival MAP and the same mean service time 1 and rho, but service
+# is a balanced H2 with the C_s^2 measured in the call-centre data (callcenter_service_fit.py)
+# instead of Erlang-2 (C_s^2 = 0.5). Levels: cc_afternoon_realsvc, cc_evening_realsvc.
+LEVEL_INFO.update({
+    "cc_afternoon_realsvc": ("CallCentre-afternoon-realsvc", "_cc_afternoon_realsvc", 82),
+    "cc_evening_realsvc": ("CallCentre-evening-realsvc", "_cc_evening_realsvc", 83),
+})
+_arrival_map_erlang = arrival_map
+
+
+def arrival_map(level, lam):
+    """The arrival MAP for any MAP/PH/1 setting (the _realsvc levels use the same arrivals)."""
+    return _arrival_map_erlang(level.replace("_realsvc", ""), lam)
+
+
+def service_ph(level, mean=1.0):
+    """Service distribution of a MAP/PH/1 setting: Erlang-2, or the fitted H2 for _realsvc levels."""
+    from ph_utils import erlang, PH
+    if not level.endswith("_realsvc"):
+        return erlang(2, mean)
+    import json
+    from pathlib import Path
+    path = Path(__file__).resolve().parent.parent / "results" / "callcenter_service_fit.json"
+    if not path.exists():
+        raise FileNotFoundError(f"{path} not found: run simulation/callcenter_service_fit.py first")
+    f = json.loads(path.read_text())[level.replace("_realsvc", "")]
+    ph = PH(np.array(f["alpha"]), np.array(f["T"]) / mean, name=f"H2(C_s^2={f['scv']:.2f})")
+    return ph
+
+
+def service_label_k(level):
+    """Value written in the service_erlang_k column: 2 for Erlang-2, 0 for the fitted H2."""
+    return 0 if level.endswith("_realsvc") else 2

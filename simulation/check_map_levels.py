@@ -33,7 +33,7 @@ Usage
 -----
     python simulation/check_map_levels.py
 
-Writes ../results/map_levels_properties.csv and ../plots/map_levels_properties.png
+Writes ../results/map_levels_properties.csv and ../results/plots/map_levels_properties.png
 """
 
 from pathlib import Path
@@ -49,7 +49,7 @@ from map_utils import map_level, ph_renewal_map, MATCH_WINDOW, MAP_LEVELS
 
 ROOT = Path(__file__).resolve().parent.parent
 RES_DIR = ROOT / "results"
-PLOT_DIR = ROOT / "plots"
+PLOT_DIR = ROOT / "results" / "plots"
 
 N_SEQ = 30
 N_GAPS = 200_000
@@ -172,7 +172,7 @@ def main():
     fig.text(0.5, -0.02, "lines = exact, dots = simulated (30 x 200,000 arrivals)", ha="center", fontsize=9)
     fig.tight_layout()
     fig.savefig(PLOT_DIR / "map_levels_properties.png", dpi=150, bbox_inches="tight")
-    print("Saved -> plots/map_levels_properties.png")
+    print("Saved -> results/plots/map_levels_properties.png")
 
 
 if __name__ == "__main__":
